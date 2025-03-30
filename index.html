@@ -5,69 +5,181 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CS Connect PK</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --primary-dark: #2980b9;
+            --text-dark: #2c3e50;
+            --text-light: #4a5568;
+            --bg-light: #f8f9fa;
+            --bg-white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        section {
+            scroll-margin-top: 80px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-title {
+            font-size: 2.8em;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .section-subtitle {
+            font-size: 1.3em;
+            color: var(--text-light);
+            max-width: 800px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .card {
+            background: var(--bg-white);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-size: 1.1em;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.25);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.3);
+        }
+
+        .nav-link {
+            color: #f0f0f0;
+            text-decoration: none;
+            font-size: 1em;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Scroll Animation Classes */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .fade-in-up.delay-1 {
+            transition-delay: 0.2s;
+        }
+
+        .fade-in-up.delay-2 {
+            transition-delay: 0.4s;
+        }
+
+        .fade-in-up.delay-3 {
+            transition-delay: 0.6s;
+        }
+    </style>
 </head>
 <body>
-    <header style="text-align: center; padding: 20px; background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%); color: white;">
-        <h1 style="font-size: 3em; margin: 0; font-family: 'Segoe UI', Arial, sans-serif; font-weight: bold;">CS Connect Pakistan</h1>
-        <p style="font-size: 1.2em; margin-top: 10px; font-family: 'Segoe UI', Arial, sans-serif; color: #a0aec0;">Connecting Developers Across Pakistan</p>
+    <header style="text-align: center; padding: 20px; background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%); color: white; box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15); position: relative;">
+        <h1 style="font-size: 3.2em; margin: 0; font-family: 'Poppins', sans-serif; font-weight: 700; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); letter-spacing: -0.02em;">CS Connect Pakistan</h1>
+        <p style="font-size: 1.3em; margin-top: 12px; font-family: 'Inter', sans-serif; color: #e0eaf1; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); font-weight: 400;">Connecting Developers Across Pakistan</p>
     </header>
-
-    <nav style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; background-color: #121212; color: white; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); position: sticky; top: 0; z-index: 1000;">
-        <!-- Logo and Brand -->
-        <div style="display: flex; align-items: center; gap: 0.8rem;">
-            <div style="font-size: 1.8em; font-weight: bold; font-family: 'Segoe UI', Arial, sans-serif;">CS Connect PK</div>
-        </div>
-
-        <!-- Desktop Navigation -->
-        <div style="display: flex; align-items: center; gap: 2rem;">
-            <a href="#home" style="color: white; text-decoration: none; font-size: 1em; transition: color 0.3s ease; padding: 0.5rem 1rem; border-radius: 4px;">Home</a>
-            <a href="#events" style="color: white; text-decoration: none; font-size: 1em; transition: color 0.3s ease; padding: 0.5rem 1rem; border-radius: 4px;">Events</a>
-            <a href="#blog" style="color: white; text-decoration: none; font-size: 1em; transition: color 0.3s ease; padding: 0.5rem 1rem; border-radius: 4px;">Blogs</a>
-            <a href="#forum" style="color: white; text-decoration: none; font-size: 1em; transition: color 0.3s ease; padding: 0.5rem 1rem; border-radius: 4px;">Forum</a>
-            <a href="#contact" style="color: white; text-decoration: none; font-size: 1em; transition: color 0.3s ease; padding: 0.5rem 1rem; border-radius: 4px;">Contact</a>
-            <a href="#join" style="background: linear-gradient(135deg, #3498db, #2980b9); color: white; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: 500; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);">Join Us</a>
-        </div>
-
-        <!-- Mobile Menu Button -->
-        <button id="mobile-menu-button" style="display: none; background: none; border: none; color: white; font-size: 1.5em; cursor: pointer; padding: 0.5rem;">
-            <i class="fas fa-bars"></i>
-        </button>
-
-        <!-- Mobile Navigation -->
-        <div id="mobile-menu" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(18, 18, 18, 0.95); z-index: 1001; padding: 2rem;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
-                <div style="display: flex; align-items: center; gap: 0.8rem;">
-                    <div style="font-size: 1.8em; font-weight: bold; font-family: 'Segoe UI', Arial, sans-serif;">CS Connect PK</div>
-                </div>
-                <button id="close-menu" style="background: none; border: none; color: white; font-size: 1.5em; cursor: pointer;">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <div style="display: flex; flex-direction: column; gap: 1.5rem; align-items: center;">
-                <a href="#home" style="color: white; text-decoration: none; font-size: 1.2em; transition: all 0.3s ease; padding: 0.8rem; width: 100%; text-align: center; border-radius: 8px;">Home</a>
-                <a href="#events" style="color: white; text-decoration: none; font-size: 1.2em; transition: all 0.3s ease; padding: 0.8rem; width: 100%; text-align: center; border-radius: 8px;">Events</a>
-                <a href="#blog" style="color: white; text-decoration: none; font-size: 1.2em; transition: all 0.3s ease; padding: 0.8rem; width: 100%; text-align: center; border-radius: 8px;">Blogs</a>
-                <a href="#forum" style="color: white; text-decoration: none; font-size: 1.2em; transition: all 0.3s ease; padding: 0.8rem; width: 100%; text-align: center; border-radius: 8px;">Forum</a>
-                <a href="#contact" style="color: white; text-decoration: none; font-size: 1.2em; transition: all 0.3s ease; padding: 0.8rem; width: 100%; text-align: center; border-radius: 8px;">Contact</a>
-                <a href="#join" style="background: linear-gradient(135deg, #3498db, #2980b9); color: white; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 500; transition: all 0.3s ease; width: 100%; text-align: center; margin-top: 1rem;">Join Us</a>
-            </div>
-        </div>
+    <nav style="display: flex; justify-content: space-between; align-items: center; padding: 15px 30px; background-color: #121212; color: white; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+        <div style="font-size: 1.8em; font-weight: 700; font-family: 'Poppins', sans-serif; letter-spacing: -0.02em;">CS Connect PK</div>
+        <ul style="list-style: none; display: flex; margin: 0; padding: 0; font-family: 'Inter', sans-serif;">
+            <li style="margin: 0 15px;"><a href="#home" class="nav-link">Home</a></li>
+            <li style="margin: 0 15px;"><a href="#events" class="nav-link">Events</a></li>
+            <li style="margin: 0 15px;"><a href="#blog" class="nav-link">Blogs</a></li>
+            <li style="margin: 0 15px;"><a href="#forum" class="nav-link">Forum</a></li>
+            <li style="margin: 0 15px;"><a href="#footer" class="nav-link">Contact</a></li>
+        </ul>
+        <a href="#join" class="btn btn-primary">Join Us</a>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" style="text-align: center; padding: 6rem 2rem; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); position: relative; overflow: hidden;">
         <div style="max-width: 1000px; margin: 0 auto; position: relative; z-index: 1;">
-            <h2 style="font-size: 3.2em; margin-bottom: 1.5rem; font-family: 'Segoe UI', Arial, sans-serif; color: #2c3e50; font-weight: 700; letter-spacing: -0.5px;">
+            <h2 class="section-title">
                 Connecting Tech Enthusiasts Across Pakistan!
             </h2>
-            <p style="font-size: 1.3em; margin-bottom: 2.5rem; color: #4a5568; line-height: 1.8; font-family: 'Segoe UI', Arial, sans-serif; max-width: 800px; margin-left: auto; margin-right: auto;">
+            <p class="section-subtitle">
                 Join a community of coders, designers, and tech lovers.
             </p>
             <div style="display: flex; gap: 1.5rem; justify-content: center; align-items: center; flex-wrap: wrap;">
-                <a href="#join" style="display: inline-flex; align-items: center; padding: 1rem 2.5rem; font-size: 1.1em; color: white; background: linear-gradient(135deg, #3498db, #2980b9); text-decoration: none; border-radius: 50px; font-family: 'Segoe UI', Arial, sans-serif; font-weight: 500; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);">
+                <a href="#join" class="btn btn-primary">
+                    <i class="fas fa-user-plus"></i>
                     Join Now
                 </a>
-                <a href="#events" style="display: inline-flex; align-items: center; padding: 1rem 2.5rem; font-size: 1.1em; color: #2c3e50; background: white; text-decoration: none; border-radius: 50px; font-family: 'Segoe UI', Arial, sans-serif; font-weight: 500; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);">
+                <a href="#events" class="btn" style="color: var(--text-dark); background: white; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);">
+                    <i class="fas fa-calendar-alt"></i>
                     Explore Events
                 </a>
             </div>
@@ -79,32 +191,24 @@
     <section id="about" style="padding: 6rem 2rem; background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); text-align: center; position: relative; overflow: hidden;">
         <div style="max-width: 1000px; margin: 0 auto; position: relative; z-index: 1;">
             <div style="margin-bottom: 3rem;">
-                <h2 style="font-size: 2.8em; margin-bottom: 1.5rem; font-family: 'Segoe UI', Arial, sans-serif; color: #2c3e50; font-weight: 700; letter-spacing: -0.5px;">
-                    About CS Connect Pakistan
-                </h2>
-                <div style="width: 80px; height: 4px; background: linear-gradient(90deg, #3498db, #2980b9); margin: 0 auto; border-radius: 2px;"></div>
+                <h2 class="section-title">About CS Connect Pakistan</h2>
+                <div style="width: 80px; height: 4px; background: linear-gradient(90deg, var(--primary-color), var(--primary-dark)); margin: 0 auto; border-radius: 2px;"></div>
             </div>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
-                <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease;">
-                    <i class="fas fa-calendar-alt" style="font-size: 2.5em; color: #3498db; margin-bottom: 1rem;"></i>
-                    <h3 style="font-size: 1.5em; color: #2c3e50; margin-bottom: 1rem; font-weight: 600;">Weekly Tech Meetups</h3>
-                    <p style="color: #4a5568; line-height: 1.8; font-size: 1.1em;">
-                        Weekly sessions with industry experts sharing insights on latest tech trends, career guidance, and technical knowledge.
-                    </p>
+                <div class="card" style="padding: 2rem;">
+                    <i class="fas fa-calendar-alt" style="font-size: 2.5em; color: var(--primary-color); margin-bottom: 1rem;"></i>
+                    <h3 style="font-size: 1.5em; color: var(--text-dark); margin-bottom: 1rem; font-weight: 600;">Tech Events</h3>
+                    <p style="color: var(--text-light); line-height: 1.8; font-size: 1.1em;">Regular meetups, workshops, and conferences to connect and learn.</p>
                 </div>
-                <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease;">
-                    <i class="fas fa-users" style="font-size: 2.5em; color: #3498db; margin-bottom: 1rem;"></i>
-                    <h3 style="font-size: 1.5em; color: #2c3e50; margin-bottom: 1rem; font-weight: 600;">Mentorship</h3>
-                    <p style="color: #4a5568; line-height: 1.8; font-size: 1.1em;">
-                        Connect with experienced developers for guidance and support.
-                    </p>
+                <div class="card" style="padding: 2rem;">
+                    <i class="fas fa-users" style="font-size: 2.5em; color: var(--primary-color); margin-bottom: 1rem;"></i>
+                    <h3 style="font-size: 1.5em; color: var(--text-dark); margin-bottom: 1rem; font-weight: 600;">Mentorship</h3>
+                    <p style="color: var(--text-light); line-height: 1.8; font-size: 1.1em;">Connect with experienced developers for guidance and support.</p>
                 </div>
-                <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease;">
-                    <i class="fas fa-book" style="font-size: 2.5em; color: #3498db; margin-bottom: 1rem;"></i>
-                    <h3 style="font-size: 1.5em; color: #2c3e50; margin-bottom: 1rem; font-weight: 600;">Learning Resources</h3>
-                    <p style="color: #4a5568; line-height: 1.8; font-size: 1.1em;">
-                        Access curated learning materials and tutorials.
-                    </p>
+                <div class="card" style="padding: 2rem;">
+                    <i class="fas fa-book" style="font-size: 2.5em; color: var(--primary-color); margin-bottom: 1rem;"></i>
+                    <h3 style="font-size: 1.5em; color: var(--text-dark); margin-bottom: 1rem; font-weight: 600;">Learning Resources</h3>
+                    <p style="color: var(--text-light); line-height: 1.8; font-size: 1.1em;">Access curated learning materials and tutorials.</p>
                 </div>
             </div>
         </div>
@@ -115,83 +219,129 @@
     <section id="events" style="padding: 6rem 2rem; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); text-align: center; position: relative; overflow: hidden;">
         <div style="max-width: 1000px; margin: 0 auto; position: relative; z-index: 1;">
             <div style="margin-bottom: 3rem;">
-                <h2 style="font-size: 2.8em; margin-bottom: 1.5rem; font-family: 'Segoe UI', Arial, sans-serif; color: #2c3e50; font-weight: 700; letter-spacing: -0.5px;">
-                    Our Events
-                </h2>
-                <div style="width: 80px; height: 4px; background: linear-gradient(90deg, #3498db, #2980b9); margin: 0 auto; border-radius: 2px;"></div>
+                <h2 class="section-title">Our Events</h2>
+                <div style="width: 80px; height: 4px; background: linear-gradient(90deg, var(--primary-color), var(--primary-dark)); margin: 0 auto; border-radius: 2px;"></div>
             </div>
 
             <!-- Past Events -->
             <div style="margin-bottom: 4rem;">
-                <h3 style="font-size: 2em; margin-bottom: 2rem; color: #2c3e50; font-weight: 600;">Past Events</h3>
+                <h3 style="font-size: 2em; margin-bottom: 2rem; color: var(--text-dark); font-weight: 600;">Past Events</h3>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
-                    <!-- First Event -->
+                    <!-- Event 1 -->
                     <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease;">
                         <img src="https://via.placeholder.com/300x200" alt="From Pakistan to Ireland: The Journey of a Senior SWE" style="width: 100%; border-radius: 8px; margin-bottom: 1rem;">
                         <div style="background: linear-gradient(135deg, #3498db, #2980b9); color: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
-                            <h4 style="font-size: 1.5em; margin: 0; font-weight: 600;">From Pakistan to Ireland</h4>
+                            <h4 style="font-size: 1.5em; margin: 0; font-weight: 600;">From Pakistan to Ireland: The Journey of a Senior SWE</h4>
                             <p style="margin: 0.5rem 0 0; font-size: 0.9em;">Featuring Kashif Umair Liaqat</p>
                         </div>
-                        <p style="color: #4a5568; line-height: 1.8; font-size: 1.1em; margin-bottom: 1.5rem;">
-                            An inspiring journey of a Senior Software Engineer who made his mark from Pakistan to Ireland, sharing valuable insights about international career opportunities and professional growth.
-                        </p>
-                        <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 1rem;">
+                        <div style="text-align: left; margin-bottom: 1.5rem;">
+                            <p style="color: #4a5568; line-height: 1.8; font-size: 1.1em; margin-bottom: 1rem;">
+                                An inspiring journey of a Pakistani software engineer who made it to Ireland:
+                            </p>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                                    <i class="fas fa-check-circle" style="color: #3498db;"></i>
+                                    <span>Career transition from Pakistan to Ireland</span>
+                                </li>
+                                <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                                    <i class="fas fa-check-circle" style="color: #3498db;"></i>
+                                    <span>International work experience insights</span>
+                                </li>
+                                <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                                    <i class="fas fa-check-circle" style="color: #3498db;"></i>
+                                    <span>Career growth strategies</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 1.5rem;">
                             <span style="background: #e2e8f0; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9em; color: #4a5568;">
-                                <i class="fas fa-user-tie"></i> Senior SWE
+                                <i class="fas fa-users"></i> 150+ Views
                             </span>
                             <span style="background: #e2e8f0; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9em; color: #4a5568;">
-                                <i class="fas fa-globe"></i> International Career
+                                <i class="fas fa-clock"></i> 45 mins
                             </span>
                         </div>
-                        <a href="https://youtube.com" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; background: linear-gradient(135deg, #3498db, #2980b9); color: white; text-decoration: none; border-radius: 50px; font-weight: 500; transition: all 0.3s ease;">
+                        <a href="https://youtu.be/Uy6LhfnALzw?feature=shared" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; background: linear-gradient(135deg, #3498db, #2980b9); color: white; text-decoration: none; border-radius: 50px; font-weight: 500; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(52, 152, 219, 0.15);">
                             <i class="fab fa-youtube"></i>
                             Watch Recording
                         </a>
                     </div>
 
-                    <!-- Second Event -->
+                    <!-- Event 2 -->
                     <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease;">
                         <img src="https://via.placeholder.com/300x200" alt="Nauman Anwar: FAST, Telecom, Harvard, Business & Energy" style="width: 100%; border-radius: 8px; margin-bottom: 1rem;">
                         <div style="background: linear-gradient(135deg, #3498db, #2980b9); color: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
-                            <h4 style="font-size: 1.5em; margin: 0; font-weight: 600;">FAST, Telecom, Harvard, Business & Energy</h4>
-                            <p style="margin: 0.5rem 0 0; font-size: 0.9em;">Featuring Nauman Anwar</p>
+                            <h4 style="font-size: 1.5em; margin: 0; font-weight: 600;">Nauman Anwar: FAST, Telecom, Harvard, Business & Energy</h4>
+                            <p style="margin: 0.5rem 0 0; font-size: 0.9em;">CCPk | 003</p>
                         </div>
-                        <p style="color: #4a5568; line-height: 1.8; font-size: 1.1em; margin-bottom: 1.5rem;">
-                            A comprehensive discussion about academic excellence, industry experience, and entrepreneurial ventures in the tech and energy sectors.
-                        </p>
-                        <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 1rem;">
+                        <div style="text-align: left; margin-bottom: 1.5rem;">
+                            <p style="color: #4a5568; line-height: 1.8; font-size: 1.1em; margin-bottom: 1rem;">
+                                A comprehensive discussion about education, career, and business:
+                            </p>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                                    <i class="fas fa-check-circle" style="color: #3498db;"></i>
+                                    <span>Educational journey from FAST to Harvard</span>
+                                </li>
+                                <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                                    <i class="fas fa-check-circle" style="color: #3498db;"></i>
+                                    <span>Telecom industry insights</span>
+                                </li>
+                                <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                                    <i class="fas fa-check-circle" style="color: #3498db;"></i>
+                                    <span>Business and energy sector experience</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 1.5rem;">
                             <span style="background: #e2e8f0; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9em; color: #4a5568;">
-                                <i class="fas fa-graduation-cap"></i> Harvard Graduate
+                                <i class="fas fa-users"></i> 200+ Views
                             </span>
                             <span style="background: #e2e8f0; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9em; color: #4a5568;">
-                                <i class="fas fa-briefcase"></i> Industry Expert
+                                <i class="fas fa-clock"></i> 1 hour
                             </span>
                         </div>
-                        <a href="https://youtube.com" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; background: linear-gradient(135deg, #3498db, #2980b9); color: white; text-decoration: none; border-radius: 50px; font-weight: 500; transition: all 0.3s ease;">
+                        <a href="https://youtu.be/iSq15mG1hTc?feature=shared" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; background: linear-gradient(135deg, #3498db, #2980b9); color: white; text-decoration: none; border-radius: 50px; font-weight: 500; transition: all 0.3s ease;">
                             <i class="fab fa-youtube"></i>
                             Watch Recording
                         </a>
                     </div>
 
-                    <!-- Third Event -->
+                    <!-- Event 3 -->
                     <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease;">
                         <img src="https://via.placeholder.com/300x200" alt="Should CS Undergrads Pursue a Master's?" style="width: 100%; border-radius: 8px; margin-bottom: 1rem;">
                         <div style="background: linear-gradient(135deg, #3498db, #2980b9); color: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
                             <h4 style="font-size: 1.5em; margin: 0; font-weight: 600;">Should CS Undergrads Pursue a Master's?</h4>
                             <p style="margin: 0.5rem 0 0; font-size: 0.9em;">Featuring Hamza Azhar</p>
                         </div>
-                        <p style="color: #4a5568; line-height: 1.8; font-size: 1.1em; margin-bottom: 1.5rem;">
-                            An insightful discussion about the value of pursuing higher education in computer science, featuring perspectives on Coursera and other learning platforms.
-                        </p>
-                        <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 1rem;">
+                        <div style="text-align: left; margin-bottom: 1.5rem;">
+                            <p style="color: #4a5568; line-height: 1.8; font-size: 1.1em; margin-bottom: 1rem;">
+                                A detailed discussion about pursuing higher education in Computer Science:
+                            </p>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                                    <i class="fas fa-check-circle" style="color: #3498db;"></i>
+                                    <span>Pros and cons of pursuing MS</span>
+                                </li>
+                                <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                                    <i class="fas fa-check-circle" style="color: #3498db;"></i>
+                                    <span>Career opportunities after MS</span>
+                                </li>
+                                <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                                    <i class="fas fa-check-circle" style="color: #3498db;"></i>
+                                    <span>Timing and preparation tips</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 1.5rem;">
                             <span style="background: #e2e8f0; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9em; color: #4a5568;">
-                                <i class="fas fa-book-reader"></i> Education Expert
+                                <i class="fas fa-users"></i> 180+ Views
                             </span>
                             <span style="background: #e2e8f0; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9em; color: #4a5568;">
-                                <i class="fas fa-laptop-code"></i> Online Learning
+                                <i class="fas fa-clock"></i> 40 mins
                             </span>
                         </div>
-                        <a href="https://youtube.com" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; background: linear-gradient(135deg, #3498db, #2980b9); color: white; text-decoration: none; border-radius: 50px; font-weight: 500; transition: all 0.3s ease;">
+                        <a href="https://youtu.be/X1G7GZIz-ag?feature=shared" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; background: linear-gradient(135deg, #3498db, #2980b9); color: white; text-decoration: none; border-radius: 50px; font-weight: 500; transition: all 0.3s ease;">
                             <i class="fab fa-youtube"></i>
                             Watch Recording
                         </a>
@@ -203,49 +353,109 @@
             <div>
                 <h3 style="font-size: 2em; margin-bottom: 2rem; color: #2c3e50; font-weight: 600;">Upcoming Events</h3>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                    <!-- Hackathon Event -->
                     <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease;">
                         <div style="background: linear-gradient(135deg, #3498db, #2980b9); color: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
-                            <h4 style="font-size: 1.5em; margin: 0; font-weight: 600;">AI & Machine Learning Summit</h4>
-                            <p style="margin: 0.5rem 0 0; font-size: 0.9em;">March 20, 2024 • 2:00 PM</p>
+                            <h4 style="font-size: 1.5em; margin: 0; font-weight: 600;">Pakistan Tech Hackathon 2024</h4>
+                            <p style="margin: 0.5rem 0 0; font-size: 0.9em;">March 15-17, 2024 • 48 Hours</p>
                         </div>
-                        <p style="color: #4a5568; line-height: 1.8; font-size: 1.1em; margin-bottom: 1.5rem;">
-                            Join us for a comprehensive summit on AI and Machine Learning, featuring keynote speakers from leading tech companies and hands-on workshops.
-                        </p>
+                        <div style="text-align: left; margin-bottom: 1.5rem;">
+                            <p style="color: #4a5568; line-height: 1.8; font-size: 1.1em; margin-bottom: 1rem;">
+                                Join Pakistan's biggest tech hackathon and build innovative solutions:
+                            </p>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                                    <i class="fas fa-check-circle" style="color: #3498db;"></i>
+                                    <span>Build innovative solutions in teams</span>
+                                </li>
+                                <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                                    <i class="fas fa-check-circle" style="color: #3498db;"></i>
+                                    <span>Mentorship from industry experts</span>
+                                </li>
+                                <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                                    <i class="fas fa-check-circle" style="color: #3498db;"></i>
+                                    <span>Prizes worth PKR 500,000</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 1rem;">
+                            <span style="background: #e2e8f0; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9em; color: #4a5568;">
+                                <i class="fas fa-users"></i> 100 spots left
+                            </span>
+                            <span style="background: #e2e8f0; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9em; color: #4a5568;">
+                                <i class="fas fa-clock"></i> 48 hours
+                            </span>
+                            <span style="background: #e2e8f0; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9em; color: #4a5568;">
+                                <i class="fas fa-trophy"></i> Prizes
+                            </span>
+                        </div>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfGEo5yFGg932sBYGcrCXs8rogV0iCWPI0H6BM_IzTQXAybJw/viewform" target="_blank" style="display: inline-block; padding: 0.8rem 1.5rem; background: linear-gradient(135deg, #3498db, #2980b9); color: white; text-decoration: none; border-radius: 50px; font-weight: 500; transition: all 0.3s ease;">Register Now</a>
+                    </div>
+
+                    <!-- AI Workshop Event -->
+                    <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease;">
+                        <div style="background: linear-gradient(135deg, #3498db, #2980b9); color: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                            <h4 style="font-size: 1.5em; margin: 0; font-weight: 600;">AI & Machine Learning Workshop</h4>
+                            <p style="margin: 0.5rem 0 0; font-size: 0.9em;">March 20, 2024 • 2:00 PM - 4:00 PM</p>
+                        </div>
+                        <div style="text-align: left; margin-bottom: 1.5rem;">
+                            <p style="color: #4a5568; line-height: 1.8; font-size: 1.1em; margin-bottom: 1rem;">
+                                Join us for an intensive workshop on AI and Machine Learning fundamentals:
+                            </p>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                                    <i class="fas fa-check-circle" style="color: #3498db;"></i>
+                                    <span>Introduction to AI/ML concepts and applications</span>
+                                </li>
+                                <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                                    <i class="fas fa-check-circle" style="color: #3498db;"></i>
+                                    <span>Hands-on coding session with Python</span>
+                                </li>
+                                <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                                    <i class="fas fa-check-circle" style="color: #3498db;"></i>
+                                    <span>Real-world project implementation</span>
+                                </li>
+                            </ul>
+                        </div>
                         <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 1rem;">
                             <span style="background: #e2e8f0; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9em; color: #4a5568;">
                                 <i class="fas fa-users"></i> 50 spots left
                             </span>
                             <span style="background: #e2e8f0; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9em; color: #4a5568;">
-                                <i class="fas fa-clock"></i> 4 hours
+                                <i class="fas fa-clock"></i> 2 hours
                             </span>
-                        </div>
-                        <div style="margin-bottom: 1.5rem; text-align: left;">
-                            <h5 style="color: #2c3e50; margin-bottom: 0.5rem; font-weight: 600;">Event Highlights:</h5>
-                            <ul style="list-style: none; padding: 0; margin: 0;">
-                                <li style="color: #4a5568; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
-                                    <i class="fas fa-check-circle" style="color: #3498db;"></i>
-                                    Keynote speeches from industry leaders
-                                </li>
-                                <li style="color: #4a5568; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
-                                    <i class="fas fa-check-circle" style="color: #3498db;"></i>
-                                    Hands-on ML workshop
-                                </li>
-                                <li style="color: #4a5568; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
-                                    <i class="fas fa-check-circle" style="color: #3498db;"></i>
-                                    Networking session
-                                </li>
-                            </ul>
+                            <span style="background: #e2e8f0; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9em; color: #4a5568;">
+                                <i class="fas fa-laptop-code"></i> Hands-on
+                            </span>
                         </div>
                         <a href="#" style="display: inline-block; padding: 0.8rem 1.5rem; background: linear-gradient(135deg, #3498db, #2980b9); color: white; text-decoration: none; border-radius: 50px; font-weight: 500; transition: all 0.3s ease;">Register Now</a>
                     </div>
+
+                    <!-- Cloud Computing Event -->
                     <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease;">
                         <div style="background: linear-gradient(135deg, #3498db, #2980b9); color: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
-                            <h4 style="font-size: 1.5em; margin: 0; font-weight: 600;">Cloud Computing Workshop</h4>
-                            <p style="margin: 0.5rem 0 0; font-size: 0.9em;">March 25, 2024 • 3:00 PM</p>
+                            <h4 style="font-size: 1.5em; margin: 0; font-weight: 600;">Cloud Computing & DevOps</h4>
+                            <p style="margin: 0.5rem 0 0; font-size: 0.9em;">March 25, 2024 • 3:00 PM - 6:00 PM</p>
                         </div>
-                        <p style="color: #4a5568; line-height: 1.8; font-size: 1.1em; margin-bottom: 1.5rem;">
-                            Master cloud computing fundamentals and advanced deployment strategies with practical examples and real-world case studies.
-                        </p>
+                        <div style="text-align: left; margin-bottom: 1.5rem;">
+                            <p style="color: #4a5568; line-height: 1.8; font-size: 1.1em; margin-bottom: 1rem;">
+                                Comprehensive workshop on modern cloud and DevOps practices:
+                            </p>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                                    <i class="fas fa-check-circle" style="color: #3498db;"></i>
+                                    <span>AWS, Azure, and GCP platform overview</span>
+                                </li>
+                                <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                                    <i class="fas fa-check-circle" style="color: #3498db;"></i>
+                                    <span>Containerization with Docker & Kubernetes</span>
+                                </li>
+                                <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                                    <i class="fas fa-check-circle" style="color: #3498db;"></i>
+                                    <span>CI/CD pipeline implementation</span>
+                                </li>
+                            </ul>
+                        </div>
                         <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 1rem;">
                             <span style="background: #e2e8f0; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9em; color: #4a5568;">
                                 <i class="fas fa-users"></i> 30 spots left
@@ -253,23 +463,9 @@
                             <span style="background: #e2e8f0; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9em; color: #4a5568;">
                                 <i class="fas fa-clock"></i> 3 hours
                             </span>
-                        </div>
-                        <div style="margin-bottom: 1.5rem; text-align: left;">
-                            <h5 style="color: #2c3e50; margin-bottom: 0.5rem; font-weight: 600;">Workshop Topics:</h5>
-                            <ul style="list-style: none; padding: 0; margin: 0;">
-                                <li style="color: #4a5568; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
-                                    <i class="fas fa-check-circle" style="color: #3498db;"></i>
-                                    Cloud architecture fundamentals
-                                </li>
-                                <li style="color: #4a5568; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
-                                    <i class="fas fa-check-circle" style="color: #3498db;"></i>
-                                    Containerization and Kubernetes
-                                </li>
-                                <li style="color: #4a5568; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
-                                    <i class="fas fa-check-circle" style="color: #3498db;"></i>
-                                    Serverless computing
-                                </li>
-                            </ul>
+                            <span style="background: #e2e8f0; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9em; color: #4a5568;">
+                                <i class="fas fa-laptop-code"></i> Hands-on
+                            </span>
                         </div>
                         <a href="#" style="display: inline-block; padding: 0.8rem 1.5rem; background: linear-gradient(135deg, #3498db, #2980b9); color: white; text-decoration: none; border-radius: 50px; font-weight: 500; transition: all 0.3s ease;">Register Now</a>
                     </div>
@@ -282,77 +478,134 @@
     <section id="blog" style="padding: 6rem 2rem; background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); text-align: center; position: relative; overflow: hidden;">
         <div style="max-width: 1000px; margin: 0 auto; position: relative; z-index: 1;">
             <div style="margin-bottom: 3rem;">
-                <h2 style="font-size: 2.8em; margin-bottom: 1.5rem; font-family: 'Segoe UI', Arial, sans-serif; color: #2c3e50; font-weight: 700; letter-spacing: -0.5px;">
-                    Latest from Our Blog
-                </h2>
-                <div style="width: 80px; height: 4px; background: linear-gradient(90deg, #3498db, #2980b9); margin: 0 auto; border-radius: 2px;"></div>
+                <h2 class="section-title">Latest from Our Blog</h2>
+                <div style="width: 80px; height: 4px; background: linear-gradient(90deg, var(--primary-color), var(--primary-dark)); margin: 0 auto; border-radius: 2px;"></div>
             </div>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
-                <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease;">
-                    <img src="https://via.placeholder.com/300x200" alt="Why piracy should be avoided?" style="width: 100%; border-radius: 8px; margin-bottom: 1rem;">
-                    <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem; justify-content: center;">
-                        <span style="background: #e2e8f0; padding: 0.3rem 0.8rem; border-radius: 50px; font-size: 0.9em; color: #4a5568;">
-                            <i class="fas fa-shield-alt"></i> Ethics
+                <!-- Blog Post 1 -->
+                <div class="card" style="padding: 2rem;">
+                    <div style="background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)); color: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                        <h3 style="font-size: 1.5em; margin: 0; font-weight: 600;">Why piracy should be avoided?</h3>
+                        <p style="margin: 0.5rem 0 0; font-size: 0.9em;">Ethics & FOSS</p>
+                    </div>
+                    <div style="text-align: left; margin-bottom: 1.5rem;">
+                        <p style="color: var(--text-light); line-height: 1.8; font-size: 1.1em; margin-bottom: 1rem;">
+                            An insightful discussion on the ethical implications of software piracy and the importance of supporting open-source alternatives:
+                        </p>
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                                <i class="fas fa-check-circle" style="color: var(--primary-color);"></i>
+                                <span>Understanding the impact of piracy</span>
+                            </li>
+                            <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                                <i class="fas fa-check-circle" style="color: var(--primary-color);"></i>
+                                <span>Exploring free and open-source alternatives</span>
+                            </li>
+                            <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                                <i class="fas fa-check-circle" style="color: var(--primary-color);"></i>
+                                <span>Making ethical choices in software usage</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 1.5rem;">
+                        <span style="background: #e2e8f0; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9em; color: var(--text-light);">
+                            <i class="fas fa-calendar"></i> Feb 23, 2025
                         </span>
-                        <span style="background: #e2e8f0; padding: 0.3rem 0.8rem; border-radius: 50px; font-size: 0.9em; color: #4a5568;">
-                            <i class="fas fa-code"></i> FOSS
+                        <span style="background: #e2e8f0; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9em; color: var(--text-light);">
+                            <i class="fas fa-clock"></i> 4 min read
                         </span>
                     </div>
-                    <h3 style="font-size: 1.5em; color: #2c3e50; margin-bottom: 1rem; font-weight: 600;">Why piracy should be avoided?</h3>
-                    <p style="color: #4a5568; line-height: 1.8; font-size: 1.1em; margin-bottom: 1.5rem;">
-                        An insightful discussion on the ethical implications of software piracy and the importance of supporting open-source alternatives.
-                    </p>
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; color: #718096; font-size: 0.9em;">
-                        <i class="fas fa-user"></i>
-                        <span>By Talha Asghar</span>
+                    <div style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.8rem;">
+                        <i class="fas fa-user-circle" style="font-size: 1.2em; color: var(--primary-color);"></i>
+                        <span style="color: var(--text-light); font-size: 0.9em;">Author: Talha Asghar</span>
                     </div>
-                    <a href="https://talhaasghar.dev/blog/2025/why-piracy-should-be-avoided/" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; background: linear-gradient(135deg, #3498db, #2980b9); color: white; text-decoration: none; border-radius: 50px; font-weight: 500; transition: all 0.3s ease;">
+                    <a href="https://talhaasghar.dev/blog/2025/why-piracy-should-be-avoided/" target="_blank" class="btn btn-primary">
                         <i class="fas fa-book-reader"></i>
                         Read Article
                     </a>
                 </div>
-                <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease;">
-                    <img src="https://via.placeholder.com/300x200" alt="How to copy or move millions of files concurrently in linux" style="width: 100%; border-radius: 8px; margin-bottom: 1rem;">
-                    <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem; justify-content: center;">
-                        <span style="background: #e2e8f0; padding: 0.3rem 0.8rem; border-radius: 50px; font-size: 0.9em; color: #4a5568;">
-                            <i class="fab fa-linux"></i> Linux
+
+                <!-- Blog Post 2 -->
+                <div class="card" style="padding: 2rem;">
+                    <div style="background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)); color: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                        <h3 style="font-size: 1.5em; margin: 0; font-weight: 600;">How to copy or move millions of files concurrently in linux</h3>
+                        <p style="margin: 0.5rem 0 0; font-size: 0.9em;">Linux & Backend Tips</p>
+                    </div>
+                    <div style="text-align: left; margin-bottom: 1.5rem;">
+                        <p style="color: var(--text-light); line-height: 1.8; font-size: 1.1em; margin-bottom: 1rem;">
+                            A practical guide to efficiently handling large-scale file operations in Linux:
+                        </p>
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                                <i class="fas fa-check-circle" style="color: var(--primary-color);"></i>
+                                <span>Using parallel processing for file operations</span>
+                            </li>
+                            <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                                <i class="fas fa-check-circle" style="color: var(--primary-color);"></i>
+                                <span>Optimizing performance for large datasets</span>
+                            </li>
+                            <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                                <i class="fas fa-check-circle" style="color: var(--primary-color);"></i>
+                                <span>Best practices for system resources</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 1.5rem;">
+                        <span style="background: #e2e8f0; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9em; color: var(--text-light);">
+                            <i class="fas fa-calendar"></i> Jan 04, 2024
                         </span>
-                        <span style="background: #e2e8f0; padding: 0.3rem 0.8rem; border-radius: 50px; font-size: 0.9em; color: #4a5568;">
-                            <i class="fas fa-terminal"></i> Terminal
+                        <span style="background: #e2e8f0; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9em; color: var(--text-light);">
+                            <i class="fas fa-clock"></i> 4 min read
                         </span>
                     </div>
-                    <h3 style="font-size: 1.5em; color: #2c3e50; margin-bottom: 1rem; font-weight: 600;">How to copy or move millions of files concurrently in linux</h3>
-                    <p style="color: #4a5568; line-height: 1.8; font-size: 1.1em; margin-bottom: 1.5rem;">
-                        Learn efficient techniques for handling large-scale file operations in Linux using parallel processing.
-                    </p>
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; color: #718096; font-size: 0.9em;">
-                        <i class="fas fa-user"></i>
-                        <span>By Talha Asghar</span>
+                    <div style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.8rem;">
+                        <i class="fas fa-user-circle" style="font-size: 1.2em; color: var(--primary-color);"></i>
+                        <span style="color: var(--text-light); font-size: 0.9em;">Author: Talha Asghar</span>
                     </div>
-                    <a href="https://talhaasghar.dev/blog/2024/how-to-copy-or-move-millions-of-files-concurrently-in-linux/" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; background: linear-gradient(135deg, #3498db, #2980b9); color: white; text-decoration: none; border-radius: 50px; font-weight: 500; transition: all 0.3s ease;">
+                    <a href="https://talhaasghar.dev/blog/2024/how-to-copy-or-move-millions-of-files-concurrently-in-linux/" target="_blank" class="btn btn-primary">
                         <i class="fas fa-book-reader"></i>
                         Read Article
                     </a>
                 </div>
-                <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease;">
-                    <img src="https://via.placeholder.com/300x200" alt="Mastodon and Fediverse" style="width: 100%; border-radius: 8px; margin-bottom: 1rem;">
-                    <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem; justify-content: center;">
-                        <span style="background: #e2e8f0; padding: 0.3rem 0.8rem; border-radius: 50px; font-size: 0.9em; color: #4a5568;">
-                            <i class="fas fa-globe"></i> Fediverse
+
+                <!-- Blog Post 3 -->
+                <div class="card" style="padding: 2rem;">
+                    <div style="background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)); color: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                        <h3 style="font-size: 1.5em; margin: 0; font-weight: 600;">Signal as alternative of WhatsApp</h3>
+                        <p style="margin: 0.5rem 0 0; font-size: 0.9em;">Privacy & Messaging</p>
+                    </div>
+                    <div style="text-align: left; margin-bottom: 1.5rem;">
+                        <p style="color: var(--text-light); line-height: 1.8; font-size: 1.1em; margin-bottom: 1rem;">
+                            A comprehensive comparison of Signal and WhatsApp for secure messaging:
+                        </p>
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                                <i class="fas fa-check-circle" style="color: var(--primary-color);"></i>
+                                <span>Privacy and security features</span>
+                            </li>
+                            <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                                <i class="fas fa-check-circle" style="color: var(--primary-color);"></i>
+                                <span>User experience comparison</span>
+                            </li>
+                            <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                                <i class="fas fa-check-circle" style="color: var(--primary-color);"></i>
+                                <span>Making the switch to Signal</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 1.5rem;">
+                        <span style="background: #e2e8f0; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9em; color: var(--text-light);">
+                            <i class="fas fa-calendar"></i> Feb 23, 2024
                         </span>
-                        <span style="background: #e2e8f0; padding: 0.3rem 0.8rem; border-radius: 50px; font-size: 0.9em; color: #4a5568;">
-                            <i class="fas fa-shield-alt"></i> Privacy
+                        <span style="background: #e2e8f0; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9em; color: var(--text-light);">
+                            <i class="fas fa-clock"></i> 1 min read
                         </span>
                     </div>
-                    <h3 style="font-size: 1.5em; color: #2c3e50; margin-bottom: 1rem; font-weight: 600;">Mastodon and Fediverse</h3>
-                    <p style="color: #4a5568; line-height: 1.8; font-size: 1.1em; margin-bottom: 1.5rem;">
-                        A potential Twitter alternative for global Muslim ummah, exploring decentralized social networking and community building.
-                    </p>
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; color: #718096; font-size: 0.9em;">
-                        <i class="fas fa-user"></i>
-                        <span>By Talha Asghar</span>
+                    <div style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.8rem;">
+                        <i class="fas fa-user-circle" style="font-size: 1.2em; color: var(--primary-color);"></i>
+                        <span style="color: var(--text-light); font-size: 0.9em;">Author: Talha Asghar</span>
                     </div>
-                    <a href="https://talhaasghar.dev/blog/2024/mastodon-and-fediverse/" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; background: linear-gradient(135deg, #3498db, #2980b9); color: white; text-decoration: none; border-radius: 50px; font-weight: 500; transition: all 0.3s ease;">
+                    <a href="https://talhaasghar.dev/blog/2024/signal-as-alternative-of-whatsapp/" target="_blank" class="btn btn-primary">
                         <i class="fas fa-book-reader"></i>
                         Read Article
                     </a>
@@ -366,69 +619,67 @@
         <div style="max-width: 1000px; margin: 0 auto; position: relative; z-index: 1;">
             <div style="margin-bottom: 3rem;">
                 <h2 style="font-size: 2.8em; margin-bottom: 1.5rem; font-family: 'Segoe UI', Arial, sans-serif; color: #2c3e50; font-weight: 700; letter-spacing: -0.5px;">
-                    Join the Discussion
+                    Join Our Communities
                 </h2>
                 <div style="width: 80px; height: 4px; background: linear-gradient(90deg, #3498db, #2980b9); margin: 0 auto; border-radius: 2px;"></div>
             </div>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
-                <!-- WhatsApp Box -->
-                <div style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease;">
-                    <div style="text-align: center; margin-bottom: 1.8rem;">
-                        <div style="background: linear-gradient(135deg, rgba(37, 211, 102, 0.1), rgba(37, 211, 102, 0.05)); width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-                            <i class="fab fa-whatsapp" style="font-size: 2em; color: #25D366;"></i>
-                        </div>
-                        <h3 style="font-size: 1.6em; color: #2c3e50; margin-bottom: 0.8rem; font-weight: 600;">WhatsApp Community</h3>
-                        <p style="color: #4a5568; line-height: 1.6; font-size: 1em; max-width: 500px; margin: 0 auto;">
-                            Join our vibrant WhatsApp community for instant discussions and networking.
-                        </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                <!-- WhatsApp Community Box -->
+                <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; display: flex; flex-direction: column; align-items: center; text-align: center; border: 1px solid rgba(0, 0, 0, 0.05);">
+                    <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #25D366, #128C7E); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.15); position: relative; overflow: hidden;">
+                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);"></div>
+                        <i class="fab fa-whatsapp" style="font-size: 2.2em; color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.1);"></i>
                     </div>
-                    <div style="margin-bottom: 1.5rem;">
-                        <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.8rem; padding: 0.8rem; background: rgba(37, 211, 102, 0.05); border-radius: 10px;">
-                            <i class="fas fa-users" style="color: #25D366; font-size: 1.1em;"></i>
-                            <span style="color: #4a5568; font-size: 0.95em;">Active community of 1000+ members</span>
-                        </div>
-                        <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.8rem; padding: 0.8rem; background: rgba(37, 211, 102, 0.05); border-radius: 10px;">
-                            <i class="fas fa-comments" style="color: #25D366; font-size: 1.1em;"></i>
-                            <span style="color: #4a5568; font-size: 0.95em;">Daily tech discussions and Q&A</span>
-                        </div>
-                        <div style="display: flex; align-items: center; gap: 0.8rem; padding: 0.8rem; background: rgba(37, 211, 102, 0.05); border-radius: 10px;">
-                            <i class="fas fa-bolt" style="color: #25D366; font-size: 1.1em;"></i>
-                            <span style="color: #4a5568; font-size: 0.95em;">Instant notifications and updates</span>
-                        </div>
-                    </div>
-                    <a href="https://chat.whatsapp.com/G3H3VPbJvHOB38AzsUljMt" target="_blank" style="display: flex; align-items: center; justify-content: center; gap: 0.6rem; padding: 0.9rem; background: #25D366; color: white; text-decoration: none; border-radius: 10px; font-weight: 500; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);">
-                        <i class="fab fa-whatsapp" style="font-size: 1.2em;"></i>
+                    <h3 style="font-size: 1.8em; color: #2c3e50; margin-bottom: 1rem; font-weight: 600;">WhatsApp Community</h3>
+                    <p style="color: #4a5568; line-height: 1.8; font-size: 1.1em; margin-bottom: 1.5rem; max-width: 90%;">
+                        Join our active WhatsApp community for instant discussions, networking, and quick updates.
+                    </p>
+                    <ul style="list-style: none; padding: 0; margin: 0; text-align: left; margin-bottom: 2rem; width: 100%;">
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem; padding: 0.8rem; background: rgba(37, 211, 102, 0.05); border-radius: 8px;">
+                            <i class="fas fa-check-circle" style="color: #25D366; font-size: 1.1em;"></i>
+                            <span style="font-weight: 500;">Daily tech discussions</span>
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem; padding: 0.8rem; background: rgba(37, 211, 102, 0.05); border-radius: 8px;">
+                            <i class="fas fa-check-circle" style="color: #25D366; font-size: 1.1em;"></i>
+                            <span style="font-weight: 500;">Job opportunities</span>
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem; padding: 0.8rem; background: rgba(37, 211, 102, 0.05); border-radius: 8px;">
+                            <i class="fas fa-check-circle" style="color: #25D366; font-size: 1.1em;"></i>
+                            <span style="font-weight: 500;">Quick networking</span>
+                        </li>
+                    </ul>
+                    <a href="https://chat.whatsapp.com/G3H3VPbJvHOB38AzsUljMt" target="_blank" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 1rem 2rem; background: linear-gradient(135deg, #25D366, #128C7E); color: white; text-decoration: none; border-radius: 8px; font-weight: 500; transition: all 0.3s ease; font-size: 1.1em; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);">
+                        <i class="fab fa-whatsapp"></i>
                         Join WhatsApp Group
                     </a>
                 </div>
 
-                <!-- Discord Box -->
-                <div style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease;">
-                    <div style="text-align: center; margin-bottom: 1.8rem;">
-                        <div style="background: linear-gradient(135deg, rgba(88, 101, 242, 0.1), rgba(88, 101, 242, 0.05)); width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-                            <i class="fab fa-discord" style="font-size: 2em; color: #5865F2;"></i>
-                        </div>
-                        <h3 style="font-size: 1.6em; color: #2c3e50; margin-bottom: 0.8rem; font-weight: 600;">Discord Server</h3>
-                        <p style="color: #4a5568; line-height: 1.6; font-size: 1em; max-width: 500px; margin: 0 auto;">
-                            Connect with our Discord community for structured discussions and events.
-                        </p>
+                <!-- Discord Community Box -->
+                <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; display: flex; flex-direction: column; align-items: center; text-align: center; border: 1px solid rgba(0, 0, 0, 0.05);">
+                    <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #7289DA, #5865F2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; box-shadow: 0 4px 15px rgba(114, 137, 218, 0.15); position: relative; overflow: hidden;">
+                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);"></div>
+                        <i class="fab fa-discord" style="font-size: 2.2em; color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.1);"></i>
                     </div>
-                    <div style="margin-bottom: 1.5rem;">
-                        <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.8rem; padding: 0.8rem; background: rgba(88, 101, 242, 0.05); border-radius: 10px;">
-                            <i class="fas fa-layer-group" style="color: #5865F2; font-size: 1.1em;"></i>
-                            <span style="color: #4a5568; font-size: 0.95em;">Organized channels for different topics</span>
-                        </div>
-                        <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.8rem; padding: 0.8rem; background: rgba(88, 101, 242, 0.05); border-radius: 10px;">
-                            <i class="fas fa-calendar-check" style="color: #5865F2; font-size: 1.1em;"></i>
-                            <span style="color: #4a5568; font-size: 0.95em;">Community events and meetups</span>
-                        </div>
-                        <div style="display: flex; align-items: center; gap: 0.8rem; padding: 0.8rem; background: rgba(88, 101, 242, 0.05); border-radius: 10px;">
-                            <i class="fas fa-headset" style="color: #5865F2; font-size: 1.1em;"></i>
-                            <span style="color: #4a5568; font-size: 0.95em;">Voice channels for live discussions</span>
-                        </div>
-                    </div>
-                    <a href="https://discord.gg/gWyvnmSRRF" target="_blank" style="display: flex; align-items: center; justify-content: center; gap: 0.6rem; padding: 0.9rem; background: #5865F2; color: white; text-decoration: none; border-radius: 10px; font-weight: 500; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(88, 101, 242, 0.2);">
-                        <i class="fab fa-discord" style="font-size: 1.2em;"></i>
+                    <h3 style="font-size: 1.8em; color: #2c3e50; margin-bottom: 1rem; font-weight: 600;">Discord Server</h3>
+                    <p style="color: #4a5568; line-height: 1.8; font-size: 1.1em; margin-bottom: 1.5rem; max-width: 90%;">
+                        Connect with our Discord community for structured discussions, voice channels, and organized content.
+                    </p>
+                    <ul style="list-style: none; padding: 0; margin: 0; text-align: left; margin-bottom: 2rem; width: 100%;">
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem; padding: 0.8rem; background: rgba(114, 137, 218, 0.05); border-radius: 8px;">
+                            <i class="fas fa-check-circle" style="color: #7289DA; font-size: 1.1em;"></i>
+                            <span style="font-weight: 500;">Voice channels for discussions</span>
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem; padding: 0.8rem; background: rgba(114, 137, 218, 0.05); border-radius: 8px;">
+                            <i class="fas fa-check-circle" style="color: #7289DA; font-size: 1.1em;"></i>
+                            <span style="font-weight: 500;">Organized topic channels</span>
+                        </li>
+                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem; padding: 0.8rem; background: rgba(114, 137, 218, 0.05); border-radius: 8px;">
+                            <i class="fas fa-check-circle" style="color: #7289DA; font-size: 1.1em;"></i>
+                            <span style="font-weight: 500;">Community events</span>
+                        </li>
+                    </ul>
+                    <a href="https://discord.gg/gWyvnmSRRF" target="_blank" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 1rem 2rem; background: linear-gradient(135deg, #7289DA, #5865F2); color: white; text-decoration: none; border-radius: 8px; font-weight: 500; transition: all 0.3s ease; font-size: 1.1em; box-shadow: 0 4px 15px rgba(114, 137, 218, 0.2);">
+                        <i class="fab fa-discord"></i>
                         Join Discord Server
                     </a>
                 </div>
@@ -436,69 +687,113 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" style="padding: 2rem; background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%); text-align: center; position: relative; overflow: hidden;">
-        <div style="max-width: 1000px; margin: 0 auto; position: relative; z-index: 1;">
-            <div style="margin-bottom: 3rem;">
-                <h2 style="font-size: 2.8em; margin-bottom: 1rem; font-family: 'Segoe UI', Arial, sans-serif; color: white; font-weight: 700; letter-spacing: -0.5px;">
-                    Contact Us
-                </h2>
-                <div style="width: 80px; height: 4px; background: linear-gradient(90deg, #3498db, #2980b9); margin: 0 auto; border-radius: 2px;"></div>
-            </div>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 4rem; margin-bottom: 3rem;">
+
+    <!-- Existing Footer -->
+    <footer id="footer" style="padding: 4rem 2rem; background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%); color: #f0f0f0; text-align: center; position: relative; overflow: hidden; box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.15); border-top: 1px solid rgba(255, 255, 255, 0.05);">
+        <div style="max-width: 1200px; margin: 0 auto; position: relative; z-index: 1;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-bottom: 3rem;">
                 <div>
-                    <h3 style="font-size: 1.8em; margin-bottom: 1.2rem; font-weight: 600; color: #3498db;">CS Connect PK</h3>
-                    <p style="color: #a0aec0; line-height: 1.6; margin-bottom: 1rem; font-size: 1.1em;">
+                    <h3 style="font-size: 1.5em; margin-bottom: 1.5rem; font-weight: 600; color: #3498db;">CS Connect PK</h3>
+                    <p style="color: #a0aec0; line-height: 1.8; margin-bottom: 1.5rem;">
                         Empowering developers across Pakistan through knowledge-sharing and community building.
                     </p>
                 </div>
                 <div>
-                    <h3 style="font-size: 1.8em; margin-bottom: 1.2rem; font-weight: 600; color: #3498db;">Quick Links</h3>
+                    <h3 style="font-size: 1.5em; margin-bottom: 1.5rem; font-weight: 600; color: #3498db;">Quick Links</h3>
                     <ul style="list-style: none; padding: 0; margin: 0;">
-                        <li style="margin-bottom: 0.8rem;"><a href="#home" style="color: #a0aec0; text-decoration: none; transition: color 0.3s; font-size: 1.1em;">Home</a></li>
-                        <li style="margin-bottom: 0.8rem;"><a href="#about" style="color: #a0aec0; text-decoration: none; transition: color 0.3s; font-size: 1.1em;">About</a></li>
-                        <li style="margin-bottom: 0.8rem;"><a href="#blog" style="color: #a0aec0; text-decoration: none; transition: color 0.3s; font-size: 1.1em;">Blog</a></li>
-                        <li style="margin-bottom: 0.8rem;"><a href="#contact" style="color: #a0aec0; text-decoration: none; transition: color 0.3s; font-size: 1.1em;">Contact</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="index.html" style="color: #a0aec0; text-decoration: none; transition: color 0.3s;">Home</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="about.html" style="color: #a0aec0; text-decoration: none; transition: color 0.3s;">About</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="blog.html" style="color: #a0aec0; text-decoration: none; transition: color 0.3s;">Blog</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="contact.html" style="color: #a0aec0; text-decoration: none; transition: color 0.3s;">Contact</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3 style="font-size: 1.8em; margin-bottom: 1.2rem; font-weight: 600; color: #3498db;">Connect With Us</h3>
-                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.8rem; margin-bottom: 1.5rem; max-width: 500px; margin-left: auto; margin-right: auto;">
-                        <a href="https://chat.whatsapp.com/G3H3VPbJvHOB38AzsUljMt" target="_blank" style="color: #010101; text-decoration: none; font-size: 1.1em; transition: all 0.3s ease; padding: 0.6rem; border-radius: 6px; background: rgba(250, 252, 253, 0.99); display: flex; align-items: center; justify-content: center; gap: 0.5rem;" title="Join our WhatsApp Group">
+                    <h3 style="font-size: 1.5em; margin-bottom: 1.5rem; font-weight: 600; color: #3498db;">Connect With Us</h3>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-bottom: 1.5rem; max-width: 500px; margin-left: auto; margin-right: auto;">
+                        <a href="https://web.whatsapp.com" target="_blank" style="color: #010101; text-decoration: none; font-size: 1.1em; transition: all 0.3s ease; padding: 0.8rem; border-radius: 8px; background: rgba(250, 252, 253, 0.99); display: flex; align-items: center; gap: 0.8rem;" title="Join our WhatsApp Group">
                             <i class="fab fa-whatsapp" style="font-size: 1.4em;"></i>
                             <span>WhatsApp</span>
                         </a>
-                        <a href="https://discord.gg/gWyvnmSRRF" target="_blank" style="color: #101112; text-decoration: none; font-size: 1.1em; transition: all 0.3s ease; padding: 0.6rem; border-radius: 6px; background: rgba(244, 245, 246, 0.99); display: flex; align-items: center; justify-content: center; gap: 0.5rem;" title="Join our Discord Server">
+                        <a href="https://discord.com" target="_blank" style="color: #101112; text-decoration: none; font-size: 1.1em; transition: all 0.3s ease; padding: 0.8rem; border-radius: 8px; background: rgba(244, 245, 246, 0.99); display: flex; align-items: center; gap: 0.8rem;" title="Join our Discord Server">
                             <i class="fab fa-discord" style="font-size: 1.4em;"></i>
                             <span>Discord</span>
                         </a>
-                        <a href="https://linkedin.com" target="_blank" style="color: #121213; text-decoration: none; font-size: 1.1em; transition: all 0.3s ease; padding: 0.6rem; border-radius: 6px; background: rgba(245, 247, 247, 0.918); display: flex; align-items: center; justify-content: center; gap: 0.5rem;" title="Connect on LinkedIn">
+                        <a href="https://linkedin.com" target="_blank" style="color: #121213; text-decoration: none; font-size: 1.1em; transition: all 0.3s ease; padding: 0.8rem; border-radius: 8px; background: rgba(245, 247, 247, 0.918); display: flex; align-items: center; gap: 0.8rem;" title="Connect on LinkedIn">
                             <i class="fab fa-linkedin" style="font-size: 1.4em;"></i>
                             <span>LinkedIn</span>
                         </a>
-                        <a href="https://youtube.com/@csconnectpk" target="_blank" style="color: #0d0d0d; text-decoration: none; font-size: 1.1em; transition: all 0.3s ease; padding: 0.6rem; border-radius: 6px; background: rgb(251, 248, 248); display: flex; align-items: center; justify-content: center; gap: 0.5rem;" title="Subscribe to our YouTube">
+                        <a href="https://youtube.com" target="_blank" style="color: #0d0d0d; text-decoration: none; font-size: 1.1em; transition: all 0.3s ease; padding: 0.8rem; border-radius: 8px; background: rgb(251, 248, 248); display: flex; align-items: center; gap: 0.8rem;" title="Subscribe to our YouTube">
                             <i class="fab fa-youtube" style="font-size: 1.4em;"></i>
                             <span>YouTube</span>
                         </a>
-                        <a href="https://github.com" target="_blank" style="color: #060606; text-decoration: none; font-size: 1.1em; transition: all 0.3s ease; padding: 0.6rem; border-radius: 6px; background: rgb(250, 250, 250); display: flex; align-items: center; justify-content: center; gap: 0.5rem;" title="Follow us on GitHub">
+                        <a href="https://github.com" target="_blank" style="color: #060606; text-decoration: none; font-size: 1.1em; transition: all 0.3s ease; padding: 0.8rem; border-radius: 8px; background: rgb(250, 250, 250); display: flex; align-items: center; gap: 0.8rem;" title="Follow us on GitHub">
                             <i class="fab fa-github" style="font-size: 1.4em;"></i>
                             <span>GitHub</span>
                         </a>
-                        <a href="https://www.instagram.com/csconnectpk" target="_blank" style="color: #080808; text-decoration: none; font-size: 1.1em; transition: all 0.3s ease; padding: 0.6rem; border-radius: 6px; background: rgba(243, 241, 241, 0.916); display: flex; align-items: center; justify-content: center; gap: 0.5rem;" title="Follow us on Instagram">
+                        <a href="https://instagram.com" target="_blank" style="color: #080808; text-decoration: none; font-size: 1.1em; transition: all 0.3s ease; padding: 0.8rem; border-radius: 8px; background: rgba(243, 241, 241, 0.916); display: flex; align-items: center; gap: 0.8rem;" title="Follow us on Instagram">
                             <i class="fab fa-instagram" style="font-size: 1.4em;"></i>
                             <span>Instagram</span>
                         </a>
                     </div>
-                    <div style="margin-top: 1.5rem;">
-                        <p style="color: #a0aec0; margin-bottom: 0.8rem; font-size: 1.1em;">Contact us:</p>
-                        <a href="mailto:info@csconnectpk.com" style="color: #e0eaf1; text-decoration: none; font-weight: 500; transition: all 0.3s; display: inline-block; padding: 0.6rem 1.2rem; background: rgba(52, 152, 219, 0.15); border-radius: 6px; font-size: 1.1em;">csconnectpk@gmail.com</a>
+                    <div style="margin-top: 2rem;">
+                        <p style="color: #a0aec0; margin-bottom: 1rem; font-size: 1.1em;">Contact us:</p>
+                        <a href="mailto:info@csconnectpk.com" style="color: #e0eaf1; text-decoration: none; font-weight: 500; transition: all 0.3s; display: inline-block; padding: 0.8rem 1.5rem; background: rgba(52, 152, 219, 0.15); border-radius: 8px; font-size: 1.1em;">csconnectpk@gmail.com</a>
                     </div>
                 </div>
             </div>
-            <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 1.5rem; margin-top: 1.5rem;">
-                <p style="color: #a0aec0; font-size: 1em; margin: 0;">&copy; 2024 CS Connect Pakistan. All rights reserved.</p>
+            <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 2rem; margin-top: 2rem;">
+                <p style="color: #a0aec0; font-size: 0.9em; margin: 0;">&copy; 2024 CS Connect Pakistan. All rights reserved.</p>
             </div>
         </div>
-    </section>
+        <div style="position: absolute; top: 0; right: 0; width: 300px; height: 300px; background: linear-gradient(135deg, rgba(52, 152, 219, 0.05) 0%, rgba(41, 128, 185, 0.05) 100%); border-radius: 50%; transform: translate(50%, -50%); z-index: 0;"></div>
+    </footer>
+
+    <script>
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Add fade-in-up class to elements
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add to section titles
+            document.querySelectorAll('.section-title').forEach((el, index) => {
+                el.classList.add('fade-in-up');
+                el.classList.add(`delay-${(index % 3) + 1}`);
+                observer.observe(el);
+            });
+
+            // Add to cards
+            document.querySelectorAll('.card').forEach((el, index) => {
+                el.classList.add('fade-in-up');
+                el.classList.add(`delay-${(index % 3) + 1}`);
+                observer.observe(el);
+            });
+
+            // Add to buttons
+            document.querySelectorAll('.btn').forEach((el, index) => {
+                el.classList.add('fade-in-up');
+                el.classList.add(`delay-${(index % 3) + 1}`);
+                observer.observe(el);
+            });
+
+            // Add to list items
+            document.querySelectorAll('ul li').forEach((el, index) => {
+                el.classList.add('fade-in-up');
+                el.classList.add(`delay-${(index % 3) + 1}`);
+                observer.observe(el);
+            });
+        });
+    </script>
 </body>
 </html>
