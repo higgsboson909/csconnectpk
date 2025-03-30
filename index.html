@@ -64,7 +64,7 @@
         }
 
         .card {
-            background: var(--bg-white);
+            background: white;
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -73,6 +73,14 @@
         .card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, #1a1a1a, #2c3e50);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
         }
 
         .btn {
@@ -88,14 +96,14 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            background: linear-gradient(135deg, #1a1a1a, #2c3e50);
             color: white;
-            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.25);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.3);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
         }
 
         .nav-link {
@@ -144,6 +152,47 @@
 
         .fade-in-up.delay-3 {
             transition-delay: 0.6s;
+        }
+
+        /* Update past events grid boxes */
+        #events [style*="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))"] > div {
+            padding: 1.2rem !important;  /* Reduced from 2rem */
+        }
+
+        #events [style*="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))"] > div > div {
+            margin-bottom: 0.6rem !important;  /* Reduced from 1rem */
+        }
+
+        #events [style*="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))"] > div > div[style*="margin-bottom: 1.5rem"] {
+            margin-bottom: 0.8rem !important;  /* Reduced from 1.5rem */
+        }
+
+        #events [style*="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))"] > div ul li {
+            margin-bottom: 0.4rem !important;  /* Reduced from 0.8rem */
+        }
+
+        #events [style*="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))"] > div > div[style*="display: flex; gap: 1rem; justify-content: center"] {
+            margin-bottom: 0.8rem !important;  /* Reduced from 1.5rem */
+        }
+
+        #events [style*="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))"] > div p {
+            line-height: 1.5 !important;  /* Reduced from 1.8 */
+            margin-bottom: 0.6rem !important;  /* Reduced from 1rem */
+        }
+
+        footer {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%);
+        }
+
+        .social-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .social-btn:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.2);
         }
     </style>
 </head>
@@ -229,7 +278,6 @@
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
                     <!-- Event 1 -->
                     <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease;">
-                        <img src="https://via.placeholder.com/300x200" alt="From Pakistan to Ireland: The Journey of a Senior SWE" style="width: 100%; border-radius: 8px; margin-bottom: 1rem;">
                         <div style="background: linear-gradient(135deg, #3498db, #2980b9); color: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
                             <h4 style="font-size: 1.5em; margin: 0; font-weight: 600;">From Pakistan to Ireland: The Journey of a Senior SWE</h4>
                             <p style="margin: 0.5rem 0 0; font-size: 0.9em;">Featuring Kashif Umair Liaqat</p>
@@ -253,7 +301,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 1.5rem;">
+                        <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 1rem;">
                             <span style="background: #e2e8f0; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9em; color: #4a5568;">
                                 <i class="fas fa-users"></i> 150+ Views
                             </span>
@@ -261,7 +309,7 @@
                                 <i class="fas fa-clock"></i> 45 mins
                             </span>
                         </div>
-                        <a href="https://youtu.be/Uy6LhfnALzw?feature=shared" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; background: linear-gradient(135deg, #3498db, #2980b9); color: white; text-decoration: none; border-radius: 50px; font-weight: 500; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(52, 152, 219, 0.15);">
+                        <a href="https://youtu.be/Uy6LhfnALzw?feature=shared" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; background: linear-gradient(135deg, #3498db, #2980b9); color: white; text-decoration: none; border-radius: 50px; font-weight: 500; transition: all 0.3s ease;">
                             <i class="fab fa-youtube"></i>
                             Watch Recording
                         </a>
@@ -269,7 +317,6 @@
 
                     <!-- Event 2 -->
                     <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease;">
-                        <img src="https://via.placeholder.com/300x200" alt="Nauman Anwar: FAST, Telecom, Harvard, Business & Energy" style="width: 100%; border-radius: 8px; margin-bottom: 1rem;">
                         <div style="background: linear-gradient(135deg, #3498db, #2980b9); color: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
                             <h4 style="font-size: 1.5em; margin: 0; font-weight: 600;">Nauman Anwar: FAST, Telecom, Harvard, Business & Energy</h4>
                             <p style="margin: 0.5rem 0 0; font-size: 0.9em;">CCPk | 003</p>
@@ -293,7 +340,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 1.5rem;">
+                        <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 1rem;">
                             <span style="background: #e2e8f0; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9em; color: #4a5568;">
                                 <i class="fas fa-users"></i> 200+ Views
                             </span>
@@ -309,7 +356,6 @@
 
                     <!-- Event 3 -->
                     <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease;">
-                        <img src="https://via.placeholder.com/300x200" alt="Should CS Undergrads Pursue a Master's?" style="width: 100%; border-radius: 8px; margin-bottom: 1rem;">
                         <div style="background: linear-gradient(135deg, #3498db, #2980b9); color: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
                             <h4 style="font-size: 1.5em; margin: 0; font-weight: 600;">Should CS Undergrads Pursue a Master's?</h4>
                             <p style="margin: 0.5rem 0 0; font-size: 0.9em;">Featuring Hamza Azhar</p>
@@ -333,7 +379,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 1.5rem;">
+                        <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 1rem;">
                             <span style="background: #e2e8f0; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9em; color: #4a5568;">
                                 <i class="fas fa-users"></i> 180+ Views
                             </span>
@@ -475,43 +521,45 @@
     </section>
 
     <!-- Blog Highlights Section -->
-    <section id="blog" style="padding: 6rem 2rem; background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); text-align: center; position: relative; overflow: hidden;">
+    <section id="blog" style="padding: 6rem 2rem; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); text-align: center; position: relative; overflow: hidden;">
         <div style="max-width: 1000px; margin: 0 auto; position: relative; z-index: 1;">
             <div style="margin-bottom: 3rem;">
                 <h2 class="section-title">Latest from Our Blog</h2>
                 <div style="width: 80px; height: 4px; background: linear-gradient(90deg, var(--primary-color), var(--primary-dark)); margin: 0 auto; border-radius: 2px;"></div>
             </div>
+
+            <!-- Blog Posts Grid -->
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
                 <!-- Blog Post 1 -->
-                <div class="card" style="padding: 2rem;">
-                    <div style="background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)); color: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
-                        <h3 style="font-size: 1.5em; margin: 0; font-weight: 600;">Why piracy should be avoided?</h3>
+                <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease;">
+                    <div style="background: linear-gradient(135deg, #3498db, #2980b9); color: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                        <h4 style="font-size: 1.5em; margin: 0; font-weight: 600;">Why piracy should be avoided?</h4>
                         <p style="margin: 0.5rem 0 0; font-size: 0.9em;">Ethics & FOSS</p>
                     </div>
                     <div style="text-align: left; margin-bottom: 1.5rem;">
-                        <p style="color: var(--text-light); line-height: 1.8; font-size: 1.1em; margin-bottom: 1rem;">
+                        <p style="color: #4a5568; line-height: 1.8; font-size: 1.1em; margin-bottom: 1rem;">
                             An insightful discussion on the ethical implications of software piracy and the importance of supporting open-source alternatives:
                         </p>
                         <ul style="list-style: none; padding: 0; margin: 0;">
                             <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
-                                <i class="fas fa-check-circle" style="color: var(--primary-color);"></i>
+                                <i class="fas fa-check-circle" style="color: #3498db;"></i>
                                 <span>Understanding the impact of piracy</span>
                             </li>
                             <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
-                                <i class="fas fa-check-circle" style="color: var(--primary-color);"></i>
+                                <i class="fas fa-check-circle" style="color: #3498db;"></i>
                                 <span>Exploring free and open-source alternatives</span>
                             </li>
                             <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
-                                <i class="fas fa-check-circle" style="color: var(--primary-color);"></i>
+                                <i class="fas fa-check-circle" style="color: #3498db;"></i>
                                 <span>Making ethical choices in software usage</span>
                             </li>
                         </ul>
                     </div>
-                    <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 1.5rem;">
-                        <span style="background: #e2e8f0; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9em; color: var(--text-light);">
+                    <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 1rem;">
+                        <span style="background: #e2e8f0; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9em; color: #4a5568;">
                             <i class="fas fa-calendar"></i> Feb 23, 2025
                         </span>
-                        <span style="background: #e2e8f0; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9em; color: var(--text-light);">
+                        <span style="background: #e2e8f0; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9em; color: #4a5568;">
                             <i class="fas fa-clock"></i> 4 min read
                         </span>
                     </div>
@@ -519,42 +567,42 @@
                         <i class="fas fa-user-circle" style="font-size: 1.2em; color: var(--primary-color);"></i>
                         <span style="color: var(--text-light); font-size: 0.9em;">Author: Talha Asghar</span>
                     </div>
-                    <a href="https://talhaasghar.dev/blog/2025/why-piracy-should-be-avoided/" target="_blank" class="btn btn-primary">
+                    <a href="https://talhaasghar.dev/blog/2025/why-piracy-should-be-avoided/" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; background: linear-gradient(135deg, #3498db, #2980b9); color: white; text-decoration: none; border-radius: 50px; font-weight: 500; transition: all 0.3s ease;">
                         <i class="fas fa-book-reader"></i>
                         Read Article
                     </a>
                 </div>
 
                 <!-- Blog Post 2 -->
-                <div class="card" style="padding: 2rem;">
-                    <div style="background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)); color: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
-                        <h3 style="font-size: 1.5em; margin: 0; font-weight: 600;">How to copy or move millions of files concurrently in linux</h3>
+                <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease;">
+                    <div style="background: linear-gradient(135deg, #3498db, #2980b9); color: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                        <h4 style="font-size: 1.5em; margin: 0; font-weight: 600;">How to copy or move millions of files concurrently in linux</h4>
                         <p style="margin: 0.5rem 0 0; font-size: 0.9em;">Linux & Backend Tips</p>
                     </div>
                     <div style="text-align: left; margin-bottom: 1.5rem;">
-                        <p style="color: var(--text-light); line-height: 1.8; font-size: 1.1em; margin-bottom: 1rem;">
+                        <p style="color: #4a5568; line-height: 1.8; font-size: 1.1em; margin-bottom: 1rem;">
                             A practical guide to efficiently handling large-scale file operations in Linux:
                         </p>
                         <ul style="list-style: none; padding: 0; margin: 0;">
                             <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
-                                <i class="fas fa-check-circle" style="color: var(--primary-color);"></i>
+                                <i class="fas fa-check-circle" style="color: #3498db;"></i>
                                 <span>Using parallel processing for file operations</span>
                             </li>
                             <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
-                                <i class="fas fa-check-circle" style="color: var(--primary-color);"></i>
+                                <i class="fas fa-check-circle" style="color: #3498db;"></i>
                                 <span>Optimizing performance for large datasets</span>
                             </li>
                             <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
-                                <i class="fas fa-check-circle" style="color: var(--primary-color);"></i>
+                                <i class="fas fa-check-circle" style="color: #3498db;"></i>
                                 <span>Best practices for system resources</span>
                             </li>
                         </ul>
                     </div>
-                    <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 1.5rem;">
-                        <span style="background: #e2e8f0; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9em; color: var(--text-light);">
+                    <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 1rem;">
+                        <span style="background: #e2e8f0; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9em; color: #4a5568;">
                             <i class="fas fa-calendar"></i> Jan 04, 2024
                         </span>
-                        <span style="background: #e2e8f0; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9em; color: var(--text-light);">
+                        <span style="background: #e2e8f0; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9em; color: #4a5568;">
                             <i class="fas fa-clock"></i> 4 min read
                         </span>
                     </div>
@@ -562,42 +610,42 @@
                         <i class="fas fa-user-circle" style="font-size: 1.2em; color: var(--primary-color);"></i>
                         <span style="color: var(--text-light); font-size: 0.9em;">Author: Talha Asghar</span>
                     </div>
-                    <a href="https://talhaasghar.dev/blog/2024/how-to-copy-or-move-millions-of-files-concurrently-in-linux/" target="_blank" class="btn btn-primary">
+                    <a href="https://talhaasghar.dev/blog/2024/how-to-copy-or-move-millions-of-files-concurrently-in-linux/" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; background: linear-gradient(135deg, #3498db, #2980b9); color: white; text-decoration: none; border-radius: 50px; font-weight: 500; transition: all 0.3s ease;">
                         <i class="fas fa-book-reader"></i>
                         Read Article
                     </a>
                 </div>
 
                 <!-- Blog Post 3 -->
-                <div class="card" style="padding: 2rem;">
-                    <div style="background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)); color: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
-                        <h3 style="font-size: 1.5em; margin: 0; font-weight: 600;">Signal as alternative of WhatsApp</h3>
+                <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease;">
+                    <div style="background: linear-gradient(135deg, #3498db, #2980b9); color: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                        <h4 style="font-size: 1.5em; margin: 0; font-weight: 600;">Signal as alternative of WhatsApp</h4>
                         <p style="margin: 0.5rem 0 0; font-size: 0.9em;">Privacy & Messaging</p>
                     </div>
                     <div style="text-align: left; margin-bottom: 1.5rem;">
-                        <p style="color: var(--text-light); line-height: 1.8; font-size: 1.1em; margin-bottom: 1rem;">
+                        <p style="color: #4a5568; line-height: 1.8; font-size: 1.1em; margin-bottom: 1rem;">
                             A comprehensive comparison of Signal and WhatsApp for secure messaging:
                         </p>
                         <ul style="list-style: none; padding: 0; margin: 0;">
                             <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
-                                <i class="fas fa-check-circle" style="color: var(--primary-color);"></i>
+                                <i class="fas fa-check-circle" style="color: #3498db;"></i>
                                 <span>Privacy and security features</span>
                             </li>
                             <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
-                                <i class="fas fa-check-circle" style="color: var(--primary-color);"></i>
+                                <i class="fas fa-check-circle" style="color: #3498db;"></i>
                                 <span>User experience comparison</span>
                             </li>
                             <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
-                                <i class="fas fa-check-circle" style="color: var(--primary-color);"></i>
+                                <i class="fas fa-check-circle" style="color: #3498db;"></i>
                                 <span>Making the switch to Signal</span>
                             </li>
                         </ul>
                     </div>
-                    <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 1.5rem;">
-                        <span style="background: #e2e8f0; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9em; color: var(--text-light);">
+                    <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 1rem;">
+                        <span style="background: #e2e8f0; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9em; color: #4a5568;">
                             <i class="fas fa-calendar"></i> Feb 23, 2024
                         </span>
-                        <span style="background: #e2e8f0; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9em; color: var(--text-light);">
+                        <span style="background: #e2e8f0; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9em; color: #4a5568;">
                             <i class="fas fa-clock"></i> 1 min read
                         </span>
                     </div>
@@ -605,7 +653,7 @@
                         <i class="fas fa-user-circle" style="font-size: 1.2em; color: var(--primary-color);"></i>
                         <span style="color: var(--text-light); font-size: 0.9em;">Author: Talha Asghar</span>
                     </div>
-                    <a href="https://talhaasghar.dev/blog/2024/signal-as-alternative-of-whatsapp/" target="_blank" class="btn btn-primary">
+                    <a href="https://talhaasghar.dev/blog/2024/signal-as-alternative-of-whatsapp/" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; background: linear-gradient(135deg, #3498db, #2980b9); color: white; text-decoration: none; border-radius: 50px; font-weight: 500; transition: all 0.3s ease;">
                         <i class="fas fa-book-reader"></i>
                         Read Article
                     </a>
