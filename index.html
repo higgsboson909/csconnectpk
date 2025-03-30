@@ -14,6 +14,8 @@
             --text-light: #4a5568;
             --bg-light: #f8f9fa;
             --bg-white: #ffffff;
+            --card-bg: #f8f9fa;
+            --text-secondary: #6c757d;
         }
 
         * {
@@ -107,7 +109,7 @@
         }
 
         .nav-link {
-            color: #f0f0f0;
+            color: white !important;
             text-decoration: none;
             font-size: 1em;
             font-weight: 500;
@@ -122,7 +124,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--primary-color);
+            background: #6c757d;
             transition: width 0.3s ease;
         }
 
@@ -193,6 +195,60 @@
         .social-btn:hover {
             background: rgba(255, 255, 255, 0.15);
             border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .blog-post {
+            background: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .blog-post:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-post-header {
+            background: linear-gradient(135deg, #6c757d, #495057);
+            padding: 1.5rem;
+            color: white;
+        }
+
+        .blog-post-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .blog-post-meta {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            color: white;
+        }
+
+        .blog-post-content {
+            padding: 1.5rem;
+        }
+
+        .blog-post-excerpt {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .read-more {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: linear-gradient(135deg, #6c757d, #495057);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .read-more:hover {
+            transform: translateX(5px);
+            color: white;
         }
     </style>
 </head>
@@ -278,7 +334,7 @@
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
                     <!-- Event 1 -->
                     <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease;">
-                        <div style="background: linear-gradient(135deg, #3498db, #2980b9); color: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                        <div style="background: linear-gradient(135deg, #6c757d, #495057); color: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
                             <h4 style="font-size: 1.5em; margin: 0; font-weight: 600;">From Pakistan to Ireland: The Journey of a Senior SWE</h4>
                             <p style="margin: 0.5rem 0 0; font-size: 0.9em;">Featuring Kashif Umair Liaqat</p>
                         </div>
@@ -309,7 +365,7 @@
                                 <i class="fas fa-clock"></i> 45 mins
                             </span>
                         </div>
-                        <a href="https://youtu.be/Uy6LhfnALzw?feature=shared" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; background: linear-gradient(135deg, #3498db, #2980b9); color: white; text-decoration: none; border-radius: 50px; font-weight: 500; transition: all 0.3s ease;">
+                        <a href="https://youtu.be/Uy6LhfnALzw?feature=shared" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; background: linear-gradient(135deg, #6c757d, #495057); color: white; text-decoration: none; border-radius: 50px; font-weight: 500; transition: all 0.3s ease;">
                             <i class="fab fa-youtube"></i>
                             Watch Recording
                         </a>
@@ -317,7 +373,7 @@
 
                     <!-- Event 2 -->
                     <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease;">
-                        <div style="background: linear-gradient(135deg, #3498db, #2980b9); color: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                        <div style="background: linear-gradient(135deg, #6c757d, #495057); color: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
                             <h4 style="font-size: 1.5em; margin: 0; font-weight: 600;">Nauman Anwar: FAST, Telecom, Harvard, Business & Energy</h4>
                             <p style="margin: 0.5rem 0 0; font-size: 0.9em;">CCPk | 003</p>
                         </div>
@@ -348,7 +404,7 @@
                                 <i class="fas fa-clock"></i> 1 hour
                             </span>
                         </div>
-                        <a href="https://youtu.be/iSq15mG1hTc?feature=shared" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; background: linear-gradient(135deg, #3498db, #2980b9); color: white; text-decoration: none; border-radius: 50px; font-weight: 500; transition: all 0.3s ease;">
+                        <a href="https://youtu.be/iSq15mG1hTc?feature=shared" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; background: linear-gradient(135deg, #6c757d, #495057); color: white; text-decoration: none; border-radius: 50px; font-weight: 500; transition: all 0.3s ease;">
                             <i class="fab fa-youtube"></i>
                             Watch Recording
                         </a>
@@ -356,7 +412,7 @@
 
                     <!-- Event 3 -->
                     <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease;">
-                        <div style="background: linear-gradient(135deg, #3498db, #2980b9); color: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                        <div style="background: linear-gradient(135deg, #6c757d, #495057); color: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
                             <h4 style="font-size: 1.5em; margin: 0; font-weight: 600;">Should CS Undergrads Pursue a Master's?</h4>
                             <p style="margin: 0.5rem 0 0; font-size: 0.9em;">Featuring Hamza Azhar</p>
                         </div>
@@ -387,7 +443,7 @@
                                 <i class="fas fa-clock"></i> 40 mins
                             </span>
                         </div>
-                        <a href="https://youtu.be/X1G7GZIz-ag?feature=shared" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; background: linear-gradient(135deg, #3498db, #2980b9); color: white; text-decoration: none; border-radius: 50px; font-weight: 500; transition: all 0.3s ease;">
+                        <a href="https://youtu.be/X1G7GZIz-ag?feature=shared" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; background: linear-gradient(135deg, #6c757d, #495057); color: white; text-decoration: none; border-radius: 50px; font-weight: 500; transition: all 0.3s ease;">
                             <i class="fab fa-youtube"></i>
                             Watch Recording
                         </a>
@@ -401,7 +457,7 @@
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
                     <!-- Hackathon Event -->
                     <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease;">
-                        <div style="background: linear-gradient(135deg, #3498db, #2980b9); color: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                        <div style="background: linear-gradient(135deg, #6c757d, #495057); color: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
                             <h4 style="font-size: 1.5em; margin: 0; font-weight: 600;">Pakistan Tech Hackathon 2024</h4>
                             <p style="margin: 0.5rem 0 0; font-size: 0.9em;">March 15-17, 2024 • 48 Hours</p>
                         </div>
@@ -435,12 +491,12 @@
                                 <i class="fas fa-trophy"></i> Prizes
                             </span>
                         </div>
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfGEo5yFGg932sBYGcrCXs8rogV0iCWPI0H6BM_IzTQXAybJw/viewform" target="_blank" style="display: inline-block; padding: 0.8rem 1.5rem; background: linear-gradient(135deg, #3498db, #2980b9); color: white; text-decoration: none; border-radius: 50px; font-weight: 500; transition: all 0.3s ease;">Register Now</a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfGEo5yFGg932sBYGcrCXs8rogV0iCWPI0H6BM_IzTQXAybJw/viewform" target="_blank" style="display: inline-block; padding: 0.8rem 1.5rem; background: linear-gradient(135deg, #6c757d, #495057); color: white; text-decoration: none; border-radius: 50px; font-weight: 500; transition: all 0.3s ease;">Register Now</a>
                     </div>
 
                     <!-- AI Workshop Event -->
                     <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease;">
-                        <div style="background: linear-gradient(135deg, #3498db, #2980b9); color: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                        <div style="background: linear-gradient(135deg, #6c757d, #495057); color: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
                             <h4 style="font-size: 1.5em; margin: 0; font-weight: 600;">AI & Machine Learning Workshop</h4>
                             <p style="margin: 0.5rem 0 0; font-size: 0.9em;">March 20, 2024 • 2:00 PM - 4:00 PM</p>
                         </div>
@@ -474,12 +530,12 @@
                                 <i class="fas fa-laptop-code"></i> Hands-on
                             </span>
                         </div>
-                        <a href="#" style="display: inline-block; padding: 0.8rem 1.5rem; background: linear-gradient(135deg, #3498db, #2980b9); color: white; text-decoration: none; border-radius: 50px; font-weight: 500; transition: all 0.3s ease;">Register Now</a>
+                        <a href="#" style="display: inline-block; padding: 0.8rem 1.5rem; background: linear-gradient(135deg, #6c757d, #495057); color: white; text-decoration: none; border-radius: 50px; font-weight: 500; transition: all 0.3s ease;">Register Now</a>
                     </div>
 
                     <!-- Cloud Computing Event -->
                     <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease;">
-                        <div style="background: linear-gradient(135deg, #3498db, #2980b9); color: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                        <div style="background: linear-gradient(135deg, #6c757d, #495057); color: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
                             <h4 style="font-size: 1.5em; margin: 0; font-weight: 600;">Cloud Computing & DevOps</h4>
                             <p style="margin: 0.5rem 0 0; font-size: 0.9em;">March 25, 2024 • 3:00 PM - 6:00 PM</p>
                         </div>
@@ -513,7 +569,7 @@
                                 <i class="fas fa-laptop-code"></i> Hands-on
                             </span>
                         </div>
-                        <a href="#" style="display: inline-block; padding: 0.8rem 1.5rem; background: linear-gradient(135deg, #3498db, #2980b9); color: white; text-decoration: none; border-radius: 50px; font-weight: 500; transition: all 0.3s ease;">Register Now</a>
+                        <a href="#" style="display: inline-block; padding: 0.8rem 1.5rem; background: linear-gradient(135deg, #6c757d, #495057); color: white; text-decoration: none; border-radius: 50px; font-weight: 500; transition: all 0.3s ease;">Register Now</a>
                     </div>
                 </div>
             </div>
@@ -531,132 +587,75 @@
             <!-- Blog Posts Grid -->
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
                 <!-- Blog Post 1 -->
-                <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease;">
-                    <div style="background: linear-gradient(135deg, #3498db, #2980b9); color: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
-                        <h4 style="font-size: 1.5em; margin: 0; font-weight: 600;">Why piracy should be avoided?</h4>
-                        <p style="margin: 0.5rem 0 0; font-size: 0.9em;">Ethics & FOSS</p>
+                <div class="blog-post">
+                    <div class="blog-post-header">
+                        <h4 class="blog-post-title">Why piracy should be avoided?</h4>
+                        <p class="blog-post-meta">Ethics & FOSS</p>
                     </div>
-                    <div style="text-align: left; margin-bottom: 1.5rem;">
-                        <p style="color: #4a5568; line-height: 1.8; font-size: 1.1em; margin-bottom: 1rem;">
-                            An insightful discussion on the ethical implications of software piracy and the importance of supporting open-source alternatives:
-                        </p>
-                        <ul style="list-style: none; padding: 0; margin: 0;">
-                            <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
-                                <i class="fas fa-check-circle" style="color: #3498db;"></i>
-                                <span>Understanding the impact of piracy</span>
-                            </li>
-                            <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
-                                <i class="fas fa-check-circle" style="color: #3498db;"></i>
-                                <span>Exploring free and open-source alternatives</span>
-                            </li>
-                            <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
-                                <i class="fas fa-check-circle" style="color: #3498db;"></i>
-                                <span>Making ethical choices in software usage</span>
-                            </li>
+                    <div class="blog-post-content">
+                        <p class="blog-post-excerpt">An insightful discussion on the ethical implications of software piracy and the importance of supporting open-source alternatives:</p>
+                        <ul>
+                            <li>Understanding the impact of piracy</li>
+                            <li>Exploring free and open-source alternatives</li>
+                            <li>Making ethical choices in software usage</li>
                         </ul>
+                        <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1rem; color: #6c757d;">
+                            <i class="fas fa-user-circle"></i>
+                            <span>Author: Talha Asghar</span>
+                        </div>
+                        <div class="read-more">
+                            <i class="fas fa-book-reader"></i>
+                            Read Article
+                        </div>
                     </div>
-                    <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 1rem;">
-                        <span style="background: #e2e8f0; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9em; color: #4a5568;">
-                            <i class="fas fa-calendar"></i> Feb 23, 2025
-                        </span>
-                        <span style="background: #e2e8f0; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9em; color: #4a5568;">
-                            <i class="fas fa-clock"></i> 4 min read
-                        </span>
-                    </div>
-                    <div style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.8rem;">
-                        <i class="fas fa-user-circle" style="font-size: 1.2em; color: var(--primary-color);"></i>
-                        <span style="color: var(--text-light); font-size: 0.9em;">Author: Talha Asghar</span>
-                    </div>
-                    <a href="https://talhaasghar.dev/blog/2025/why-piracy-should-be-avoided/" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; background: linear-gradient(135deg, #3498db, #2980b9); color: white; text-decoration: none; border-radius: 50px; font-weight: 500; transition: all 0.3s ease;">
-                        <i class="fas fa-book-reader"></i>
-                        Read Article
-                    </a>
                 </div>
 
                 <!-- Blog Post 2 -->
-                <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease;">
-                    <div style="background: linear-gradient(135deg, #3498db, #2980b9); color: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
-                        <h4 style="font-size: 1.5em; margin: 0; font-weight: 600;">How to copy or move millions of files concurrently in linux</h4>
-                        <p style="margin: 0.5rem 0 0; font-size: 0.9em;">Linux & Backend Tips</p>
+                <div class="blog-post">
+                    <div class="blog-post-header">
+                        <h4 class="blog-post-title">How to copy or move millions of files concurrently in linux</h4>
+                        <p class="blog-post-meta">Linux & Backend Tips</p>
                     </div>
-                    <div style="text-align: left; margin-bottom: 1.5rem;">
-                        <p style="color: #4a5568; line-height: 1.8; font-size: 1.1em; margin-bottom: 1rem;">
-                            A practical guide to efficiently handling large-scale file operations in Linux:
-                        </p>
-                        <ul style="list-style: none; padding: 0; margin: 0;">
-                            <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
-                                <i class="fas fa-check-circle" style="color: #3498db;"></i>
-                                <span>Using parallel processing for file operations</span>
-                            </li>
-                            <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
-                                <i class="fas fa-check-circle" style="color: #3498db;"></i>
-                                <span>Optimizing performance for large datasets</span>
-                            </li>
-                            <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
-                                <i class="fas fa-check-circle" style="color: #3498db;"></i>
-                                <span>Best practices for system resources</span>
-                            </li>
+                    <div class="blog-post-content">
+                        <p class="blog-post-excerpt">A practical guide to efficiently handling large-scale file operations in Linux:</p>
+                        <ul>
+                            <li>Using parallel processing for file operations</li>
+                            <li>Optimizing performance for large datasets</li>
+                            <li>Best practices for system resources</li>
                         </ul>
+                        <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1rem; color: #6c757d;">
+                            <i class="fas fa-user-circle"></i>
+                            <span>Author: Talha Asghar</span>
+                        </div>
                     </div>
-                    <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 1rem;">
-                        <span style="background: #e2e8f0; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9em; color: #4a5568;">
-                            <i class="fas fa-calendar"></i> Jan 04, 2024
-                        </span>
-                        <span style="background: #e2e8f0; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9em; color: #4a5568;">
-                            <i class="fas fa-clock"></i> 4 min read
-                        </span>
-                    </div>
-                    <div style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.8rem;">
-                        <i class="fas fa-user-circle" style="font-size: 1.2em; color: var(--primary-color);"></i>
-                        <span style="color: var(--text-light); font-size: 0.9em;">Author: Talha Asghar</span>
-                    </div>
-                    <a href="https://talhaasghar.dev/blog/2024/how-to-copy-or-move-millions-of-files-concurrently-in-linux/" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; background: linear-gradient(135deg, #3498db, #2980b9); color: white; text-decoration: none; border-radius: 50px; font-weight: 500; transition: all 0.3s ease;">
+                    <div class="read-more">
                         <i class="fas fa-book-reader"></i>
                         Read Article
-                    </a>
+                    </div>
                 </div>
 
                 <!-- Blog Post 3 -->
-                <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease;">
-                    <div style="background: linear-gradient(135deg, #3498db, #2980b9); color: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
-                        <h4 style="font-size: 1.5em; margin: 0; font-weight: 600;">Signal as alternative of WhatsApp</h4>
-                        <p style="margin: 0.5rem 0 0; font-size: 0.9em;">Privacy & Messaging</p>
+                <div class="blog-post">
+                    <div class="blog-post-header">
+                        <h4 class="blog-post-title">Signal as alternative of WhatsApp</h4>
+                        <p class="blog-post-meta">Privacy & Messaging</p>
                     </div>
-                    <div style="text-align: left; margin-bottom: 1.5rem;">
-                        <p style="color: #4a5568; line-height: 1.8; font-size: 1.1em; margin-bottom: 1rem;">
-                            A comprehensive comparison of Signal and WhatsApp for secure messaging:
-                        </p>
-                        <ul style="list-style: none; padding: 0; margin: 0;">
-                            <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
-                                <i class="fas fa-check-circle" style="color: #3498db;"></i>
-                                <span>Privacy and security features</span>
-                            </li>
-                            <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
-                                <i class="fas fa-check-circle" style="color: #3498db;"></i>
-                                <span>User experience comparison</span>
-                            </li>
-                            <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
-                                <i class="fas fa-check-circle" style="color: #3498db;"></i>
-                                <span>Making the switch to Signal</span>
-                            </li>
+                    <div class="blog-post-content">
+                        <p class="blog-post-excerpt">A comprehensive comparison of Signal and WhatsApp for secure messaging:</p>
+                        <ul>
+                            <li>Privacy and security features</li>
+                            <li>User experience comparison</li>
+                            <li>Making the switch to Signal</li>
                         </ul>
+                        <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1rem; color: #6c757d;">
+                            <i class="fas fa-user-circle"></i>
+                            <span>Author: Talha Asghar</span>
+                        </div>
                     </div>
-                    <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 1rem;">
-                        <span style="background: #e2e8f0; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9em; color: #4a5568;">
-                            <i class="fas fa-calendar"></i> Feb 23, 2024
-                        </span>
-                        <span style="background: #e2e8f0; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9em; color: #4a5568;">
-                            <i class="fas fa-clock"></i> 1 min read
-                        </span>
-                    </div>
-                    <div style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.8rem;">
-                        <i class="fas fa-user-circle" style="font-size: 1.2em; color: var(--primary-color);"></i>
-                        <span style="color: var(--text-light); font-size: 0.9em;">Author: Talha Asghar</span>
-                    </div>
-                    <a href="https://talhaasghar.dev/blog/2024/signal-as-alternative-of-whatsapp/" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; background: linear-gradient(135deg, #3498db, #2980b9); color: white; text-decoration: none; border-radius: 50px; font-weight: 500; transition: all 0.3s ease;">
+                    <div class="read-more">
                         <i class="fas fa-book-reader"></i>
                         Read Article
-                    </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -796,52 +795,6 @@
         <div style="position: absolute; top: 0; right: 0; width: 300px; height: 300px; background: linear-gradient(135deg, rgba(52, 152, 219, 0.05) 0%, rgba(41, 128, 185, 0.05) 100%); border-radius: 50%; transform: translate(50%, -50%); z-index: 0;"></div>
     </footer>
 
-    <script>
-        // Intersection Observer for scroll animations
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        // Add fade-in-up class to elements
-        document.addEventListener('DOMContentLoaded', () => {
-            // Add to section titles
-            document.querySelectorAll('.section-title').forEach((el, index) => {
-                el.classList.add('fade-in-up');
-                el.classList.add(`delay-${(index % 3) + 1}`);
-                observer.observe(el);
-            });
-
-            // Add to cards
-            document.querySelectorAll('.card').forEach((el, index) => {
-                el.classList.add('fade-in-up');
-                el.classList.add(`delay-${(index % 3) + 1}`);
-                observer.observe(el);
-            });
-
-            // Add to buttons
-            document.querySelectorAll('.btn').forEach((el, index) => {
-                el.classList.add('fade-in-up');
-                el.classList.add(`delay-${(index % 3) + 1}`);
-                observer.observe(el);
-            });
-
-            // Add to list items
-            document.querySelectorAll('ul li').forEach((el, index) => {
-                el.classList.add('fade-in-up');
-                el.classList.add(`delay-${(index % 3) + 1}`);
-                observer.observe(el);
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
