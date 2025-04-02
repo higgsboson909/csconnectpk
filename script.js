@@ -519,10 +519,17 @@ document.addEventListener('DOMContentLoaded', () => {
     addAnimations();
     lazyLoadImages();
     
-    initMobileNav();
     initTouchInteractions();
     optimizeScroll();
     handleOrientation();
+
+    // Add viewport height fix for mobile browsers
+    function setViewportHeight() {
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+    setViewportHeight();
+    window.addEventListener('resize', setViewportHeight);
 });
 
 // Smooth scroll for navigation links with performance optimization
@@ -540,39 +547,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
-
-// Mobile Navigation
-function initMobileNav() {
-    const nav = document.querySelector('nav');
-    const navList = nav.querySelector('ul');
-    const mobileToggle = document.createElement('button');
-    mobileToggle.className = 'mobile-nav-toggle';
-    mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
-    nav.insertBefore(mobileToggle, navList);
-
-    mobileToggle.addEventListener('click', () => {
-        navList.classList.toggle('active');
-        mobileToggle.innerHTML = navList.classList.contains('active') 
-            ? '<i class="fas fa-times"></i>' 
-            : '<i class="fas fa-bars"></i>';
-    });
-
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!nav.contains(e.target) && navList.classList.contains('active')) {
-            navList.classList.remove('active');
-            mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
-        }
-    });
-
-    // Close mobile menu when clicking a link
-    navList.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            navList.classList.remove('active');
-            mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
-        });
-    });
-}
 
 // Touch-friendly interactions
 function initTouchInteractions() {
@@ -593,11 +567,28 @@ function initTouchInteractions() {
             e.preventDefault();
         });
     });
+
+    // Add pull-to-refresh prevention
+    let touchStartY = 0;
+    document.addEventListener('touchstart', (e) => {
+        touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+
+    document.addEventListener('touchmove', (e) => {
+        const touchY = e.touches[0].clientY;
+        const touchDiff = touchY - touchStartY;
+        
+        if (touchDiff > 50 && window.scrollY === 0) {
+            e.preventDefault();
+        }
+    }, { passive: false });
 }
 
 // Optimize scroll performance
 function optimizeScroll() {
     let ticking = false;
+    let lastScrollY = window.scrollY;
+
     window.addEventListener('scroll', () => {
         if (!ticking) {
             window.requestAnimationFrame(() => {
@@ -606,6 +597,12 @@ function optimizeScroll() {
             });
             ticking = true;
         }
+
+        // Add scroll direction class to body
+        const currentScrollY = window.scrollY;
+        document.body.classList.toggle('scrolling-down', currentScrollY > lastScrollY);
+        document.body.classList.toggle('scrolling-up', currentScrollY < lastScrollY);
+        lastScrollY = currentScrollY;
     });
 }
 
@@ -618,6 +615,10 @@ function handleOrientation() {
         if (navList && navList.classList.contains('active')) {
             navList.classList.remove('active');
             mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            document.body.style.overflow = '';
         }
+
+        // Force a reflow to fix any layout issues
+        window.scrollTo(0, 0);
     });
 }

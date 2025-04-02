@@ -62,14 +62,14 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #f0f0f0;
+    color: white;
     text-decoration: none;
     font-size: 1em;
     transition: color 0.3s;
 }
 
 nav ul li a:hover {
-    color: #131719;
+    color: #3498db;
 }
 
 nav a {
@@ -398,40 +398,31 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    /* Navigation */
     nav {
         padding: 1rem;
     }
 
-    .mobile-nav-toggle {
-        display: block;
+    nav div {
+        font-size: 1.5em;
     }
 
     nav ul {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(18, 18, 18, 0.98);
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 2rem;
-        z-index: 1000;
-    }
-
-    nav ul.active {
         display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     nav ul li {
-        margin: 1rem 0;
+        margin: 0.5rem;
     }
 
     nav ul li a {
-        font-size: 1.2rem;
+        font-size: 0.9em;
+    }
+
+    /* Hide the Join Us button on mobile */
+    nav a.btn {
+        display: none;
     }
 
     /* Header */
