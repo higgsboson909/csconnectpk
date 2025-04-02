@@ -518,6 +518,11 @@ document.addEventListener('DOMContentLoaded', () => {
     createThemeToggle();
     addAnimations();
     lazyLoadImages();
+    
+    initMobileNav();
+    initTouchInteractions();
+    optimizeScroll();
+    handleOrientation();
 });
 
 // Smooth scroll for navigation links with performance optimization
@@ -535,3 +540,84 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+// Mobile Navigation
+function initMobileNav() {
+    const nav = document.querySelector('nav');
+    const navList = nav.querySelector('ul');
+    const mobileToggle = document.createElement('button');
+    mobileToggle.className = 'mobile-nav-toggle';
+    mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+    nav.insertBefore(mobileToggle, navList);
+
+    mobileToggle.addEventListener('click', () => {
+        navList.classList.toggle('active');
+        mobileToggle.innerHTML = navList.classList.contains('active') 
+            ? '<i class="fas fa-times"></i>' 
+            : '<i class="fas fa-bars"></i>';
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!nav.contains(e.target) && navList.classList.contains('active')) {
+            navList.classList.remove('active');
+            mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        }
+    });
+
+    // Close mobile menu when clicking a link
+    navList.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navList.classList.remove('active');
+            mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        });
+    });
+}
+
+// Touch-friendly interactions
+function initTouchInteractions() {
+    // Add touch feedback to buttons and cards
+    const touchElements = document.querySelectorAll('.btn, .card, .nav-link');
+    touchElements.forEach(element => {
+        element.addEventListener('touchstart', () => {
+            element.style.transform = 'scale(0.98)';
+        });
+        element.addEventListener('touchend', () => {
+            element.style.transform = '';
+        });
+    });
+
+    // Prevent double-tap zoom on buttons
+    document.querySelectorAll('button, .btn').forEach(button => {
+        button.addEventListener('touchend', (e) => {
+            e.preventDefault();
+        });
+    });
+}
+
+// Optimize scroll performance
+function optimizeScroll() {
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                // Update scroll-based animations here
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+}
+
+// Handle orientation changes
+function handleOrientation() {
+    window.addEventListener('orientationchange', () => {
+        // Reset mobile menu on orientation change
+        const navList = document.querySelector('nav ul');
+        const mobileToggle = document.querySelector('.mobile-nav-toggle');
+        if (navList && navList.classList.contains('active')) {
+            navList.classList.remove('active');
+            mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        }
+    });
+}
