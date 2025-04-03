@@ -10,11 +10,26 @@ document.addEventListener('DOMContentLoaded', function() {
     const navList = nav.querySelector('ul');
     nav.insertBefore(hamburgerBtn, navList);
 
+    // Add Join Us button to mobile menu
+    const joinUsItem = document.createElement('li');
+    joinUsItem.className = 'mobile-join';
+    
+    // Create Join Us link with proper styling
+    const joinUsLink = document.createElement('a');
+    joinUsLink.href = 'index.html#join';
+    joinUsLink.className = 'btn btn-primary';
+    joinUsLink.innerHTML = 'Join Us';
+    
+    joinUsItem.appendChild(joinUsLink);
+    navList.appendChild(joinUsItem);
+
     // Toggle menu functionality
-    hamburgerBtn.addEventListener('click', function() {
+    hamburgerBtn.addEventListener('click', function(e) {
+        e.stopPropagation(); // Prevent event from bubbling up
         navList.classList.toggle('show');
         const isExpanded = navList.classList.contains('show');
         hamburgerBtn.setAttribute('aria-expanded', isExpanded);
+        document.body.classList.toggle('menu-open', isExpanded);
         
         // Toggle icon between bars and times
         hamburgerBtn.innerHTML = isExpanded ? 
@@ -22,14 +37,13 @@ document.addEventListener('DOMContentLoaded', function() {
             '<i class="fas fa-bars"></i>';
     });
 
-    // Close menu when clicking outside
+    // Close menu when clicking outside nav
     document.addEventListener('click', function(event) {
-        const isClickInside = nav.contains(event.target);
-        
-        if (!isClickInside && navList.classList.contains('show')) {
+        if (!nav.contains(event.target) && navList.classList.contains('show')) {
             navList.classList.remove('show');
             hamburgerBtn.innerHTML = '<i class="fas fa-bars"></i>';
             hamburgerBtn.setAttribute('aria-expanded', 'false');
+            document.body.classList.remove('menu-open');
         }
     });
 
@@ -39,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
             navList.classList.remove('show');
             hamburgerBtn.innerHTML = '<i class="fas fa-bars"></i>';
             hamburgerBtn.setAttribute('aria-expanded', 'false');
+            document.body.classList.remove('menu-open');
         });
     });
 
@@ -51,7 +66,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 navList.classList.remove('show');
                 hamburgerBtn.innerHTML = '<i class="fas fa-bars"></i>';
                 hamburgerBtn.setAttribute('aria-expanded', 'false');
+                document.body.classList.remove('menu-open');
             }
         }, 250);
+    });
+
+    // Handle escape key to close menu
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && navList.classList.contains('show')) {
+            navList.classList.remove('show');
+            hamburgerBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            hamburgerBtn.setAttribute('aria-expanded', 'false');
+            document.body.classList.remove('menu-open');
+        }
     });
 }); 
