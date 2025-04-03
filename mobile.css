@@ -1,0 +1,152 @@
+/* Mobile-specific styles */
+@media screen and (max-width: 768px) {
+    /* Navigation styles */
+    nav {
+        padding: 10px 15px !important;
+    }
+
+    nav ul {
+        display: none !important;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #121212;
+        padding: 20px !important;
+        flex-direction: column !important;
+        gap: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    nav ul.show {
+        display: flex !important;
+    }
+
+    nav ul li {
+        margin: 0 !important;
+        width: 100%;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 10px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .hamburger-menu {
+        display: block !important;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+        padding: 5px;
+    }
+
+    /* Hide desktop Join Us button */
+    nav > a.btn {
+        display: none !important;
+    }
+
+    /* Header styles */
+    header {
+        padding: 40px 20px !important;
+    }
+
+    header h1 {
+        font-size: 2em !important;
+    }
+
+    header p {
+        font-size: 1em !important;
+    }
+
+    /* Section styles */
+    section {
+        padding: 40px 20px !important;
+    }
+
+    .section-title {
+        font-size: 2em !important;
+    }
+
+    .section-subtitle {
+        font-size: 1em !important;
+    }
+
+    /* Grid layouts */
+    .grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+
+    /* Card styles */
+    .card {
+        margin-bottom: 20px !important;
+    }
+
+    /* Button styles */
+    .btn {
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    /* Footer styles */
+    footer {
+        padding: 40px 20px !important;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+    }
+
+    .social-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    /* Blog and Event cards */
+    .blog-post, .event-card {
+        margin: 0 0 20px 0 !important;
+    }
+
+    .blog-post-header, .event-header {
+        padding: 15px !important;
+    }
+
+    .blog-post-content, .event-content {
+        padding: 15px !important;
+    }
+
+    /* Event stats */
+    .event-stats {
+        flex-wrap: wrap !important;
+    }
+
+    .event-stat {
+        width: calc(50% - 10px) !important;
+        text-align: center !important;
+    }
+}
+
+/* Hamburger menu icon */
+.hamburger-menu {
+    display: none;
+}
+
+/* Animation for menu toggle */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+nav ul.show {
+    animation: slideDown 0.3s ease-out forwards;
+} 
