@@ -62,15 +62,14 @@
         transform: scale(1.1) !important;
     }
 
-    /* Hide desktop Join Us button */
-    nav > a.btn {
+    /* Hide desktop Join Us button on mobile */
+    nav > a.btn-primary {
         display: none !important;
     }
 
-    /* Mobile Join Us button styling */
+    /* Style for Join Us button in mobile menu */
     nav ul li.mobile-join {
         padding: 15px 20px !important;
-        border-bottom: none !important;
     }
 
     nav ul li.mobile-join a {
@@ -80,7 +79,6 @@
         margin: 0 !important;
         padding: 12px 20px !important;
         color: white !important;
-        font-weight: 500 !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
@@ -173,6 +171,19 @@
     }
 }
 
+/* Desktop styles */
+@media screen and (min-width: 769px) {
+    /* Show desktop Join Us button */
+    nav > a.btn-primary {
+        display: inline-flex !important;
+    }
+
+    /* Hide mobile Join Us in desktop view */
+    nav ul li.mobile-join {
+        display: none !important;
+    }
+}
+
 /* Hamburger menu icon */
 .hamburger-menu {
     display: none;
@@ -197,4 +208,4 @@ nav ul.show {
 /* Prevent body scroll when menu is open */
 body.menu-open {
     overflow: hidden;
-} 
+}

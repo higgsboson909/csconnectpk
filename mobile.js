@@ -10,18 +10,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const navList = nav.querySelector('ul');
     nav.insertBefore(hamburgerBtn, navList);
 
-    // Add Join Us button to mobile menu
-    const joinUsItem = document.createElement('li');
-    joinUsItem.className = 'mobile-join';
-    
-    // Create Join Us link with proper styling
-    const joinUsLink = document.createElement('a');
-    joinUsLink.href = 'index.html#join';
-    joinUsLink.className = 'btn btn-primary';
-    joinUsLink.innerHTML = 'Join Us';
-    
-    joinUsItem.appendChild(joinUsLink);
-    navList.appendChild(joinUsItem);
+    // Add Join Us button to mobile menu if it doesn't exist
+    const mobileJoinExists = navList.querySelector('.mobile-join');
+    if (!mobileJoinExists) {
+        const joinUsItem = document.createElement('li');
+        joinUsItem.className = 'mobile-join';
+        const joinUsLink = document.createElement('a');
+        joinUsLink.href = 'index.html#join';
+        joinUsLink.className = 'btn btn-primary';
+        joinUsLink.innerHTML = '<i class="fas fa-user-plus"></i>Join Us';
+        joinUsItem.appendChild(joinUsLink);
+        navList.appendChild(joinUsItem);
+    }
 
     // Toggle menu functionality
     hamburgerBtn.addEventListener('click', function(e) {
