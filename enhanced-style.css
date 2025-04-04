@@ -4,14 +4,15 @@
     --bg-dark: #0B0C2A; /* Deep Midnight */
     --bg-darker: #080924;
     --bg-light: #111339;
-    --text-light: #FAFAFA; /* Light text for dark backgrounds */
+    --text-light: black; /* Changed to pure black for better visibility */
+    --text-hero-section: white;
     --text-dark: #000000; /* Changed to pure black for better visibility */
     
     /* Accent Colors */
     --accent-purple: #9B5DE5;
     --accent-blue: #60A3D9;
     --accent-cyan: #A4F1F9;
-    --accent-gray: #D0D0D0;
+    --accent-gray: #000000; /* Changed to black for readability */
     
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
@@ -53,7 +54,7 @@ nav {
     align-items: center;
     padding: 15px 30px;
     background-color: var(--nav-bg) !important;
-    color: var(--text-light);
+    color: #FAFAFA;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
     position: sticky;
     top: 0;
@@ -66,7 +67,7 @@ nav .site-title {
     font-weight: 700;
     font-family: 'Poppins', sans-serif;
     letter-spacing: -0.02em;
-    color: var(--text-light);
+    color: #FAFAFA;
 }
 
 nav ul {
@@ -82,7 +83,7 @@ nav ul li {
 }
 
 .nav-link {
-    color: var(--text-light) !important;
+    color: #FAFAFA !important;
     text-decoration: none;
     font-size: 1em;
     font-weight: 500 !important;
@@ -125,7 +126,7 @@ nav ul li {
 /* Buttons */
 .btn-primary {
     background: var(--gradient-primary) !important;
-    color: var(--text-light) !important;
+    color: #FAFAFA !important;
     box-shadow: 0 4px 15px rgba(155, 93, 229, 0.3) !important;
     transition: all 0.3s ease !important;
     display: inline-flex;
@@ -160,7 +161,7 @@ section#home {
 }
 
 .section-title {
-    color: var(--text-light) !important;
+    color: var(--text-hero-section) ;
     font-weight: 700 !important;
 }
 
@@ -214,7 +215,7 @@ section[style*="background: linear-gradient(135deg, #ffffff"] p {
 }
 
 .event-title, .event-meta {
-    color: var(--text-light) !important;
+    color: #FAFAFA !important;
 }
 
 .event-content {
@@ -227,7 +228,7 @@ section[style*="background: linear-gradient(135deg, #ffffff"] p {
 
 .event-stat {
     background: rgba(155, 93, 229, 0.1) !important;
-    color: var(--accent-cyan) !important;
+    color: var(--accent-gray) !important;
 }
 
 /* Blog Posts */
@@ -241,7 +242,7 @@ section[style*="background: linear-gradient(135deg, #ffffff"] p {
 }
 
 .blog-post-title, .blog-post-meta {
-    color: var(--text-light) !important;
+    color: #FAFAFA !important;
 }
 
 .blog-post-content {
@@ -258,13 +259,13 @@ section[style*="background: linear-gradient(135deg, #ffffff"] p {
 
 .read-more {
     background: var(--gradient-primary) !important;
-    color: var(--text-light) !important;
+    color: #FAFAFA !important;
     transition: transform 0.3s ease, background 0.3s ease !important;
 }
 
 .read-more:hover {
     background: var(--gradient-hover) !important;
-    color: var(--text-light) !important;
+    color: #FAFAFA !important;
 }
 
 /* Footer */
@@ -320,7 +321,7 @@ footer {
 .hamburger-menu {
     display: none;
     background: none !important;
-    color: var(--text-light) !important;
+    color: #FAFAFA !important;
     border: none;
     font-size: 24px;
     cursor: pointer;
@@ -340,7 +341,7 @@ footer {
         justify-content: center !important;
         background: none !important;
         border: none !important;
-        color: var(--text-light) !important;
+        color: #FAFAFA !important;
         font-size: 24px !important;
         cursor: pointer !important;
         padding: 5px 10px !important;
@@ -382,7 +383,7 @@ footer {
         padding: 15px 20px !important;
         width: 100% !important;
         text-align: left !important;
-        color: var(--text-light) !important;
+        color: #FAFAFA !important;
         font-size: 1.1em !important;
         transition: background-color 0.3s ease !important;
     }
@@ -406,7 +407,7 @@ footer {
         text-align: center !important;
         margin: 0 !important;
         padding: 12px 20px !important;
-        color: var(--text-light) !important;
+        color: #FAFAFA !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
