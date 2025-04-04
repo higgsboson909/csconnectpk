@@ -12,12 +12,12 @@
         top: 100% !important;
         left: 0 !important;
         width: 100% !important;
-        background-color: #0A0B20 !important;
+        background-color: var(--nav-bg) !important;
         padding: 0 !important;
         margin: 0 !important;
         flex-direction: column !important;
         z-index: 1000 !important;
-        border-top: 1px solid rgba(155, 93, 229, 0.2) !important;
+        border-top: 1px solid var(--border-color) !important;
     }
 
     nav ul.show {
@@ -27,7 +27,7 @@
     nav ul li {
         margin: 0 !important;
         width: 100% !important;
-        border-bottom: 1px solid rgba(155, 93, 229, 0.2) !important;
+        border-bottom: 1px solid var(--border-color) !important;
     }
 
     nav ul li a {
@@ -35,14 +35,14 @@
         padding: 15px 20px !important;
         width: 100% !important;
         text-align: left !important;
-        color: white !important;
+        color: var(--text-light) !important;
         font-size: 1.1em !important;
         transition: background-color 0.3s ease !important;
     }
 
     nav ul li a:hover {
         background-color: rgba(155, 93, 229, 0.1) !important;
-        color: #A4F1F9 !important;
+        color: var(--accent-cyan) !important;
     }
 
     .hamburger-menu {
@@ -51,7 +51,7 @@
         justify-content: center !important;
         background: none !important;
         border: none !important;
-        color: white !important;
+        color: var(--text-light) !important;
         font-size: 24px !important;
         cursor: pointer !important;
         padding: 5px 10px !important;
@@ -74,12 +74,12 @@
     }
 
     nav ul li.mobile-join a {
-        background: linear-gradient(135deg, #9B5DE5, #60A3D9) !important;
+        background: var(--gradient-primary) !important;
         border-radius: 8px !important;
         text-align: center !important;
         margin: 0 !important;
         padding: 12px 20px !important;
-        color: white !important;
+        color: var(--text-light) !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
@@ -87,7 +87,7 @@
     }
 
     nav ul li.mobile-join a:hover {
-        background: linear-gradient(135deg, #60A3D9, #A4F1F9) !important;
+        background: var(--gradient-hover) !important;
         transform: translateY(-2px) !important;
     }
 

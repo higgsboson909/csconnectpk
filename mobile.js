@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Ensure CSS variables are applied correctly across all pages
+    document.documentElement.style.setProperty('--nav-bg', '#0A0B20');
+    
     // Create and add hamburger menu button
     const nav = document.querySelector('nav');
     

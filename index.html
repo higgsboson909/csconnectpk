@@ -6,40 +6,11 @@
     <title>CS Connect PK</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="mobile.css">
     <link rel="stylesheet" href="enhanced-style.css">
+    <link rel="stylesheet" href="mobile.css">
     <link rel="icon" type="image/png" href="images/web-app-manifest-512x512.png" sizes="512x512">
-    <link rel="stylesheet">
     <style>
-        :root {
-            --primary-color: #3498db;
-            --primary-dark: #2980b9;
-            --text-dark: #2c3e50;
-            --text-light: #4a5568;
-            --bg-light: #f8f9fa;
-            --bg-white: #ffffff;
-            --card-bg: #f8f9fa;
-            --text-secondary: #6c757d;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: var(--text-dark);
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600;
-            line-height: 1.3;
-        }
-
+        /* Only keep index-specific styles */
         html {
             scroll-behavior: smooth;
         }
@@ -49,46 +20,12 @@
         }
 
         .gradient-text {
-            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .section-title {
-            font-size: 2.8em;
-            margin-bottom: 1.5rem;
-            color: var(--text-dark);
-            font-weight: 700;
-            letter-spacing: -0.02em;
-        }
-
-        .section-subtitle {
-            font-size: 1.3em;
-            color: var(--text-light);
-            max-width: 800px;
-            margin: 0 auto 2.5rem;
-        }
-
-        .card {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .card-header {
-            background: linear-gradient(135deg, #1a1a1a, #2c3e50);
-            color: white;
-            padding: 1rem;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-        }
-
+        /* Button styles */
         .btn {
             display: inline-flex;
             align-items: center;
@@ -101,63 +38,35 @@
             font-size: 1.1em;
         }
 
-        .btn-primary {
-            background: linear-gradient(135deg, #1a1a1a, #2c3e50);
-            color: white;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        .hero-btn-primary {
+            background: var(--gradient-primary);
+            color: var(--text-light);
+            padding: 1rem 2rem;
+            font-size: 1.2em;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(155, 93, 229, 0.3);
         }
 
-        .btn-primary:hover {
+        .hero-btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+            background: var(--gradient-hover);
+            box-shadow: var(--hover-glow);
         }
 
-        .nav-link {
-            color: white !important;
-            text-decoration: none;
-            font-size: 1em;
-            font-weight: 500;
-            transition: color 0.3s;
-            position: relative;
+        .hero-btn-secondary {
+            color: var(--text-light);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1rem 2rem;
+            font-size: 1.2em;
+            border-radius: 10px;
         }
 
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #6c757d;
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        /* Scroll Animation Classes */
-        .fade-in-up {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-
-        .fade-in-up.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .fade-in-up.delay-1 {
-            transition-delay: 0.2s;
-        }
-
-        .fade-in-up.delay-2 {
-            transition-delay: 0.4s;
-        }
-
-        .fade-in-up.delay-3 {
-            transition-delay: 0.6s;
+        .hero-btn-secondary:hover {
+            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.15);
         }
 
         /* Update past events grid boxes */
@@ -185,93 +94,19 @@
             line-height: 1.5 !important;  /* Reduced from 1.8 */
             margin-bottom: 0.6rem !important;  /* Reduced from 1rem */
         }
-
-        footer {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%);
-        }
-
-        .social-btn {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .social-btn:hover {
-            background: rgba(255, 255, 255, 0.15);
-            border-color: rgba(255, 255, 255, 0.2);
-        }
-
-        .blog-post {
-            background: var(--card-bg);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .blog-post:hover {
-            transform: translateY(-5px);
-        }
-
-        .blog-post-header {
-            background: linear-gradient(135deg, #6c757d, #495057);
-            padding: 1.5rem;
-            color: white;
-        }
-
-        .blog-post-title {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: white;
-        }
-
-        .blog-post-meta {
-            font-size: 0.9rem;
-            opacity: 0.9;
-            color: white;
-        }
-
-        .blog-post-content {
-            padding: 1.5rem;
-        }
-
-        .blog-post-excerpt {
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-        }
-
-        .read-more {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            background: linear-gradient(135deg, #6c757d, #495057);
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: transform 0.3s ease;
-        }
-
-        .read-more:hover {
-            transform: translateX(5px);
-            color: white;
-        }
     </style>
 </head>
 <body>
-    <header style="text-align: center; padding: 30px 20px; background: linear-gradient(135deg, #0B0C2A 0%, #14163F 100%); color: white; box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3); position: relative;">
-        <h1 style="font-size: 3.5em; margin: 0; font-family: 'Poppins', sans-serif; font-weight: 800; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); letter-spacing: -0.02em;">CS Connect Pakistan</h1>
-        <p style="font-size: 1.4em; margin-top: 15px; font-family: 'Inter', sans-serif; color: #D0D0D0; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); font-weight: 400;">A Platform Which is Created By the Tech Students For the Tech Students of Pakistan</p>
-    </header>
-    
-    <nav style="display: flex; justify-content: space-between; align-items: center; padding: 15px 30px; background-color: #0A0B20; color: white; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(155, 93, 229, 0.2);">
-        <div style="font-size: 1.8em; font-weight: 700; font-family: 'Poppins', sans-serif; letter-spacing: -0.02em; color: white;">CS Connect PK</div>
-        <ul style="list-style: none; display: flex; margin: 0; padding: 0; font-family: 'Inter', sans-serif;">
-            <li style="margin: 0 15px;"><a href="index.html" class="nav-link" style="color: white; position: relative;">Home</a></li>
-            <li style="margin: 0 15px;"><a href="events.html" class="nav-link" style="color: white; position: relative;">Events</a></li>
-            <li style="margin: 0 15px;"><a href="blogs.html" class="nav-link" style="color: white; position: relative;">Blogs</a></li>
-            <li style="margin: 0 15px;"><a href="#forum" class="nav-link" style="color: white; position: relative;">Forum</a></li>
-            <li style="margin: 0 15px;"><a href="#footer" class="nav-link" style="color: white; position: relative;">Contact</a></li>
+    <nav>
+        <div class="site-title">CS Connect PK</div>
+        <ul>
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="events.html" class="nav-link">Events</a></li>
+            <li><a href="blogs.html" class="nav-link">Blogs</a></li>
+            <li><a href="#forum" class="nav-link">Forum</a></li>
+            <li><a href="#footer" class="nav-link">Contact</a></li>
         </ul>
-        <a href="#join" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #9B5DE5, #60A3D9); color: white; box-shadow: 0 4px 15px rgba(155, 93, 229, 0.3); transition: all 0.3s ease;"><i class="fas fa-user-plus"></i>Join Us</a>
+        <a href="#join" class="btn-primary"><i class="fas fa-user-plus"></i>Join Us</a>
     </nav>
 
     <!-- Hero Section -->
@@ -284,11 +119,11 @@
                 Join Community of Coders, Designers, and Tech Lovers!
             </p>
             <div style="display: flex; gap: 1.5rem; justify-content: center; align-items: center; flex-wrap: wrap;">
-                <a href="#join" class="btn btn-primary" style="background: linear-gradient(135deg, #9B5DE5, #60A3D9); padding: 1rem 2rem; font-size: 1.2em; border-radius: 10px; box-shadow: 0 4px 15px rgba(155, 93, 229, 0.3);">
+                <a href="#join" class="btn hero-btn-primary">
                     <i class="fas fa-user-plus"></i>
                     Join The Community
                 </a>
-                <a href="#events" class="btn" style="color: white; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(5px); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); border: 1px solid rgba(255, 255, 255, 0.1); padding: 1rem 2rem; font-size: 1.2em; border-radius: 10px;">
+                <a href="#events" class="btn hero-btn-secondary">
                     <i class="fas fa-calendar-alt"></i>
                     Explore Events
                 </a>
