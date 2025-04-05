@@ -3,98 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CS Connect PK</title>
+    <title>CS Connect PK - Computer Science Community in Pakistan</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="enhanced-style.css">
-    <link rel="stylesheet" href="mobile.css">
-    <link rel="icon" type="image/png" href="images/web-app-manifest-512x512.png" sizes="512x512">
-    <style>
-        /* Only keep index-specific styles */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        section {
-            scroll-margin-top: 80px;
-        }
-
-        .gradient-text {
-            background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* Button styles */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.8rem 1.5rem;
-            border-radius: 8px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            font-size: 1.1em;
-        }
-
-        .hero-btn-primary {
-            background: var(--gradient-primary);
-            color: var(--text-light);
-            padding: 1rem 2rem;
-            font-size: 1.2em;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(155, 93, 229, 0.3);
-        }
-
-        .hero-btn-primary:hover {
-            transform: translateY(-2px);
-            background: var(--gradient-hover);
-            box-shadow: var(--hover-glow);
-        }
-
-        .hero-btn-secondary {
-            color: var(--text-light);
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(5px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 1rem 2rem;
-            font-size: 1.2em;
-            border-radius: 10px;
-        }
-
-        .hero-btn-secondary:hover {
-            transform: translateY(-2px);
-            background: rgba(255, 255, 255, 0.15);
-        }
-
-        /* Update past events grid boxes */
-        #events [style*="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))"] > div {
-            padding: 1.2rem !important;  /* Reduced from 2rem */
-        }
-
-        #events [style*="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))"] > div > div {
-            margin-bottom: 0.6rem !important;  /* Reduced from 1rem */
-        }
-
-        #events [style*="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))"] > div > div[style*="margin-bottom: 1.5rem"] {
-            margin-bottom: 0.8rem !important;  /* Reduced from 1.5rem */
-        }
-
-        #events [style*="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))"] > div ul li {
-            margin-bottom: 0.4rem !important;  /* Reduced from 0.8rem */
-        }
-
-        #events [style*="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))"] > div > div[style*="display: flex; gap: 1rem; justify-content: center"] {
-            margin-bottom: 0.8rem !important;  /* Reduced from 1.5rem */
-        }
-
-        #events [style*="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))"] > div p {
-            line-height: 1.5 !important;  /* Reduced from 1.8 */
-            margin-bottom: 0.6rem !important;  /* Reduced from 1rem */
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <nav>
@@ -106,200 +18,127 @@
             <li><a href="#forum" class="nav-link">Forum</a></li>
             <li><a href="#footer" class="nav-link">Contact</a></li>
         </ul>
-
         <a href="#join" class="btn-primary"><i class="fas fa-user-plus"></i>Join Us</a>
     </nav>
-
-    <!-- Hero Section -->
-    <section id="home" style="text-align: center; padding: 6rem 2rem; background: linear-gradient(135deg, #0B0C2A 0%, #14163F 100%); position: relative; overflow: hidden;">
-        <div style="max-width: 1000px; margin: 0 auto; position: relative; z-index: 1;">
-            <h2 class="section-title" style="color: #000000; font-size: 3.2em; font-weight: 800; margin-bottom: 1.2rem; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);">
-                <strong>Connecting Tech Enthusiasts Across Pakistan!</strong>
-            </h2>
-            <p class="section-subtitle" style="color: #000000; font-size: 1.4em; margin-bottom: 2.5rem; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);">
-                Join Community of Coders, Designers, and Tech Lovers!
-            </p>
-            <div style="display: flex; gap: 1.5rem; justify-content: center; align-items: center; flex-wrap: wrap;">
-                <a href="#join" class="btn hero-btn-primary">
-                    <i class="fas fa-user-plus"></i>
-                    Join The Community
-                </a>
-                <a href="#events" class="btn hero-btn-secondary">
-                    <i class="fas fa-calendar-alt"></i>
-                    Explore Events
-                </a>
+    
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Pakistan's Computer Science Community</h1>
+            <h2 class="hero-subtitle">Connect, Learn, and Grow with Fellow Tech Enthusiasts</h2>
+            <p class="hero-text">Join a community of students, professionals, and educators in the field of Computer Science and Information Technology.</p>
+            <div class="hero-buttons">
+                <a href="#join" class="btn-primary">Join Community</a>
+                <a href="#about" class="btn-secondary">Learn More</a>
             </div>
         </div>
-        <div style="position: absolute; top: -100px; right: -100px; width: 400px; height: 400px; background: linear-gradient(135deg, rgba(155, 93, 229, 0.1) 0%, rgba(96, 163, 217, 0.1) 100%); border-radius: 50%; filter: blur(30px); z-index: 0;"></div>
-        <div style="position: absolute; bottom: -100px; left: -100px; width: 350px; height: 350px; background: linear-gradient(135deg, rgba(96, 163, 217, 0.1) 0%, rgba(164, 241, 249, 0.1) 100%); border-radius: 50%; filter: blur(25px); z-index: 0;"></div>
-    </section>
+    </header>
 
-    <!-- About Section -->
-    <section id="about" style="padding: 6rem 2rem; background: var(--bg-dark); text-align: center; position: relative; overflow: hidden;">
-        <div style="max-width: 1000px; margin: 0 auto; position: relative; z-index: 1;">
-            <div style="margin-bottom: 3rem;">
-                <h2 class="section-title" style="color: #000000;">About CS Connect Pakistan</h2>
-                <div style="width: 80px; height: 4px; background: linear-gradient(90deg, var(--accent-purple), var(--accent-blue)); margin: 0 auto; border-radius: 2px;"></div>
-            </div>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
-                <div class="card" style="padding: 2rem;">
-                    <i class="fas fa-calendar-alt" style="font-size: 2.5em; color: var(--accent-purple); margin-bottom: 1rem;"></i>
-                    <h3 style="font-size: 1.5em; color: #000000; margin-bottom: 1rem; font-weight: 600;">Tech Events</h3>
-                    <p style="color: #000000; line-height: 1.8; font-size: 1.1em;">Regular meetups, workshops, and conferences to connect and learn.</p>
-                </div>
-                <div class="card" style="padding: 2rem;">
-                    <i class="fas fa-users" style="font-size: 2.5em; color: var(--accent-purple); margin-bottom: 1rem;"></i>
-                    <h3 style="font-size: 1.5em; color: #000000; margin-bottom: 1rem; font-weight: 600;">Mentorship</h3>
-                    <p style="color: #000000; line-height: 1.8; font-size: 1.1em;">Connect with experienced developers for guidance and support.</p>
-                </div>
-                <div class="card" style="padding: 2rem;">
-                    <i class="fas fa-book" style="font-size: 2.5em; color: var(--accent-purple); margin-bottom: 1rem;"></i>
-                    <h3 style="font-size: 1.5em; color: #000000; margin-bottom: 1rem; font-weight: 600;">Learning Resources</h3>
-                    <p style="color: #000000; line-height: 1.8; font-size: 1.1em;">Access curated learning materials and tutorials.</p>
-                </div>
-            </div>
-        </div>
-        <div style="position: absolute; top: 0; left: 0; width: 300px; height: 300px; background: linear-gradient(135deg, rgba(155, 93, 229, 0.05) 0%, rgba(96, 163, 217, 0.05) 100%); border-radius: 50%; transform: translate(-50%, -50%); z-index: 0;"></div>
-    </section>
-
-    <!-- Forum Section -->
-    <section id="forum" class="join-section" style="padding: 6rem 2rem; background: var(--bg-dark); text-align: center; position: relative; overflow: hidden;">
-        <div id="join" style="max-width: 1000px; margin: 0 auto; position: relative; z-index: 1;">
-            <div style="margin-bottom: 3rem;">
-                <h2 style="font-size: 2.8em; margin-bottom: 1.5rem; font-family: 'Segoe UI', Arial, sans-serif; color: #000000; font-weight: 700; letter-spacing: -0.5px;">
-                    Join Our Communities
-                </h2>
-                <div style="width: 80px; height: 4px; background: linear-gradient(90deg, var(--accent-purple), var(--accent-blue)); margin: 0 auto; border-radius: 2px;"></div>
-            </div>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
-                <!-- WhatsApp Community Box -->
-                <div style="background: var(--card-bg); padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; display: flex; flex-direction: column; align-items: center; text-align: center; border: 1px solid var(--border-color);">
-                    <div style="width: 70px; height: 70px; background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; box-shadow: 0 4px 15px rgba(155, 93, 229, 0.3); position: relative; overflow: hidden;">
-                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);"></div>
-                        <i class="fab fa-whatsapp" style="font-size: 2.2em; color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.1);"></i>
+    <main>
+        <section id="about" class="about-section">
+            <div class="section-container">
+                <h2 class="section-title text-center">About CS Connect PK</h2>
+                <div class="about-grid">
+                    <div class="about-card">
+                        <i class="fas fa-calendar-alt about-icon"></i>
+                        <h3 class="about-card-title">Tech Events</h3>
+                        <p class="about-card-text">Regular webinars, workshops, and networking events featuring industry professionals and academics.</p>
                     </div>
-                    <h3 style="font-size: 1.8em; color: #000000; margin-bottom: 1rem; font-weight: 600;">WhatsApp Community</h3>
-                    <p style="color: #000000; line-height: 1.8; font-size: 1.1em; margin-bottom: 1.5rem; max-width: 90%;">
-                        Join our active WhatsApp community for instant discussions, networking, and quick updates.
-                    </p>
-                    <ul style="list-style: none; padding: 0; margin: 0; text-align: left; margin-bottom: 2rem; width: 100%;">
-                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem; padding: 0.8rem; background: rgba(155, 93, 229, 0.1); border-radius: 8px;">
-                            <i class="fas fa-check-circle" style="color: var(--accent-purple); font-size: 1.1em;"></i>
-                            <span style="font-weight: 500; color: #000000;">Daily tech discussions</span>
-                        </li>
-                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem; padding: 0.8rem; background: rgba(155, 93, 229, 0.1); border-radius: 8px;">
-                            <i class="fas fa-check-circle" style="color: var(--accent-purple); font-size: 1.1em;"></i>
-                            <span style="font-weight: 500; color: #000000;">Job opportunities</span>
-                        </li>
-                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem; padding: 0.8rem; background: rgba(155, 93, 229, 0.1); border-radius: 8px;">
-                            <i class="fas fa-check-circle" style="color: var(--accent-purple); font-size: 1.1em;"></i>
-                            <span style="font-weight: 500; color: #000000;">Quick networking</span>
-                        </li>
-                    </ul>
-                    <a href="https://chat.whatsapp.com/G3H3VPbJvHOB38AzsUljMt" target="_blank" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 1rem 2rem; background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue)); color: white; text-decoration: none; border-radius: 8px; font-weight: 500; transition: all 0.3s ease; font-size: 1.1em; box-shadow: 0 4px 15px rgba(155, 93, 229, 0.3);">
-                        <i class="fab fa-whatsapp"></i>
-                        Join WhatsApp Group
-                    </a>
-                </div>
-
-                <!-- Discord Community Box -->
-                <div style="background: var(--card-bg); padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; display: flex; flex-direction: column; align-items: center; text-align: center; border: 1px solid var(--border-color);">
-                    <div style="width: 70px; height: 70px; background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; box-shadow: 0 4px 15px rgba(155, 93, 229, 0.3); position: relative; overflow: hidden;">
-                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);"></div>
-                        <i class="fab fa-discord" style="font-size: 2.2em; color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.1);"></i>
+                    <div class="about-card">
+                        <i class="fas fa-users about-icon"></i>
+                        <h3 class="about-card-title">Mentorship</h3>
+                        <p class="about-card-text">Connect with experienced mentors who can guide you through your educational and career journey.</p>
                     </div>
-                    <h3 style="font-size: 1.8em; color: #000000; margin-bottom: 1rem; font-weight: 600;">Discord Server</h3>
-                    <p style="color: #000000; line-height: 1.8; font-size: 1.1em; margin-bottom: 1.5rem; max-width: 90%;">
-                        Connect with our Discord community for structured discussions, voice channels, and organized content.
-                    </p>
-                    <ul style="list-style: none; padding: 0; margin: 0; text-align: left; margin-bottom: 2rem; width: 100%;">
-                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem; padding: 0.8rem; background: rgba(155, 93, 229, 0.1); border-radius: 8px;">
-                            <i class="fas fa-check-circle" style="color: var(--accent-purple); font-size: 1.1em;"></i>
-                            <span style="font-weight: 500; color: #000000;">Voice channels for discussions</span>
-                        </li>
-                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem; padding: 0.8rem; background: rgba(155, 93, 229, 0.1); border-radius: 8px;">
-                            <i class="fas fa-check-circle" style="color: var(--accent-purple); font-size: 1.1em;"></i>
-                            <span style="font-weight: 500; color: #000000;">Organized topic channels</span>
-                        </li>
-                        <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem; padding: 0.8rem; background: rgba(155, 93, 229, 0.1); border-radius: 8px;">
-                            <i class="fas fa-check-circle" style="color: var(--accent-purple); font-size: 1.1em;"></i>
-                            <span style="font-weight: 500; color: #000000;">Community events</span>
-                        </li>
-                    </ul>
-                    <a href="https://discord.gg/gWyvnmSRRF" target="_blank" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 1rem 2rem; background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue)); color: white; text-decoration: none; border-radius: 8px; font-weight: 500; transition: all 0.3s ease; font-size: 1.1em; box-shadow: 0 4px 15px rgba(155, 93, 229, 0.3);">
-                        <i class="fab fa-discord"></i>
-                        Join Discord Server
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Existing Footer -->
-    <footer id="footer" style="padding: 4rem 2rem; background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%); color: #f0f0f0; text-align: center; position: relative; overflow: hidden; box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.15); border-top: 1px solid rgba(255, 255, 255, 0.05);">
-        <div style="max-width: 1200px; margin: 0 auto; position: relative; z-index: 1;">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-bottom: 3rem;">
-                <div>
-                    <h3 style="font-size: 1.5em; margin-bottom: 1.5rem; font-weight: 600; color: #000000;">CS Connect PK</h3>
-                    <p style="color: #000000; line-height: 1.8; margin-bottom: 1.5rem;">
-                        Empowering developers across Pakistan through knowledge-sharing and community building.
-                    </p>
-                </div>
-                <div>
-                    <h3 style="font-size: 1.5em; margin-bottom: 1.5rem; font-weight: 600; color: #000000;">Quick Links</h3>
-                    <ul style="list-style: none; padding: 0; margin: 0;">
-                        <li style="margin-bottom: 0.8rem;"><a href="index.html" style="color: #000000; text-decoration: none; transition: color 0.3s;">Home</a></li>
-                        <li style="margin-bottom: 0.8rem;"><a href="about.html" style="color: #000000; text-decoration: none; transition: color 0.3s;">About</a></li>
-                        <li style="margin-bottom: 0.8rem;"><a href="blog.html" style="color: #000000; text-decoration: none; transition: color 0.3s;">Blog</a></li>
-                        <li style="margin-bottom: 0.8rem;"><a href="contact.html" style="color: #000000; text-decoration: none; transition: color 0.3s;">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 style="font-size: 1.5em; margin-bottom: 1.5rem; font-weight: 600; color: #000000;">Connect With Us</h3>
-                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-bottom: 1.5rem; max-width: 500px; margin-left: auto; margin-right: auto;">
-                        <a href="https://web.whatsapp.com" target="_blank" style="color: #010101; text-decoration: none; font-size: 1.1em; transition: all 0.3s ease; padding: 0.8rem; border-radius: 8px; background: rgba(250, 252, 253, 0.99); display: flex; align-items: center; gap: 0.8rem;" title="Join our WhatsApp Group">
-                            <i class="fab fa-whatsapp" style="font-size: 1.4em;"></i>
-                            <span>WhatsApp</span>
-                        </a>
-                        <a href="https://discord.com" target="_blank" style="color: #101112; text-decoration: none; font-size: 1.1em; transition: all 0.3s ease; padding: 0.8rem; border-radius: 8px; background: rgba(244, 245, 246, 0.99); display: flex; align-items: center; gap: 0.8rem;" title="Join our Discord Server">
-                            <i class="fab fa-discord" style="font-size: 1.4em;"></i>
-                            <span>Discord</span>
-                        </a>
-                        <a href="https://linkedin.com" target="_blank" style="color: #121213; text-decoration: none; font-size: 1.1em; transition: all 0.3s ease; padding: 0.8rem; border-radius: 8px; background: rgba(245, 247, 247, 0.918); display: flex; align-items: center; gap: 0.8rem;" title="Connect on LinkedIn">
-                            <i class="fab fa-linkedin" style="font-size: 1.4em;"></i>
-                            <span>LinkedIn</span>
-                        </a>
-                        <a href="https://youtube.com" target="_blank" style="color: #0d0d0d; text-decoration: none; font-size: 1.1em; transition: all 0.3s ease; padding: 0.8rem; border-radius: 8px; background: rgb(251, 248, 248); display: flex; align-items: center; gap: 0.8rem;" title="Subscribe to our YouTube">
-                            <i class="fab fa-youtube" style="font-size: 1.4em;"></i>
-                            <span>YouTube</span>
-                        </a>
-                        <a href="https://github.com" target="_blank" style="color: #060606; text-decoration: none; font-size: 1.1em; transition: all 0.3s ease; padding: 0.8rem; border-radius: 8px; background: rgb(250, 250, 250); display: flex; align-items: center; gap: 0.8rem;" title="Follow us on GitHub">
-                            <i class="fab fa-github" style="font-size: 1.4em;"></i>
-                            <span>GitHub</span>
-                        </a>
-                        <a href="https://instagram.com" target="_blank" style="color: #080808; text-decoration: none; font-size: 1.1em; transition: all 0.3s ease; padding: 0.8rem; border-radius: 8px; background: rgba(243, 241, 241, 0.916); display: flex; align-items: center; gap: 0.8rem;" title="Follow us on Instagram">
-                            <i class="fab fa-instagram" style="font-size: 1.4em;"></i>
-                            <span>Instagram</span>
-                        </a>
-                    </div>
-                    <div style="margin-top: 2rem;">
-                        <p style="color: #000000; margin-bottom: 1rem; font-size: 1.1em;">Contact us:</p>
-                        <a href="mailto:info@csconnectpk.com" style="color: #000000; text-decoration: none; font-weight: 500; transition: all 0.3s; display: inline-block; padding: 0.8rem 1.5rem; background: rgba(52, 152, 219, 0.15); border-radius: 8px; font-size: 1.1em;">csconnectpk@gmail.com</a>
+                    <div class="about-card">
+                        <i class="fas fa-book-open about-icon"></i>
+                        <h3 class="about-card-title">Learning Resources</h3>
+                        <p class="about-card-text">Access to curated learning materials, guides, and resources focused on Computer Science topics.</p>
                     </div>
                 </div>
             </div>
-            <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 2rem; margin-top: 2rem;">
-                <p style="color: #000000; font-size: 0.9em; margin: 0;">&copy; 2025 CS Connect Pakistan. All rights reserved.</p>
+        </section>
+
+        <section id="join" class="join-section">
+            <div class="section-container">
+                <h2 class="section-title text-center">Join Our Community</h2>
+                <div class="join-grid">
+                    <div class="join-card">
+                        <i class="fab fa-whatsapp join-icon"></i>
+                        <h3 class="join-card-title">WhatsApp Community</h3>
+                        <p class="join-card-text">Join our active WhatsApp group for daily discussions, resources sharing, and networking.</p>
+                        <a href="https://chat.whatsapp.com/EfQx6zEzDqw3y3lzEhTACO" target="_blank" class="btn-primary">Join WhatsApp</a>
+                    </div>
+                    <div class="join-card">
+                        <i class="fab fa-discord join-icon"></i>
+                        <h3 class="join-card-title">Discord Server</h3>
+                        <p class="join-card-text">Connect with our growing Discord community for voice chats, technical discussions, and more.</p>
+                        <a href="https://discord.gg/ynkCzPzg" target="_blank" class="btn-primary">Join Discord</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="forum" class="forum-section">
+            <div class="section-container">
+                <h2 class="section-title text-center">Community Forum</h2>
+                <div class="forum-grid">
+                    <div class="forum-card">
+                        <h3 class="forum-card-title">WhatsApp Community</h3>
+                        <p class="forum-card-text">Join our active WhatsApp group for daily discussions, resources sharing, and networking.</p>
+                        <ul class="forum-features">
+                            <li><span class="feature-highlight">Daily Discussion Topics</span></li>
+                            <li><span class="feature-highlight">Job Opportunities Sharing</span></li>
+                            <li><span class="feature-highlight">Learning Resources</span></li>
+                            <li><span class="feature-highlight">Quick Problem Solving</span></li>
+                        </ul>
+                        <a href="https://chat.whatsapp.com/EfQx6zEzDqw3y3lzEhTACO" target="_blank" class="btn-primary">Join WhatsApp</a>
+                    </div>
+                    <div class="forum-card">
+                        <h3 class="forum-card-title">Discord Server</h3>
+                        <p class="forum-card-text">Connect with our growing Discord community for voice chats, technical discussions, and more.</p>
+                        <ul class="forum-features">
+                            <li><span class="feature-highlight">Voice Chat Sessions</span></li>
+                            <li><span class="feature-highlight">Code Reviews</span></li>
+                            <li><span class="feature-highlight">Project Collaboration</span></li>
+                            <li><span class="feature-highlight">Specialized Channels</span></li>
+                        </ul>
+                        <a href="https://discord.gg/ynkCzPzg" target="_blank" class="btn-primary">Join Discord</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3 class="footer-title">CS Connect PK</h3>
+                <p class="footer-text">A community platform connecting Computer Science students, professionals, and educators across Pakistan.</p>
+            </div>
+            <div class="footer-section">
+                <h3 class="footer-title">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html" class="footer-link">Home</a></li>
+                    <li><a href="events.html" class="footer-link">Events</a></li>
+                    <li><a href="blogs.html" class="footer-link">Blogs</a></li>
+                    <li><a href="#forum" class="footer-link">Community</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3 class="footer-title">Connect With Us</h3>
+                <div class="social-links">
+                    <a href="https://twitter.com/csconnectpk" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/company/csconnectpk" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.facebook.com/csconnectpk" class="social-link"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/csconnectpk" class="social-link"><i class="fab fa-instagram"></i></a>
+                </div>
             </div>
         </div>
-        <div style="position: absolute; top: 0; right: 0; width: 300px; height: 300px; background: linear-gradient(135deg, rgba(52, 152, 219, 0.05) 0%, rgba(41, 128, 185, 0.05) 100%); border-radius: 50%; transform: translate(50%, -50%); z-index: 0;"></div>
+        <div class="footer-bottom">
+            <p class="copyright">&copy; 2025 CS Connect Pakistan. All rights reserved.</p>
+        </div>
     </footer>
-
+    
     <script src="script.js"></script>
-
-    <script src="mobile.js"></script>
-    <script src="enhanced-effects.js"></script>
-
 </body>
 </html>
 
