@@ -195,6 +195,19 @@ nav.scrolled {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
+/* Logo + Site Title Section */
+nav .logo-container {
+    display: flex;
+    align-items: center;
+}
+
+nav .navbar-logo {
+    width: 70px;  /* Increase the width to make the image larger */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 1rem;  /* Space between logo and site name */
+    vertical-align: middle;  /* Align image vertically with text */
+}
+
 nav .site-title {
     font-family: var(--font-heading);
     font-weight: 700;
@@ -231,6 +244,11 @@ nav ul li a::after {
 
 nav ul li a:hover::after {
     width: 100%;
+}
+
+/* Button */
+nav .btn-primary {
+    padding: 0.5rem 1rem;
 }
 
 nav .btn-primary {
