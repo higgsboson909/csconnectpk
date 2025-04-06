@@ -202,7 +202,7 @@ nav .logo-container {
 }
 
 nav .navbar-logo {
-    width: 70px;  /* Increase the width to make the image larger */
+    width: 80px;  /* Increase the width to make the image larger */
     height: auto; /* Maintain aspect ratio */
     margin-right: 1rem;  /* Space between logo and site name */
     vertical-align: middle;  /* Align image vertically with text */
