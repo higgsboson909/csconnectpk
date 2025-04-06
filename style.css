@@ -9,10 +9,10 @@
 /* ===== CSS Variables ===== */
 :root {
     /* Colors */
-    --primary: #002244;          /* Deep Dark Blue */
-    --primary-dark: #001a33;     /* Darker Blue */
-    --secondary: #5e2a84;        /* Deep Purple */
-    --bg-dark: #1a1a1a;          /* Very Dark Grey */
+    --primary: #4488cc;          /* Deep Dark Blue */
+    --primary-dark: #376ea1;     /* Darker Blue */
+    --secondary: #cb97f0;        /* Deep Purple */
+    --bg-dark: #534747;          /* Very Dark Grey */
     --bg-darker: #121212;        /* Deeper dark background */
     --bg-light: #f0f0f6;         /* Soft blue-tinted light grey - easier on the eyes */
     --bg-white: #e8e8ee;         /* Off-white with slight blue tint to reduce eye strain */
@@ -22,16 +22,16 @@
     --text-light: #f0f0f0;       /* Light Grey/Off-White */
     --text-dark: #101010;        /* Almost black text for readability */
     --text-secondary: #5a5a5a;   /* Subtle grey for less important text */
-    --accent-blue: #002244;      /* Deep Dark Blue */
-    --accent-purple: #5e2a84;    /* Deep Purple */
+    --accent-blue: #4f8bc8;      /* Deep Dark Blue */
+    --accent-purple: #9e62ca;    /* Deep Purple */
     --accent-pink: #8a56ac;      /* Lighter purple tone */
     --accent-yellow: #002244;    /* Changed to dark blue */
-    --accent-orange: #001a33;    /* Darker blue */
-    --accent-green: #5e2a84;     /* Changed to purple */
-    --accent-gray: #5a5a5a;      /* Subtle grey */
+    --accent-orange: #387dbe;    /* Darker blue */
+    --accent-green: #a950e9;     /* Changed to purple */
+    --accent-gray: #535151;      /* Subtle grey */
     --gradient-primary: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%); /* Blue to Purple gradient */
     --gradient-dark: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-darker) 100%);
-    --purple-gradient: linear-gradient(to right, #5e2a84, #002244); /* Deep Purple to Dark Blue Gradient */
+    --purple-gradient: linear-gradient(to right, #8140af, #053e76); /* Deep Purple to Dark Blue Gradient */
     
     /* Typography */
     --font-primary: 'Inter', sans-serif;
@@ -157,7 +157,7 @@ p {
 }
 
 .btn-secondary:hover {
-    background: rgba(0, 34, 68, 0.1);
+    background: rgba(5, 69, 134, 0.1);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 34, 68, 0.15);
 }
@@ -244,7 +244,7 @@ nav .btn-primary i {
 /* ===== Hero Section ===== */
 .hero {
     background: var(--purple-gradient);
-    min-height: 100vh;
+    min-height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -457,7 +457,12 @@ nav .btn-primary i {
 .event-features i {
     color: var(--secondary);
 }
-
+.white-strip {
+    height: 50px; /* You can adjust the height as needed */
+    background-color: white;
+    width: 100%;
+  }
+  
 /* ===== Footer ===== */
 footer {
     background: var(--nav-footer-bg);
