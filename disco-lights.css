@@ -1,0 +1,25 @@
+/**
+ * CS Connect PK - Disco Light Effects Styles
+ */
+
+.hero, .join-section, #footer {
+    position: relative;
+    overflow: hidden;
+}
+
+.disco-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero .animated-content, 
+.join-section .animated-content,
+#footer .footer-container {
+    position: relative;
+    z-index: 2;
+} 
