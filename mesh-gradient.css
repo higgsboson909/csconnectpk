@@ -1,0 +1,261 @@
+/**
+ * CS Connect PK - Mesh Gradient Animation and Dark Theme
+ */
+
+:root {
+    --dark-bg: #0a0a0f;
+    --dark-blue: #1a1a2e;
+    --deep-purple: #16213e;
+    --accent-blue: #0f3460;
+    --accent-purple: #533483;
+    --text-light: #ffffff;
+    --text-gray: #e0e0e0;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+}
+
+/* Mesh Gradient Container */
+.mesh-gradient-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+    background-color: var(--dark-bg);
+}
+
+.mesh-gradient-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+    mix-blend-mode: screen;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--dark-bg);
+    z-index: 0;
+}
+
+.hero .animated-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Content Positioning */
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+}
+
+/* Dark Theme Enhancements */
+nav {
+    background-color: rgba(10, 10, 15, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+/* Card Styling with Dark Theme */
+.blog-post-header, .event-header, .blog-card-header, .event-card-header {
+    background-color: var(--dark-bg);
+    border-bottom: 1px solid var(--accent-blue);
+    padding: 1rem;
+}
+
+.about-card {
+    background-color: #f5f5f5; /* Light grey background */
+    color: #000000; /* Black text */
+    border: 2px solid #000000; /* Black outline */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.join-card, .blog-card, .event-card {
+    background-color: var(--dark-blue);
+    border: 1px solid var(--accent-blue);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Blog Cards Special Styling */
+.blog-card {
+    position: relative;
+    background: var(--dark-blue);
+    border: 2px solid var(--dark-bg);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.blog-card:hover {
+    border-color: var(--accent-blue);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.blog-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, var(--dark-bg), var(--dark-blue), var(--deep-purple), var(--dark-blue), var(--dark-bg));
+    z-index: -1;
+    border-radius: inherit;
+    animation: gradientBorder 3s ease infinite;
+}
+
+@keyframes gradientBorder {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.btn-primary {
+    background-color: var(--accent-blue);
+    color: var(--text-light);
+}
+
+.btn-secondary {
+    background-color: var(--accent-purple);
+    color: var(--text-light);
+}
+
+/* Section Dividers */
+.about-section, .blog-section, .events-section {
+    position: relative;
+}
+
+.about-section::before, 
+.blog-section::before, 
+.events-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px; /* Thinner line for About section */
+    background: #fd0202;
+    box-shadow: 
+        0 0 1px #fd0202,
+        0 0 2px #fd0202,
+        0 0 4px #fd0202,
+        0 0 6px rgba(253, 2, 2, 0.8);
+    z-index: 10;
+}
+
+/* Join Section line */
+.join-section {
+    position: relative;
+}
+
+.join-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px; /* Keeping Join section line thicker */
+    background: #fd0202;
+    box-shadow: 
+        0 0 1px #fd0202,
+        0 0 2px #fd0202,
+        0 0 4px #fd0202,
+        0 0 6px rgba(253, 2, 2, 0.8);
+    z-index: 10;
+}
+
+/* Join Section Dark Theme */
+.join-section {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    position: relative;
+    overflow: hidden;
+}
+
+.join-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--dark-bg); /* Pure black background */
+    opacity: 1;
+    z-index: 0;
+}
+
+.join-section .section-container {
+    position: relative;
+    z-index: 1;
+}
+
+.join-section .section-title {
+    color: var(--text-light);
+}
+
+.join-card {
+    background-color: var(--dark-bg); /* Pure black background */
+    border: 1px solid var(--accent-blue);
+    backdrop-filter: blur(5px);
+}
+
+.join-card-title {
+    color: var(--text-light);
+}
+
+.join-card-text {
+    color: var(--text-light);
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+    .mesh-gradient-canvas {
+        opacity: 0.5;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .mesh-gradient-canvas {
+        animation: none;
+    }
+    .blog-card::before {
+        animation: none;
+    }
+} 

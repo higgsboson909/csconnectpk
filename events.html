@@ -3,22 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Events | csconnect.pk</title>
+    <title>CS Connect PK - Events</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mesh-gradient.css">
+    <link rel="icon" href="./images/favicon.svg" type="image/svg+xml" sizes="256x256">
 </head>
 <body>
     <nav>
-        <a href="index.html" class="site-title">CS Connect PK</a>
+        <div class="logo-container">
+            <!-- Community Logo -->
+            <img src="./images/favicon.svg" alt="CS Connect Logo" class="navbar-logo">
+            <!-- Community Name -->
+            <a href="#" class="site-title">CS Connect PK</a>
+        </div>
         <ul>
             <li><a href="index.html" class="nav-link">Home</a></li>
-            <li><a href="events.html" class="nav-link">Events</a></li>
+            <li><a href="events.html" class="nav-link active">Events</a></li>
             <li><a href="blogs.html" class="nav-link">Blogs</a></li>
-            <li><a href="index.html#about" class="nav-link">About</a></li>
-            <li><a href="index.html#join" class="nav-link">Join Us</a></li>
+            <li><a href="index.html#about" class="nav-link scroll-link">About</a></li>
+            <li><a href="index.html#join" class="nav-link scroll-link">Join Us</a></li>
         </ul>
-        <a href="index.html#join" class="btn-primary">Join Community</a>
+        <a href="index.html#join" class="btn-primary scroll-link">Join Community</a>
         <div class="mobile-toggle" aria-label="Toggle navigation menu" role="button" tabindex="0">
             <div class="bar"></div>
             <div class="bar"></div>
@@ -28,14 +35,22 @@
     
     <div class="mobile-menu">
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="events.html">Events</a></li>
-            <li><a href="blogs.html">Blogs</a></li>
-            <li><a href="index.html#about">About</a></li>
-            <li><a href="index.html#join">Join Us</a></li>
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="events.html" class="nav-link active">Events</a></li>
+            <li><a href="blogs.html" class="nav-link">Blogs</a></li>
+            <li><a href="index.html#about" class="nav-link scroll-link">About</a></li>
+            <li><a href="index.html#join" class="nav-link scroll-link">Join Us</a></li>
         </ul>
-        <a href="index.html#join" class="btn-primary">Join Community</a>
+        <a href="index.html#join" class="btn-primary scroll-link">Join Community</a>
     </div>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">CS Connect PK Events</h1>
+            <h2 class="hero-subtitle">Upcoming and Past Tech Events</h2>
+            <p class="hero-text">Join our workshops, webinars, and networking events to enhance your skills and connect with fellow tech enthusiasts.</p>
+        </div>
+    </header>
 
     <main>
         <section class="events-section">
@@ -184,12 +199,38 @@
         </section>
     </main>
 
-    <footer>
-        <div class="footer-content text-center">
-            <p>&copy; 2025 CS Connect Pakistan. All rights reserved.</p>
+    <footer id="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3 class="footer-title">CS Connect PK</h3>
+                <p class="footer-text">A community platform connecting Computer Science students, professionals, and educators across Pakistan.</p>
+            </div>
+            <div class="footer-section">
+                <h3 class="footer-title">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html" class="footer-link">Home</a></li>
+                    <li><a href="events.html" class="footer-link">Events</a></li>
+                    <li><a href="blogs.html" class="footer-link">Blogs</a></li>
+                    <li><a href="#forum" class="footer-link">Community</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3 class="footer-title">Connect With Us</h3>
+                <div class="social-links">
+                    <a href="https://twitter.com/csconnectpk" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/company/csconnectpk" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.facebook.com/csconnectpk" class="social-link"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/csconnectpk" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/csconnectpk" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="copyright">&copy; 2025 CS Connect Pakistan. All rights reserved.</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
+    <script src="mesh-gradient.js"></script>
 </body>
 </html> 

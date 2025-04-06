@@ -197,26 +197,37 @@ function initHoverEffects() {
 }
 
 /**
- * Initialize smooth scrolling for anchor links
+ * Initialize smooth scrolling for navigation links
  */
 function initSmoothScroll() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const targetId = this.getAttribute('href');
-            
-            // Skip if href is just '#'
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
+    // Get all navigation links
+    const navLinks = document.querySelectorAll('nav a[href^="#"]');
+    
+    // Add click event listener to each link
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
             e.preventDefault();
+            
+            // Get the target section id from the href
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            if (targetSection) {
+                // Calculate the offset for the fixed navbar
                 const navHeight = document.querySelector('nav').offsetHeight;
-                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight;
+                const targetPosition = targetSection.offsetTop - navHeight;
                 
+                // Smooth scroll to the target section
                 window.scrollTo({
                     top: targetPosition,
                     behavior: 'smooth'
                 });
+                
+                // Close mobile menu if open
+                const mobileMenu = document.querySelector('.mobile-menu');
+                if (mobileMenu && mobileMenu.classList.contains('active')) {
+                    toggleMobileMenu();
+                }
             }
         });
     });
