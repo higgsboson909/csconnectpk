@@ -16,7 +16,19 @@ Please provide the following details for your submission:
   - @team_member2  
   - @team_member3
   - (Add more team members as needed)
-
+  - 
+### 4. Tools / Technologies Used:
+- **Editors**:  
+  - [e.g., Visual Studio Code, Sublime Text, etc.]
+  
+- **AI Tools**:  
+  - [e.g., ChatGPT, GitHub Copilot, etc.]
+  
+- **Frameworks / Libraries**:  
+  - [e.g., React, Vue, Bootstrap, Tailwind CSS, etc.]
+  
+- **Other Technologies**:  
+  - [e.g., Node.js, Python, Firebase, etc.]
 ---
 
 Thank you for your participation in the Website Hackathon! 🎉
