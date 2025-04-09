@@ -42,12 +42,16 @@ body {
 /* Hero Section */
 .hero {
     position: relative;
-    background-color: var(--dark-bg);
-    color: var(--text-light);
-    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
+    color: var(--text-light);
+    background-color: var(--dark-bg);
+    padding: 4rem 2rem;
+    overflow: hidden;
 }
 
 .hero::before {
@@ -58,18 +62,31 @@ body {
     right: 0;
     bottom: 0;
     background-color: var(--dark-bg);
-    z-index: 0;
+    z-index: 1;
 }
 
-.hero .animated-content {
+.hero-content {
     position: relative;
-    z-index: 1;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+}
+
+.hero h1 {
+    font-size: 4.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Content Positioning */

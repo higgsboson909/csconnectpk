@@ -22,4 +22,27 @@
 #footer .footer-container {
     position: relative;
     z-index: 2;
+}
+
+/* Light Disco Lights for About Section */
+.about-section .disco-light {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    animation: float 3s ease-in-out infinite;
+    z-index: 0;
+}
+
+.about-section .disco-light:nth-child(1) { left: 10%; top: 20%; }
+.about-section .disco-light:nth-child(2) { left: 30%; top: 40%; }
+.about-section .disco-light:nth-child(3) { left: 50%; top: 60%; }
+.about-section .disco-light:nth-child(4) { left: 70%; top: 30%; }
+.about-section .disco-light:nth-child(5) { left: 90%; top: 50%; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
 } 

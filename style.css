@@ -202,16 +202,15 @@ nav .logo-container {
 }
 
 nav .navbar-logo {
-    width: 60px;  /* Increase the width to make the image larger */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 0.75rem;  /* Space between logo and site name */
-    vertical-align: middle;  /* Align image vertically with text */
+    height: 45px; /* Increased from 40px */
+    width: auto;
+    margin-right: 10px;
 }
 
 nav .site-title {
     font-family: var(--font-heading);
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: var(--text-light);
     transition: all 0.3s ease;
 }

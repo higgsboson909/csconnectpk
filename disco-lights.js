@@ -87,4 +87,14 @@ document.addEventListener('DOMContentLoaded', function() {
             createLights();
         });
     });
+
+    // Add light disco lights to About section
+    const aboutSection = document.querySelector('.about-section');
+    if (aboutSection) {
+        for (let i = 0; i < 5; i++) {
+            const light = document.createElement('div');
+            light.className = 'disco-light';
+            aboutSection.appendChild(light);
+        }
+    }
 }); 
