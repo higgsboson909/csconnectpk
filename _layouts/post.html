@@ -35,13 +35,13 @@ layout: default
                 <div class="blog-post-share">
                     <span>Share this article:</span>
                     <div class="share-buttons">
-                        <a href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}&url={{ site.url }}{{ page.url | url_encode }}" target="_blank" rel="noopener noreferrer">
+                        <a href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}&url={{ site.url }}{{ site.baseurl }}{{ page.url | url_encode }}" target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-twitter"></i>
                         </a>
-                        <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ page.url | url_encode }}&title={{ page.title | url_encode }}" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ site.baseurl }}{{ page.url | url_encode }}&title={{ page.title | url_encode }}" target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-linkedin"></i>
                         </a>
-                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url | url_encode }}" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ site.baseurl }}{{ page.url | url_encode }}" target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-facebook"></i>
                         </a>
                     </div>
