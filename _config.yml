@@ -2,3 +2,17 @@ title: CS Connect Pk
 markdown: kramdown
 permalink: pretty
 
+# Build settings
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+excerpt_separator: "<!--more-->"
+
+# Default front matter
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Talha Asghar"
+

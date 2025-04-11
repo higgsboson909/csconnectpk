@@ -1,10 +1,52 @@
----
-layout: default
-title: Blogs
-permalink: /blogs.html
----
-
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs - CS Connect PK</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/mesh-gradient.css">
+    <link rel="stylesheet" href="/disco-lights.css">
+    <link rel="stylesheet" href="/about-animation.css">
+    <link rel="icon" href="/images/favicon.svg" type="image/svg+xml" sizes="256x256">
+</head>
+<body>
+    <nav>
+        <div class="logo-container">
+            <a href="/">
+                <img src="/images/logo.png" alt="CS Connect Logo" class="navbar-logo">
+            </a>
+            <a href="/" class="site-title">CS Connect PK</a>
+        </div>
+        <ul>
+            <li><a href="/" class="nav-link ">Home</a></li>
+            <li><a href="/events.html" class="nav-link ">Events</a></li>
+            <li><a href="/blogs.html" class="nav-link active">Blogs</a></li>
+            <li><a href="/#about" class="nav-link scroll-link">About</a></li>
+            <li><a href="/#join" class="nav-link scroll-link">Join Us</a></li>
+        </ul>
+        <a href="/#join" class="btn-primary scroll-link">Join Community</a>
+        <div class="mobile-toggle" aria-label="Toggle navigation menu" role="button" tabindex="0">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="/" class="nav-link ">Home</a></li>
+            <li><a href="/events.html" class="nav-link ">Events</a></li>
+            <li><a href="/blogs.html" class="nav-link active">Blogs</a></li>
+            <li><a href="/#about" class="nav-link scroll-link">About</a></li>
+            <li><a href="/#join" class="nav-link scroll-link">Join Us</a></li>
+        </ul>
+        <a href="/#join" class="btn-primary scroll-link">Join Community</a>
+    </div>
+
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -71,31 +113,114 @@ permalink: /blogs.html
                 <p class="section-subtitle text-center">Insights, tutorials, and discussions from our community</p>
 
                 <div class="blog-flex-container">
-                    {% for post in site.posts %}
+                    
                     <article class="blog-card">
                         <div class="blog-card-content">
                             <div class="blog-card-header">
-                                <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+                                <h3><a href="/2024/12/30/my-first-blog/">Why piracy should be avoided?</a></h3>
                                 <div class="blog-card-meta">
-                                    <span class="blog-date">{{ post.date | date: "%B %d, %Y" }}</span>
-                                    <span class="blog-categories">{{ post.categories | join: " & " }}</span>
+                                    <span class="blog-date">December 30, 2024</span>
+                                    <span class="blog-categories"></span>
                                 </div>
                             </div>
                             <div class="blog-card-body">
-                                <p class="blog-excerpt">{{ post.excerpt | strip_html | truncate: 200 }}</p>
+                                <p class="blog-excerpt">An insightful discussion on the ethical implications of software piracy and the importance of supporting open-source alternatives.</p>
                             </div>
                             <div class="blog-card-footer">
                                 <div class="blog-author">
                                     <i class="fas fa-user-circle"></i>
-                                    <span>{{ post.author }}</span>
+                                    <span>Talha Asghar</span>
                                 </div>
-                                <a href="{{ post.url }}" class="read-more">
+                                <a href="/2024/12/30/my-first-blog/" class="read-more">
                                     Read Article <i class="fas fa-arrow-right"></i>
                                 </a>
                             </div>
                         </div>
                     </article>
-                    {% endfor %}
+                    
+                    <article class="blog-card">
+                        <div class="blog-card-content">
+                            <div class="blog-card-header">
+                                <h3><a href="/ethics/foss/2024/04/11/why-piracy-should-be-avoided/">Why piracy should be avoided?</a></h3>
+                                <div class="blog-card-meta">
+                                    <span class="blog-date">April 11, 2024</span>
+                                    <span class="blog-categories">Ethics & FOSS</span>
+                                </div>
+                            </div>
+                            <div class="blog-card-body">
+                                <p class="blog-excerpt">An insightful discussion on the ethical implications of software piracy and the importance of supporting open-source alternatives.</p>
+                            </div>
+                            <div class="blog-card-footer">
+                                <div class="blog-author">
+                                    <i class="fas fa-user-circle"></i>
+                                    <span>Talha Asghar</span>
+                                </div>
+                                <a href="/ethics/foss/2024/04/11/why-piracy-should-be-avoided/" class="read-more">
+                                    Read Article <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="blog-card">
+                        <div class="blog-card-content">
+                            <div class="blog-card-header">
+                                <h3><a href="/privacy/messaging/2024/04/11/signal-alternative/">Signal as alternative of WhatsApp</a></h3>
+                                <div class="blog-card-meta">
+                                    <span class="blog-date">April 11, 2024</span>
+                                    <span class="blog-categories">Privacy & Messaging</span>
+                                </div>
+                            </div>
+                            <div class="blog-card-body">
+                                <p class="blog-excerpt">A comprehensive comparison of Signal and WhatsApp for secure messaging:
+
+Privacy and security features
+
+Signal offers several advantages over WhatsApp in terms of privacy and security:
+
+
+  End-to-e...</p>
+                            </div>
+                            <div class="blog-card-footer">
+                                <div class="blog-author">
+                                    <i class="fas fa-user-circle"></i>
+                                    <span>Talha Asghar</span>
+                                </div>
+                                <a href="/privacy/messaging/2024/04/11/signal-alternative/" class="read-more">
+                                    Read Article <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="blog-card">
+                        <div class="blog-card-content">
+                            <div class="blog-card-header">
+                                <h3><a href="/linux/backend%20tips/2024/04/11/linux-file-operations/">How to copy or move millions of files concurrently in linux</a></h3>
+                                <div class="blog-card-meta">
+                                    <span class="blog-date">April 11, 2024</span>
+                                    <span class="blog-categories">Linux & Backend Tips</span>
+                                </div>
+                            </div>
+                            <div class="blog-card-body">
+                                <p class="blog-excerpt">A practical guide to efficiently handling large-scale file operations in Linux:
+
+Using parallel processing for file operations
+
+When dealing with millions of files, traditional commands like cp or ...</p>
+                            </div>
+                            <div class="blog-card-footer">
+                                <div class="blog-author">
+                                    <i class="fas fa-user-circle"></i>
+                                    <span>Talha Asghar</span>
+                                </div>
+                                <a href="/linux/backend%20tips/2024/04/11/linux-file-operations/" class="read-more">
+                                    Read Article <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                    
                 </div>
             </div>
         </section>
@@ -402,3 +527,42 @@ permalink: /blogs.html
     }
 }
 </style>
+
+
+    <footer id="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3 class="footer-title">CS Connect PK</h3>
+                <p class="footer-text">A community platform connecting Computer Science students, professionals, and educators across Pakistan.</p>
+            </div>
+            <div class="footer-section">
+                <h3 class="footer-title">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="/" class="footer-link">Home</a></li>
+                    <li><a href="/events.html" class="footer-link">Events</a></li>
+                    <li><a href="/blogs.html" class="footer-link">Blogs</a></li>
+                    <li><a href="#forum" class="footer-link">Community</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3 class="footer-title">Connect With Us</h3>
+                <div class="social-links">
+                    <a href="https://twitter.com/csconnectpk" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/company/csconnectpk" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.facebook.com/csconnectpk" class="social-link"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/csconnectpk" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/csconnectpk" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="copyright">&copy; 2025 CS Connect Pakistan. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
+    <script src="/mesh-gradient.js"></script>
+    <script src="/disco-lights.js"></script>
+    <script src="/about-animation.js"></script>
+</body>
+</html> 
