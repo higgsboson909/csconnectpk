@@ -10,24 +10,24 @@
     <link rel="stylesheet" href="{{ site.baseurl }}/mesh-gradient.css">
     <link rel="stylesheet" href="{{ site.baseurl }}/disco-lights.css">
     <link rel="stylesheet" href="{{ site.baseurl }}/about-animation.css">
-    <link rel="icon" href="/images/favicon.svg" type="image/svg+xml" sizes="256x256">
+    <link rel="icon" href="{{ site.baseurl }}/images/favicon.svg" type="image/svg+xml" sizes="256x256">
 </head>
 <body>
     <nav>
         <div class="logo-container">
-            <a href="/">
+            <a href="{{ site.baseurl }}/">
                 <img src="{{ site.baseurl }}/images/logo.png" alt="CS Connect Logo" class="navbar-logo">
             </a>
-            <a href="/" class="site-title">CS Connect PK</a>
+            <a href="{{ site.baseurl }}/" class="site-title">CS Connect PK</a>
         </div>
         <ul>
-            <li><a href="{{ site.baseurl }}/index.html" class="nav-link {% if page.url == '/' %}active{% endif %}">Home</a></li>
+            <li><a href="{{ site.baseurl }}/" class="nav-link {% if page.url == '/' %}active{% endif %}">Home</a></li>
             <li><a href="{{ site.baseurl }}/events.html" class="nav-link {% if page.url == '/events.html' %}active{% endif %}">Events</a></li>
             <li><a href="{{ site.baseurl }}/blogs.html" class="nav-link {% if page.url == '/blogs.html' %}active{% endif %}">Blogs</a></li>
-            <li><a href="index.html#about" class="nav-link scroll-link">About</a></li>
-            <li><a href="index.html#join" class="nav-link scroll-link">Join Us</a></li>
+            <li><a href="{{ site.baseurl }}/#about" class="nav-link scroll-link">About</a></li>
+            <li><a href="{{ site.baseurl }}/#join" class="nav-link scroll-link">Join Us</a></li>
         </ul>
-        <a href="index.html#join" class="btn-primary scroll-link">Join Community</a>
+        <a href="{{ site.baseurl }}/#join" class="btn-primary scroll-link">Join Community</a>
         <div class="mobile-toggle" aria-label="Toggle navigation menu" role="button" tabindex="0">
             <div class="bar"></div>
             <div class="bar"></div>
@@ -37,13 +37,13 @@
 
     <div class="mobile-menu">
         <ul>
-            <li><a href="/" class="nav-link {% if page.url == '/' %}active{% endif %}">Home</a></li>
+            <li><a href="{{ site.baseurl }}/" class="nav-link {% if page.url == '/' %}active{% endif %}">Home</a></li>
             <li><a href="{{ site.baseurl }}/events.html" class="nav-link {% if page.url == '/events.html' %}active{% endif %}">Events</a></li>
             <li><a href="{{ site.baseurl }}/blogs.html" class="nav-link {% if page.url == '/blogs.html' %}active{% endif %}">Blogs</a></li>
-            <li><a href="#about" class="nav-link scroll-link">About</a></li>
-            <li><a href="#join" class="nav-link scroll-link">Join Us</a></li>
+            <li><a href="{{ site.baseurl }}/#about" class="nav-link scroll-link">About</a></li>
+            <li><a href="{{ site.baseurl }}/#join" class="nav-link scroll-link">Join Us</a></li>
         </ul>
-        <a href="#join" class="btn-primary scroll-link">Join Community</a>
+        <a href="{{ site.baseurl }}/#join" class="btn-primary scroll-link">Join Community</a>
     </div>
 
     {{ content }}
@@ -60,7 +60,7 @@
                     <li><a href="{{ site.baseurl }}/" class="footer-link">Home</a></li>
                     <li><a href="{{ site.baseurl }}/events.html" class="footer-link">Events</a></li>
                     <li><a href="{{ site.baseurl }}/blogs.html" class="footer-link">Blogs</a></li>
-                    <li><a href="#forum" class="footer-link">Community</a></li>
+                    <li><a href="{{ site.baseurl }}/#forum" class="footer-link">Community</a></li>
                 </ul>
             </div>
             <div class="footer-section">
