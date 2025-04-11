@@ -28,3 +28,6 @@ defaults:
     values:
       author: "CS Connect PK Team"
 
+baseurl: "/csconnectpk"
+url: "https://higgsboson909.github.io/csconnectpk/"
+

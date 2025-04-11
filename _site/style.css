@@ -703,6 +703,8 @@ footer {
 }
 
 .event-content {
+    
+    color: black;
     padding: 1.5rem;
     background-color: var(--bg-light);
 }
