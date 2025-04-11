@@ -70,29 +70,46 @@ permalink: /blogs.html
                 <h2 class="section-title text-center">Our Blog</h2>
                 <p class="section-subtitle text-center">Insights, tutorials, and discussions from our community</p>
 
-                <div class="blog-flex-container">
+                <div class="blog-list">
                     {% for post in site.posts %}
-                    <article class="blog-card">
-                        <div class="blog-card-content">
-                            <div class="blog-card-header">
-                                <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-                                <div class="blog-card-meta">
-                                    <span class="blog-date">{{ post.date | date: "%B %d, %Y" }}</span>
-                                    <span class="blog-categories">{{ post.categories | join: " & " }}</span>
-                                </div>
+                    <article class="blog-post">
+                        <div class="blog-post-header">
+                            <h3 class="blog-post-title">{{ post.title }}</h3>
+                            <p class="blog-post-meta">{{ post.categories | join: " & " }}</p>
+                        </div>
+                        <div class="blog-post-content">
+                            <div class="blog-post-meta-info">
+                                <span class="meta-item">
+                                    <i class="fas fa-clock"></i>
+                                    {% assign words = post.content | number_of_words %}
+                                    {% assign read_time = words | divided_by: 200 | plus: 1 %}
+                                    {{ read_time }} min read
+                                </span>
+                                <span class="meta-item">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    {{ post.date | date: "%Y" }}
+                                </span>
+                                <span class="meta-item">
+                                    <i class="fas fa-calendar-check"></i>
+                                    {{ post.date | date: "%b %d" }}
+                                </span>
                             </div>
-                            <div class="blog-card-body">
-                                <p class="blog-excerpt">{{ post.excerpt | strip_html | truncate: 200 }}</p>
+                            <p class="blog-post-excerpt">{{ post.excerpt | strip_html | truncate: 200 }}</p>
+                            {% if post.highlights %}
+                            <ul>
+                                {% for highlight in post.highlights %}
+                                <li>{{ highlight }}</li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                            <div class="blog-author">
+                                <i class="fas fa-user-circle"></i>
+                                <span>Author: {{ post.author }}</span>
                             </div>
-                            <div class="blog-card-footer">
-                                <div class="blog-author">
-                                    <i class="fas fa-user-circle"></i>
-                                    <span>{{ post.author }}</span>
-                                </div>
-                                <a href="{{ post.url }}" class="read-more">
-                                    Read Article <i class="fas fa-arrow-right"></i>
-                                </a>
-                            </div>
+                            <a href="{{ post.url }}" class="read-more">
+                                <i class="fas fa-book-reader"></i>
+                                Read Article
+                            </a>
                         </div>
                     </article>
                     {% endfor %}
@@ -101,7 +118,7 @@ permalink: /blogs.html
         </section>
     </main>
     
-    <footer id="footer">
+    <!-- <footer id="footer">
         <div class="footer-container">
             <div class="footer-section">
                 <h3 class="footer-title">CS Connect PK</h3>
@@ -130,7 +147,7 @@ permalink: /blogs.html
         <div class="footer-bottom">
             <p class="copyright">&copy; 2025 CS Connect Pakistan. All rights reserved.</p>
         </div>
-    </footer>
+    </footer> -->
 
     <script src="script.js"></script>
     <script src="mesh-gradient.js"></script>
@@ -145,7 +162,7 @@ permalink: /blogs.html
 }
 
 .section-container {
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
 }
@@ -163,242 +180,156 @@ permalink: /blogs.html
     margin-bottom: 3rem;
 }
 
-.blog-flex-container {
+.blog-list {
     display: flex;
-    flex-wrap: wrap;
-    gap: 2.5rem;
-    margin-top: 2rem;
-    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
 }
 
-.blog-card {
-    background: var(--card-background);
-    border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.blog-post {
+    background: var(--bg-light);
+    border-radius: 8px;
     overflow: hidden;
-    border: 1px solid var(--border-color);
-    min-height: 400px;
-    display: flex;
-    flex-direction: column;
-    flex: 1 1 350px;
-    max-width: 400px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.blog-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+.blog-post-header {
+    background: var(--dark-bg);
+    padding: 1rem;
+    position: relative;
 }
 
-.blog-card-content {
-    padding: 2.5rem;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.blog-card-header {
-    margin-bottom: 2rem;
-}
-
-.blog-card-header h3 {
-    font-size: 1.75rem;
-    margin-bottom: 1.25rem;
-    line-height: 1.4;
-    color: var(--text-color);
+.blog-post-title {
+    color: var(--text-light);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
     font-weight: 600;
+    line-height: 1.4;
 }
 
-.blog-card-header h3 a {
-    color: var(--text-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.blog-card-header h3 a:hover {
-    color: var(--primary);
-}
-
-.blog-card-meta {
-    display: flex;
-    gap: 1.25rem;
-    font-size: 0.95rem;
-    color: var(--text-secondary);
-}
-
-.blog-date {
-    color: var(--text-secondary);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.blog-date::before {
-    content: "📅";
+.blog-post-meta {
+    color: rgba(255, 255, 255, 0.8);
     font-size: 1rem;
+    font-style: italic;
 }
 
-.blog-categories {
-    background: var(--code-background);
-    padding: 0.4rem 1rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+.blog-post-content {
+    background: var(--bg-light);
+    padding: 2rem;
+    color: var(--text-dark);
 }
 
-.blog-categories::before {
-    content: "🏷️";
-    font-size: 1rem;
+.blog-post-excerpt {
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+    font-size: 1.1rem;
 }
 
-.blog-card-body {
-    flex-grow: 1;
+.blog-post-content ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
     margin-bottom: 2rem;
 }
 
-.blog-excerpt {
-    color: var(--text-color);
-    line-height: 1.7;
-    margin: 0;
-    font-size: 1.1rem;
-    opacity: 0.9;
-}
-
-.blog-card-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--border-color);
-    margin-top: auto;
+.blog-post-content li {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
 }
 
 .blog-author {
     display: flex;
     align-items: center;
     gap: 0.75rem;
+    margin: 2rem 0;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
     color: var(--text-secondary);
-    font-size: 1rem;
 }
 
 .blog-author i {
-    color: var(--primary);
     font-size: 1.25rem;
+    color: var(--text-secondary);
 }
 
 .read-more {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 0.75rem;
+    background: #002244;
     color: white;
+    border-radius: 0.5rem;
     text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
     padding: 0.75rem 1.5rem;
-    border-radius: 30px;
-    background: var(--primary);
-    font-size: 1.1rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
 
 .read-more:hover {
-    color: white;
-    background: var(--secondary);
-    transform: translateX(5px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    opacity: 0.9;
+    transform: translateY(-2px);
 }
 
 .read-more i {
-    transition: transform 0.3s ease;
-}
-
-.read-more:hover i {
-    transform: translateX(5px);
+    font-size: 1.1rem;
 }
 
 /* Responsive Design */
-@media (max-width: 1200px) {
-    .section-container {
-        max-width: 1000px;
-    }
-    
-    .blog-flex-container {
-        gap: 2rem;
-    }
-    
-    .blog-card {
-        flex: 1 1 300px;
-    }
-    
-    .blog-card-content {
-        padding: 2rem;
-    }
-}
-
 @media (max-width: 992px) {
-    .blog-card {
-        flex: 1 1 45%;
-        max-width: none;
+    .section-container {
+        padding: 0 1.5rem;
     }
-    
-    .blog-card-header h3 {
+
+    .blog-post-title {
         font-size: 1.5rem;
-    }
-    
-    .blog-excerpt {
-        font-size: 1rem;
     }
 }
 
 @media (max-width: 768px) {
-    .blog-flex-container {
-        gap: 2rem;
+    .blog-section {
+        padding: 3rem 0;
     }
-    
-    .blog-card {
-        flex: 1 1 100%;
-        min-height: auto;
+
+    .section-container {
+        padding: 0 1.25rem;
     }
-    
-    .section-title {
-        font-size: 2rem;
+
+    .blog-post-header,
+    .blog-post-content {
+        padding: 1.5rem;
     }
-    
-    .blog-card-content {
-        padding: 1.75rem;
-    }
-    
-    .read-more {
-        padding: 0.6rem 1.25rem;
+
+    .blog-post-excerpt {
         font-size: 1rem;
+    }
+
+    .read-more {
+        width: 100%;
+        justify-content: center;
     }
 }
 
 @media (max-width: 480px) {
     .section-container {
-        padding: 0 1.25rem;
+        padding: 0 1rem;
     }
-    
-    .blog-card-content {
-        padding: 1.5rem;
+
+    .blog-post-header,
+    .blog-post-content {
+        padding: 1.25rem;
     }
-    
-    .blog-card-header h3 {
+
+    .blog-post-title {
         font-size: 1.35rem;
     }
-    
-    .blog-card-meta {
-        flex-direction: column;
-        gap: 0.75rem;
+
+    .blog-post-meta {
+        font-size: 0.9rem;
     }
-    
-    .blog-card-footer {
-        flex-direction: column;
-        gap: 1.25rem;
-        align-items: flex-start;
+
+    .blog-author {
+        flex-direction: row;
+        align-items: center;
+        gap: 0.5rem;
     }
 }
 </style>

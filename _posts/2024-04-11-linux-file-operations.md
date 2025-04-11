@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "How to copy or move millions of files concurrently in linux"
+title: "How to copy or move millions of files concurrently in Linux"
 date: 2024-04-11
 categories: ["Linux", "Backend Tips"]
-author: "Talha Asghar"
+author: "Talha Asghari"
 ---
 
 A practical guide to efficiently handling large-scale file operations in Linux:
