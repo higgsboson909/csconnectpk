@@ -10,6 +10,13 @@
     <link rel="stylesheet" href="{{ site.baseurl }}/mesh-gradient.css">
     <link rel="stylesheet" href="{{ site.baseurl }}/disco-lights.css">
     <link rel="stylesheet" href="{{ site.baseurl }}/about-animation.css">
+    
+    {% if page.custom_css %}
+    {% for css_file in page.custom_css %}
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/{{ css_file }}.css">
+    {% endfor %}
+    {% endif %}
+    
     <link rel="icon" href="{{ site.baseurl }}/images/favicon.svg" type="image/svg+xml" sizes="256x256">
 </head>
 <body>
@@ -28,14 +35,14 @@
             <li><a href="{{ site.baseurl }}/#join" class="nav-link scroll-link">Join Us</a></li>
         </ul>
         <a href="{{ site.baseurl }}/#join" class="btn-primary scroll-link">Join Community</a>
-        <div class="mobile-toggle" aria-label="Toggle navigation menu" role="button" tabindex="0">
+        <div class="mobile-toggle" aria-label="Toggle navigation menu" role="button" tabindex="0" aria-expanded="false">
             <div class="bar"></div>
             <div class="bar"></div>
             <div class="bar"></div>
         </div>
     </nav>
 
-    <div class="mobile-menu">
+    <div class="mobile-menu" aria-hidden="true">
         <ul>
             <li><a href="{{ site.baseurl }}/" class="nav-link {% if page.url == '/' %}active{% endif %}">Home</a></li>
             <li><a href="{{ site.baseurl }}/events.html" class="nav-link {% if page.url == '/events.html' %}active{% endif %}">Events</a></li>

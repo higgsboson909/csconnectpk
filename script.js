@@ -27,47 +27,25 @@ document.addEventListener('DOMContentLoaded', function() {
  * Initialize mobile navigation
  */
 function initMobileNav() {
-    // Create mobile toggle button if it doesn't exist
-    if (!document.querySelector('.mobile-toggle')) {
-        const mobileToggle = document.createElement('div');
-        mobileToggle.className = 'mobile-toggle';
-        mobileToggle.setAttribute('aria-label', 'Toggle navigation menu');
-        mobileToggle.setAttribute('role', 'button');
-        mobileToggle.setAttribute('tabindex', '0');
-        mobileToggle.innerHTML = `
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        `;
-        
-        const nav = document.querySelector('nav');
-        nav.appendChild(mobileToggle);
-    }
-    
-    // Create mobile menu if it doesn't exist
-    if (!document.querySelector('.mobile-menu')) {
-        const mobileMenu = document.createElement('div');
-        mobileMenu.className = 'mobile-menu';
-        mobileMenu.setAttribute('aria-hidden', 'true');
-        
-        // Clone navigation items
-        const navList = document.querySelector('nav ul').cloneNode(true);
-        mobileMenu.appendChild(navList);
-        
-        // Clone join button
-        const joinButton = document.querySelector('nav .btn-primary').cloneNode(true);
-        mobileMenu.appendChild(joinButton);
-        
-        // Append mobile menu to body
-        document.body.appendChild(mobileMenu);
-    }
-    
     // Get references to mobile navigation elements
     const mobileToggle = document.querySelector('.mobile-toggle');
     const mobileMenu = document.querySelector('.mobile-menu');
     
-    // Toggle mobile menu
-    mobileToggle.addEventListener('click', toggleMobileMenu);
+    if (!mobileToggle || !mobileMenu) return;
+    
+    // Add index to mobile menu items for staggered animation
+    const menuItems = mobileMenu.querySelectorAll('ul li');
+    menuItems.forEach((item, index) => {
+        item.style.setProperty('--item-index', index);
+    });
+    
+    // Toggle mobile menu when hamburger is clicked
+    mobileToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        toggleMobileMenu();
+    });
+    
+    // Toggle mobile menu on key press
     mobileToggle.addEventListener('keydown', function(e) {
         if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
@@ -76,8 +54,14 @@ function initMobileNav() {
     });
     
     // Close mobile menu when clicking on a link
-    document.querySelectorAll('.mobile-menu a').forEach(link => {
-        link.addEventListener('click', closeMobileMenu);
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            // Only close if it's not a dropdown toggle
+            if (!this.classList.contains('dropdown-toggle')) {
+                closeMobileMenu();
+            }
+        });
     });
     
     // Close mobile menu when clicking outside
@@ -98,56 +82,68 @@ function initMobileNav() {
     
     // Handle window resize
     window.addEventListener('resize', function() {
-        if (window.innerWidth >= 993 && mobileMenu.classList.contains('active')) {
+        if (window.innerWidth > 992 && mobileMenu.classList.contains('active')) {
             closeMobileMenu();
         }
     });
     
-    // Toggle mobile menu function
+    // Make sure scroll links in mobile menu work properly
+    const scrollLinks = mobileMenu.querySelectorAll('.scroll-link');
+    scrollLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').split('#')[1];
+            const targetSection = document.getElementById(targetId);
+            
+            if (targetSection) {
+                closeMobileMenu();
+                
+                // Wait for mobile menu to close before scrolling
+                setTimeout(() => {
+                    const navHeight = document.querySelector('nav').offsetHeight;
+                    const targetPosition = targetSection.offsetTop - navHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }, 400);
+            }
+        });
+    });
+    
+    /**
+     * Toggle mobile menu function
+     */
     function toggleMobileMenu() {
+        const isExpanded = mobileToggle.classList.contains('active');
+        
         mobileToggle.classList.toggle('active');
         mobileMenu.classList.toggle('active');
-        document.body.classList.toggle('no-scroll');
         
-        const isExpanded = mobileMenu.classList.contains('active');
-        mobileToggle.setAttribute('aria-expanded', isExpanded);
-        mobileMenu.setAttribute('aria-hidden', !isExpanded);
+        // Set aria attributes
+        mobileToggle.setAttribute('aria-expanded', !isExpanded);
+        mobileMenu.setAttribute('aria-hidden', isExpanded);
         
-        // Force repaint to ensure proper display
-        if (isExpanded) {
-            // First ensure the menu is in the DOM and visible
-            mobileMenu.style.display = 'flex';
-            mobileMenu.style.transform = 'translateX(0)';
-            
-            // Force repaint
-            void mobileMenu.offsetHeight;
-            
-            // Make sure toggle is always visible
-            mobileToggle.style.zIndex = '1010';
-            mobileToggle.style.position = 'relative';
-            
-            // Ensure the bars are visible with important to override any specificity issues
-            document.querySelectorAll('.mobile-toggle .bar').forEach(bar => {
-                bar.style.backgroundColor = 'var(--text-light)';
-                bar.style.setProperty('background-color', 'var(--text-light)', 'important');
-            });
+        // Toggle body scroll
+        if (!isExpanded) {
+            document.body.classList.add('no-scroll');
         } else {
-            // When closing, use a small delay to allow for animation
-            setTimeout(() => {
-                if (!mobileMenu.classList.contains('active')) {
-                    mobileMenu.style.display = '';
-                }
-            }, 300);
+            document.body.classList.remove('no-scroll');
         }
     }
     
-    // Close mobile menu function
+    /**
+     * Close mobile menu function
+     */
     function closeMobileMenu() {
-        mobileToggle.classList.remove('active');
-        mobileMenu.classList.remove('active');
-        document.body.classList.remove('no-scroll');
-        mobileToggle.setAttribute('aria-expanded', 'false');
-        mobileMenu.setAttribute('aria-hidden', 'true');
+        if (mobileMenu.classList.contains('active')) {
+            mobileToggle.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            document.body.classList.remove('no-scroll');
+            mobileToggle.setAttribute('aria-expanded', 'false');
+            mobileMenu.setAttribute('aria-hidden', 'true');
+        }
     }
 }
 
