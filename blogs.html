@@ -1,3 +1,9 @@
+---
+layout: default
+title: Blogs
+permalink: /blogs.html
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,13 +15,11 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mesh-gradient.css">
     <link rel="stylesheet" href="disco-lights.css">
+    <link rel="stylesheet" href="assets/css/blogs-styles.css">
     <link rel="icon" href="./images/favicon.svg" type="image/svg+xml" sizes="256x256">
 </head>
 <body>
     <nav>
-
-
-        
         <div class="logo-container">
             <!-- Community Logo -->
             <a href="index.html">
@@ -64,112 +68,56 @@
                 <h2 class="section-title text-center">Our Blog</h2>
                 <p class="section-subtitle text-center">Insights, tutorials, and discussions from our community</p>
 
-                <!-- Blog Posts -->
-                <div class="blog-post">
-                    <div class="blog-post-header">
-                        <h4 class="blog-post-title">Why piracy should be avoided?</h4>
-                        <p class="blog-post-meta">Ethics & FOSS</p>
-                    </div>
-                    <div class="blog-post-content">
-                        <p class="blog-post-excerpt">An insightful discussion on the ethical implications of software piracy and the importance of supporting open-source alternatives:</p>
-                        <ul>
-                            <li>Understanding the impact of piracy</li>
-                            <li>Exploring free and open-source alternatives</li>
-                            <li>Making ethical choices in software usage</li>
-                        </ul>
-                        <div class="blog-author">
-                            <i class="fas fa-user-circle"></i>
-                            <span>Author: Talha Asghar</span>
+                <div class="blog-list">
+                    {% for post in site.posts %}
+                    <article class="blog-post">
+                        <div class="blog-post-header">
+                            <h3 class="blog-post-title">{{ post.title }}</h3>
+                            <p class="blog-post-meta">{{ post.categories | join: " & " }}</p>
                         </div>
-                        <a href="#" class="read-more">
-                            <i class="fas fa-book-reader"></i>
-                            Read Article
-                        </a>
-                    </div>
-                </div>
-
-                <div class="blog-post">
-                    <div class="blog-post-header">
-                        <h4 class="blog-post-title">How to copy or move millions of files concurrently in linux</h4>
-                        <p class="blog-post-meta">Linux & Backend Tips</p>
-                    </div>
-                    <div class="blog-post-content">
-                        <p class="blog-post-excerpt">A practical guide to efficiently handling large-scale file operations in Linux:</p>
-                        <ul>
-                            <li>Using parallel processing for file operations</li>
-                            <li>Optimizing performance for large datasets</li>
-                            <li>Best practices for system resources</li>
-                        </ul>
-                        <div class="blog-author">
-                            <i class="fas fa-user-circle"></i>
-                            <span>Author: Talha Asghar</span>
+                        <div class="blog-post-content">
+                            <div class="blog-post-meta-info">
+                                <span class="meta-item">
+                                    <i class="fas fa-clock"></i>
+                                    {% assign words = post.content | number_of_words %}
+                                    {% assign read_time = words | divided_by: 200 | plus: 1 %}
+                                    {{ read_time }} min read
+                                </span>
+                                <span class="meta-item">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    {{ post.date | date: "%Y" }}
+                                </span>
+                                <span class="meta-item">
+                                    <i class="fas fa-calendar-check"></i>
+                                    {{ post.date | date: "%b %d" }}
+                                </span>
+                            </div>
+                            <p class="blog-post-excerpt">{{ post.excerpt | strip_html | truncate: 200 }}</p>
+                            {% if post.highlights %}
+                            <ul>
+                                {% for highlight in post.highlights %}
+                                <li>{{ highlight }}</li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                            <div class="blog-author">
+                                <i class="fas fa-user-circle"></i>
+                                <span>Author: {{ post.author }}</span>
+                            </div>
+                            <a href="{{ post.url }}" class="read-more">
+                                <i class="fas fa-book-reader"></i>
+                                Read Article
+                            </a>
                         </div>
-                        <a href="#" class="read-more">
-                            <i class="fas fa-book-reader"></i>
-                            Read Article
-                        </a>
-                    </div>
-                </div>
-
-                <div class="blog-post">
-                    <div class="blog-post-header">
-                        <h4 class="blog-post-title">Signal as alternative of WhatsApp</h4>
-                        <p class="blog-post-meta">Privacy & Messaging</p>
-                    </div>
-                    <div class="blog-post-content">
-                        <p class="blog-post-excerpt">A comprehensive comparison of Signal and WhatsApp for secure messaging:</p>
-                        <ul>
-                            <li>Privacy and security features</li>
-                            <li>User experience comparison</li>
-                            <li>Making the switch to Signal</li>
-                        </ul>
-                        <div class="blog-author">
-                            <i class="fas fa-user-circle"></i>
-                            <span>Author: Talha Asghar</span>
-                        </div>
-                        <a href="#" class="read-more">
-                            <i class="fas fa-book-reader"></i>
-                            Read Article
-                        </a>
-                    </div>
+                    </article>
+                    {% endfor %}
                 </div>
             </div>
         </section>
     </main>
     
-    <footer id="footer">
-        <div class="footer-container">
-            <div class="footer-section">
-                <h3 class="footer-title">CS Connect PK</h3>
-                <p class="footer-text">A community platform connecting Computer Science students, professionals, and educators across Pakistan.</p>
-            </div>
-            <div class="footer-section">
-                <h3 class="footer-title">Quick Links</h3>
-                <ul class="footer-links">
-                    <li><a href="index.html" class="footer-link">Home</a></li>
-                    <li><a href="events.html" class="footer-link">Events</a></li>
-                    <li><a href="blogs.html" class="footer-link">Blogs</a></li>
-                    <li><a href="#forum" class="footer-link">Community</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3 class="footer-title">Connect With Us</h3>
-                <div class="social-links">
-                    <a href="https://twitter.com/csconnectpk" class="social-link"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.linkedin.com/company/csconnectpk" class="social-link"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://www.facebook.com/csconnectpk" class="social-link"><i class="fab fa-facebook"></i></a>
-                    <a href="https://www.instagram.com/csconnectpk" class="social-link"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.youtube.com/csconnectpk" class="social-link"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p class="copyright">&copy; 2025 CS Connect Pakistan. All rights reserved.</p>
-        </div>
-    </footer>
-
     <script src="script.js"></script>
     <script src="mesh-gradient.js"></script>
     <script src="disco-lights.js"></script>
 </body>
-</html>
+</html> 

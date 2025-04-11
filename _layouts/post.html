@@ -1,0 +1,55 @@
+---
+layout: default
+---
+<main class="blog-post-page">
+    <header class="blog-post-header">
+        <canvas class="disco-canvas"></canvas>
+        <div class="blog-post-hero">
+            <div class="blog-post-hero-content animated-content">
+                <div class="blog-post-meta">
+                    <span class="blog-category">{{ page.categories | join: " & " }}</span>
+                    <span class="blog-date">{{ page.date | date: "%B %d, %Y" }}</span>
+                </div>
+                <h1 class="blog-post-title">{{ page.title }}</h1>
+                <div class="blog-post-author">
+                    <i class="fas fa-user-circle"></i>
+                    <span>{{ page.author }}</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <article class="blog-post-content">
+        <div class="blog-post-container">
+            <div class="blog-post-body">
+                {{ content }}
+            </div>
+            
+            <div class="blog-post-footer">
+                <div class="blog-post-tags">
+                    <i class="fas fa-tags"></i>
+                    {% for category in page.categories %}
+                    <span class="tag">{{ category }}</span>
+                    {% endfor %}
+                </div>
+                <div class="blog-post-share">
+                    <span>Share this article:</span>
+                    <div class="share-buttons">
+                        <a href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}&url={{ site.url }}{{ page.url | url_encode }}" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ page.url | url_encode }}&title={{ page.title | url_encode }}" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url | url_encode }}" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+</main>
+
+<link rel="stylesheet" href="/assets/css/post-styles.css">
+<script src="/assets/js/post-script.js"></script> 
