@@ -21,7 +21,7 @@
             <a href="/" class="site-title">CS Connect PK</a>
         </div>
         <ul>
-            <li><a href="/" class="nav-link {% if page.url == '/' %}active{% endif %}">Home</a></li>
+            <li><a href="{{ site.baseurl }}/index.html" class="nav-link {% if page.url == '/' %}active{% endif %}">Home</a></li>
             <li><a href="{{ site.baseurl }}/events.html" class="nav-link {% if page.url == '/events.html' %}active{% endif %}">Events</a></li>
             <li><a href="{{ site.baseurl }}/blogs.html" class="nav-link {% if page.url == '/blogs.html' %}active{% endif %}">Blogs</a></li>
             <li><a href="index.html#about" class="nav-link scroll-link">About</a></li>
@@ -57,7 +57,7 @@
             <div class="footer-section">
                 <h3 class="footer-title">Quick Links</h3>
                 <ul class="footer-links">
-                    <li><a href="/" class="footer-link">Home</a></li>
+                    <li><a href="{{ site.baseurl }}/" class="footer-link">Home</a></li>
                     <li><a href="{{ site.baseurl }}/events.html" class="footer-link">Events</a></li>
                     <li><a href="{{ site.baseurl }}/blogs.html" class="footer-link">Blogs</a></li>
                     <li><a href="#forum" class="footer-link">Community</a></li>
