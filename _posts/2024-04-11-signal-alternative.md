@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Signal as alternative of WhatsApp"
-date: 2024-04-11
+date: 2025-03-21
 categories: ["Privacy", "Messaging"]
 author: "Talha Asghar"
 ---

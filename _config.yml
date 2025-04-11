@@ -6,6 +6,12 @@ permalink: pretty
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 excerpt_separator: "<!--more-->"
 
+# Collections
+collections:
+  events:
+    output: false
+    sort_by: date
+
 # Default front matter
 defaults:
   -
@@ -15,4 +21,10 @@ defaults:
     values:
       layout: "post"
       author: "Talha Asghar"
+  -
+    scope:
+      path: ""
+      type: "events"
+    values:
+      author: "CS Connect PK Team"
 
