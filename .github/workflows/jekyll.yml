@@ -14,7 +14,7 @@ jobs:
     - name: Set up Ruby 3.2
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 3.1  # Specify the Ruby version you need
+        ruby-version: 3.2  # Specify the Ruby version you need
         bundler-cache: true  # Cache Bundler to speed up the process
  
     - uses: actions/cache@v3
