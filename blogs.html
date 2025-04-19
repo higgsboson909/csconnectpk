@@ -1,0 +1,69 @@
+---
+layout: default
+title: Blogs
+permalink: /blogs.html
+---
+
+<header class="hero animated-bg-container">
+    <div class="hero-content animated-content">
+        <h1 class="hero-title">CS Connect PK Blogs</h1>
+        <h2 class="hero-subtitle">Insights, Tutorials, and Tech Discussions</h2>
+        <p class="hero-text">Explore our collection of articles written by community members and tech experts.</p>
+    </div>
+</header>
+
+<main>
+    <section class="blog-section">
+        <div class="section-container">
+            <h2 class="section-title text-center">Our Blog</h2>
+            <p class="section-subtitle text-center">Insights, tutorials, and discussions from our community</p>
+
+            <div class="blog-list">
+                {% for post in site.posts %}
+                <article class="blog-post">
+                    <div class="blog-post-header">
+                        <h3 class="blog-post-title">{{ post.title }}</h3>
+                        <p class="blog-post-meta">{{ post.categories | join: " & " }}</p>
+                    </div>
+                    <div class="blog-post-content">
+                        <div class="blog-post-meta-info">
+                            <span class="meta-item">
+                                <i class="fas fa-clock"></i>
+                                {% assign words = post.content | number_of_words %}
+                                {% assign read_time = words | divided_by: 200 | plus: 1 %}
+                                {{ read_time }} min read
+                            </span>
+                            <span class="meta-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                {{ post.date | date: "%Y" }}
+                            </span>
+                            <span class="meta-item">
+                                <i class="fas fa-calendar-check"></i>
+                                {{ post.date | date: "%b %d" }}
+                            </span>
+                        </div>
+                        <p class="blog-post-excerpt">{{ post.excerpt | strip_html | truncate: 200 }}</p>
+                        {% if post.highlights %}
+                        <ul>
+                            {% for highlight in post.highlights %}
+                            <li>{{ highlight }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                        <div class="blog-author">
+                            <i class="fas fa-user-circle"></i>
+                            <span>Author: {{ post.author }}</span>
+                        </div>
+                        <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">
+                            <i class="fas fa-book-reader"></i>
+                            Read Article
+                        </a>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+</main>
+
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/blogs-styles.css"> 

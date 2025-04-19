@@ -1,0 +1,89 @@
+---
+layout: default
+title: Events
+permalink: /events.html
+---
+
+<header class="hero animated-bg-container">
+    <div class="hero-content animated-content">
+        <h1 class="hero-title">CS Connect PK Events</h1>
+        <h2 class="hero-subtitle">Upcoming and Past Tech Events</h2>
+        <p class="hero-text">Join our workshops, webinars, and networking events to enhance your skills and connect with fellow tech enthusiasts.</p>
+    </div>
+</header>
+
+<main>
+    <section class="events-section">
+        <div class="section-container">
+            <h2 class="section-title text-center">Our Events</h2>
+            <p class="section-subtitle text-center">Join us for exciting tech events and workshops</p>
+
+            <!-- Upcoming Events (only shown if there are any) -->
+            {% assign upcoming_events = site.events | where: "event_type", "upcoming" | sort: "date" %}
+            {% if upcoming_events.size > 0 %}
+            <h3 class="events-subtitle upcoming-events">Upcoming Events</h3>
+            
+            {% for event in upcoming_events %}
+            <div class="event-card">
+                <div class="event-header">
+                    <h4 class="event-title">{{ event.title }}</h4>
+                    <p class="event-meta">{{ event.event_time }}</p>
+                </div>
+                <div class="event-content">
+                    <p class="event-description">{{ event.content }}</p>
+                    <ul class="event-features">
+                        {% for feature in event.features %}
+                        <li><i class="fas fa-check-circle"></i> {{ feature }}</li>
+                        {% endfor %}
+                    </ul>
+                    <div class="event-stats">
+                        <span class="event-stat"><i class="fas fa-users"></i> {{ event.spots_left }} spots left</span>
+                        <span class="event-stat"><i class="fas fa-clock"></i> {{ event.duration }}</span>
+                        {% for tag in event.special_tags %}
+                        <span class="event-stat"><i class="fas fa-{{ tag.icon }}"></i> {{ tag.text }}</span>
+                        {% endfor %}
+                    </div>
+                    <a href="{{ event.registration_link }}" {% if event.registration_link != "#" %}target="_blank"{% endif %} class="btn-primary">Register Now</a>
+                </div>
+            </div>
+            {% endfor %}
+            {% endif %}
+
+            <!-- Past Events -->
+            <h3 class="events-subtitle">Past Events</h3>
+            
+            {% assign past_events = site.events | where: "event_type", "past" | sort: "date" | reverse %}
+            {% for event in past_events %}
+            <div class="event-card">
+                <div class="event-header">
+                    <h4 class="event-title">{{ event.title }}</h4>
+                    <p class="event-meta">
+                        {% if event.event_series %}
+                            {{ event.event_series }}
+                        {% else %}
+                            Featuring {{ event.featured_speaker }}
+                        {% endif %}
+                    </p>
+                </div>
+                <div class="event-content">
+                    <p class="event-description">{{ event.content }}</p>
+                    <ul class="event-features">
+                        {% for feature in event.features %}
+                        <li><i class="fas fa-check-circle"></i> {{ feature }}</li>
+                        {% endfor %}
+                    </ul>
+                    <div class="event-stats">
+                        <span class="event-stat"><i class="fas fa-users"></i> {{ event.views }} Views</span>
+                        <span class="event-stat"><i class="fas fa-clock"></i> {{ event.duration }}</span>
+                        <span class="event-stat"><i class="fas fa-calendar"></i> {{ event.date | date: "%B %d, %Y" }}</span>
+                    </div>
+                    <a href="{{ event.youtube_link }}" target="_blank" class="btn-primary">
+                        <i class="fab fa-youtube"></i>
+                        Watch Recording
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</main> 
