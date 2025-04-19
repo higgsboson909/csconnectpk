@@ -4,7 +4,6 @@ date: 2024-02-15
 event_date: 2024-02-15
 event_type: past
 featured_speaker: "Nauman Anwar"
-event_series: "CCPk | 003"
 duration: "1 hour"
 views: "200+"
 youtube_link: "https://youtu.be/iSq15mG1hTc?feature=shared"
