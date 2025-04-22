@@ -1,0 +1,30 @@
+name: Build and deploy Jekyll site to GitHub Pages
+
+on:
+ push:
+   branches: [ main ]  # or master, or whichever is your default branch
+
+jobs:
+ github-pages:
+   runs-on: ubuntu-latest
+   steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Ruby 3.2
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 3.2  # Specify the Ruby version you need
+        bundler-cache: true  # Cache Bundler to speed up the process
+ 
+    - uses: actions/cache@v3
+      with:
+         path: vendor/bundle
+         key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+         restore-keys: |
+           ${{ runner.os }}-gems-
+           
+    - uses: helaili/jekyll-action@v2
+      with:
+         token: ${{ secrets.GITHUB_TOKEN }}
+         target_branch: gh-pages  # Optional
