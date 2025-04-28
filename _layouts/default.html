@@ -11,6 +11,20 @@
     <link rel="stylesheet" href="{{ site.baseurl }}/disco-lights.css">
     <link rel="stylesheet" href="{{ site.baseurl }}/about-animation.css">
     <link rel="icon" href="{{ site.baseurl }}/images/favicon.svg" type="image/svg+xml" sizes="256x256">
+    
+<!-- Open Graph meta tags -->
+<meta property="og:title" content="{{ page.title | escape }}" />
+<meta property="og:description" content="{{ page.description | escape }}" />
+<meta property="og:image" content="{{ page.image | absolute_url }}" />
+<meta property="og:url" content="{{ page.url | absolute_url }}" />
+<meta property="og:type" content="article" />
+
+<!-- Twitter Card meta tags -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{ page.title | escape }}" />
+<meta name="twitter:description" content="{{ page.description | escape }}" />
+<meta name="twitter:image" content="{{ page.image | absolute_url }}" />
+
 </head>
 <body>
     <nav>
