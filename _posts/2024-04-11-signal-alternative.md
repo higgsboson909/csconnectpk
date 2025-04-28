@@ -2,7 +2,7 @@
 layout: post
 title: "Signal as alternative of WhatsApp"
 description: A comprehensive comparison of Signal and WhatsApp for secure messaging
-image: "/assets/images/favicon.jpg"
+image: "/images/favicon.jpg"
 date: 2025-03-21
 categories: ["Privacy", "Messaging"]
 author: "Talha Asghar"
