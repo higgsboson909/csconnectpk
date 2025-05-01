@@ -6,6 +6,7 @@ image: "/images/favicon.jpg"
 date: 2025-03-21
 categories: ["Privacy", "Messaging"]
 author: "Talha Asghar"
+linkedin: "https://www.linkedin.com/in/iamtalhaasghar"
 ---
 
 A comprehensive comparison of Signal and WhatsApp for secure messaging:

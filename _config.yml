@@ -1,6 +1,8 @@
 title: CS Connect Pk
 markdown: kramdown
-permalink: pretty
+permalink: /blog/:year/:title/
+# permalink: /:year/:month/:day/:title/
+# permalink: pretty
 
 # Build settings
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
@@ -8,6 +10,8 @@ excerpt_separator: "<!--more-->"
 
 # Collections
 collections:
+  posts:
+    output: true
   events:
     output: false
     sort_by: date
@@ -20,7 +24,7 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      author: "Talha Asghar"
+      # author: "Talha Asghar"
   -
     scope:
       path: ""
