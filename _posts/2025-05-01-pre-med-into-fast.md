@@ -24,10 +24,7 @@ Shifting from pre-med to Computer Science is not just about choosing another deg
 The very first requirement is the **Additional Mathematics exam**. If you are from a pre-med background, FAST makes this exam **compulsory** for admission into CS. Passing it is not optional. If you fail, your admission will be cancelled, even if you get a great score on the entry test.
 
 This is the point where many pre-med students feel a wave of doubt. It is natural. You have spent the past two years with biology, chemistry, and physics. Now suddenly you are expected to solve **trigonometry, algebra, functions, and calculus** within a few months.  
-It feels unfair. You start comparing yourself with students who have been doing maths for years.
-
-But here is the truth:  
-**It is not about how much time others had. It is about how well you use your time now.**
+It feels unfair. You start comparing yourself with students who have been doing maths for years. But here is the truth **It is not about how much time others had. It is about how well you use your time now.**
 
 ## How to Study Smart
 
@@ -48,13 +45,12 @@ But honestly, **you can prepare much more effectively at home**.
 - Solve **<a class="resource" href="https://youtube.com/playlist?list=PL5b9mn6-ELrGzCLF4mypzRNHQaa24BtH6&si=rvFpLJHkGke4KC-t" target="_blank">FAST past papers</a>** to get familiar with the paper style.
 - Keep your **FSc books** close, because they form your base.
 
-If you ever get stuck on a question, especially from KIPS books, use the **<a class="resource" href="https://play.google.com/store/apps/details?id=io.maqsad" target="_blank">Maqsad App</a>**. Its doubt-solve feature is extremely helpful. You just take a picture of your question, and it gives you a clear and fast solution.  
+If you ever get stuck on a question, especially from KIPS books, use the **<a class="resource" href="https://play.google.com/store/apps/details?id=io.maqsad" target="_blank">Maqsad App</a>** (Not a paid promotion; it was genuinely helpful for me). Its doubt-solve feature is extremely helpful. You just take a picture of your question, and it gives you a clear and fast solution.  
 It can save hours of confusion.
 
 ## Discipline Matters More Than Hours
 
-Another thing that really helps is having a routine. If you find it hard to stay focused at home, study at a teacher’s place or somewhere outside your room. What matters is **consistency**.  
-You do not need to study all day, but you do need to study every day.
+Another thing that really helps is having a routine. If you find it hard to stay focused at home, study at a teacher’s place or somewhere outside your room. What matters is **consistency**. You do not need to study all day, but you do need to study every day.
 
 ## Entry Test Options
 
@@ -68,12 +64,6 @@ For most students, especially those from a pre-med background, the **NU Entry Te
 
 ## Final Advice
 
-In the end, remember this:  
-Just because you did not study maths in college does not mean you cannot succeed in CS. You are not behind. You are just coming from a different starting point.  
-What matters now is **how committed you are and how well you manage your time and energy.**
+In the end, remember this. Just because you did not study maths in college does not mean you cannot succeed in CS. You are not behind. You are just coming from a different starting point. What matters now is **how committed you are and how well you manage your time and energy.**
 
-The road is not easy, but it is clear.  
-**Stay consistent. Practice with purpose. Use the right resources. Believe that you can catch up.**
-
-And once you do, you will not just pass the test.  
-You will **walk into FAST with confidence**, knowing you earned your seat in one of the top CS programs in Pakistan.
+The road is not easy, but it is clear. **Stay consistent. Practice with purpose. Use the right resources. Believe that you can catch up.** And once you do, you will not just pass the test. You will **walk into FAST with confidence**, knowing you earned your seat in one of the top CS programs in Pakistan.
