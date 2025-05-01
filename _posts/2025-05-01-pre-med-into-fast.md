@@ -1,6 +1,8 @@
 ---
 layout: post
 title: How a Pre-Med Student Can Get Into FAST for BS Computer Science
+description: A comprehensive comparison of Signal and WhatsApp for secure messaging
+image: "/images/favicon.jpg"
 date: 2025-05-01 10:20:00 +0500
 categories: ["Pre-Med", "Entry Test"]
 author: "Azan Waseem"
