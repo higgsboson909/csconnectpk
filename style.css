@@ -250,6 +250,17 @@ nav .site-title {
     vertical-align: middle;
 }
 
+/* Hide PK on desktop by default */
+.show-pk {
+  display: none;
+}
+
+/* Show Pakistan by default */
+.show-pakistan {
+  display: inline;
+}
+
+
 nav a {
     display: flex;
     align-items: center;
@@ -1075,7 +1086,12 @@ footer {
     h1 {
         font-size: 2.5rem;
     }
-
+    .show-pk {
+        display: inline;
+    }
+    .show-pakistan {
+        display: none;
+    }
     h2 {
         font-size: 2rem;
     }
