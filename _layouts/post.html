@@ -10,11 +10,18 @@ layout: default
                     <span class="blog-category">{{ page.categories | join: " & " }}</span>
                     <span class="blog-date">{{ page.date | date: "%B %d, %Y" }}</span>
                 </div>
+
                 <h1 class="blog-post-title">{{ page.title }}</h1>
                 <div class="blog-post-author">
-                    <i class="fas fa-user-circle"></i>
+                {% if page.linkedin %}
+                    <a href="{{ page.linkedin }}" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                    {% endif %}
                     <span>{{ page.author }}</span>
+                    </a>
                 </div>
+
+
             </div>
         </div>
     </header>

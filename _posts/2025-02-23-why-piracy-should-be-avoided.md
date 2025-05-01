@@ -4,6 +4,8 @@ title: Why piracy should be avoided?
 date: 2025-02-23 14:53:00 +0500
 categories: ["free and open source software"]
 tags: [piracy, ethics, foss] # TAG names should always be lowercase
+author: "Talha Asghar"
+linkedin: "https://www.linkedin.com/in/iamtalhaasghar"
 featured: true
 giscus_comments: true
 ---

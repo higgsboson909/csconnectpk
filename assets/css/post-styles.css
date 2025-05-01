@@ -1,4 +1,10 @@
 /* Blog Post Styles */
+.fa-linkedin {
+    position: relative;
+    top: 2px;
+    left: -2px;
+
+}
 .blog-post-page {
     background: var(--background-color);
     min-height: 100vh;
@@ -224,6 +230,11 @@
     transform: translateY(-2px);
 }
 
+.resource {
+    text-decoration: underline;
+    color: #5e2a84;
+}
+
 @media (max-width: 768px) {
     .blog-post-hero {
         padding: 0 1rem;
@@ -232,7 +243,10 @@
     .blog-post-title {
         font-size: 1.65rem;
     }
-
+    .blog-post-content {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
     .blog-post-body {
         padding: 1.5rem;
         font-size: 1rem;

@@ -1,11 +1,12 @@
 ---
 layout: post
-title: How a Pre-Med Student Can Get Into FAST for BS Computer Science
-description: A comprehensive comparison of Signal and WhatsApp for secure messaging
+title: Transitioning from Pre-Medical to FAST
+description: How can a pre-med student secure admission to computing programs at FAST?
 image: "/images/nuces.jpeg"
 date: 2025-05-01 10:20:00 +0500
 categories: ["Pre-Med", "Entry Test"]
 author: "Azan Waseem"
+linkedin: "https://www.linkedin.com/in/azanw"
 tags: [fast nuces, computer science, pre-med, additional maths, entry test]
 featured: true
 giscus_comments: true
@@ -42,12 +43,12 @@ That is the level of **focus and repetition you need when you are short on time.
 When it comes to preparation, you might hear people say things like, *"Join KIPS"* or *"Go to an academy."*  
 But honestly, **you can prepare much more effectively at home**.
 
-- Watch the full **Hashim Zia playlist on YouTube**. It is one of the best and most complete resources for the FAST entry test.
+- Watch the full **<a class="resource" href="https://youtube.com/playlist?list=PL5b9mn6-ELrHhjcb17nu1d8Zxcogj2gFP&si=5_i8goKLi5YUURI_" target="_blank">Hashim Zia playlist on YouTube</a>**. It is one of the best and most complete resources for the FAST entry test.
 - Practice from **KIPS books**.
-- Solve **FAST past papers** to get familiar with the paper style.
+- Solve **<a class="resource" href="https://youtube.com/playlist?list=PL5b9mn6-ELrGzCLF4mypzRNHQaa24BtH6&si=rvFpLJHkGke4KC-t" target="_blank">FAST past papers</a>** to get familiar with the paper style.
 - Keep your **FSc books** close, because they form your base.
 
-If you ever get stuck on a question, especially from KIPS books, use the **Maqsad app**. Its doubt-solve feature is extremely helpful. You just take a picture of your question, and it gives you a clear and fast solution.  
+If you ever get stuck on a question, especially from KIPS books, use the **<a class="resource" href="https://play.google.com/store/apps/details?id=io.maqsad" target="_blank">Maqsa App</a>**. Its doubt-solve feature is extremely helpful. You just take a picture of your question, and it gives you a clear and fast solution.  
 It can save hours of confusion.
 
 ## Discipline Matters More Than Hours
