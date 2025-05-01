@@ -2,7 +2,7 @@
 layout: post
 title: Why piracy should be avoided?
 date: 2025-02-23 14:53:00 +0500
-categories: [free and open source software]
+categories: ["free and open source software"]
 tags: [piracy, ethics, foss] # TAG names should always be lowercase
 featured: true
 giscus_comments: true

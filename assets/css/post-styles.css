@@ -61,6 +61,8 @@
     background: rgba(255, 255, 255, 0.2);
     padding: 0.5rem 1rem;
     border-radius: 20px;
+    position: relative;
+    top: 9px;
 }
 
 .blog-date {
@@ -94,7 +96,7 @@
 }
 
 .blog-post-container {
-    max-width: 800px;
+    max-width: 1050px;
     margin: 0 auto;
     background: white;
     border-radius: 12px;
@@ -228,20 +230,23 @@
     }
 
     .blog-post-title {
-        font-size: 2rem;
+        font-size: 1.65rem;
     }
 
     .blog-post-body {
-        padding: 2rem;
+        padding: 1.5rem;
         font-size: 1rem;
+    }
+    .blog-post-body h1 {
+        font-size: 1.7rem;
     }
 
     .blog-post-body h2 {
-        font-size: 1.75rem;
+        font-size: 1.55rem;
     }
 
     .blog-post-body h3 {
-        font-size: 1.25rem;
+        font-size: 1.20rem;
     }
 
     .blog-post-footer {

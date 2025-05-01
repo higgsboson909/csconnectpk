@@ -8,6 +8,8 @@ excerpt_separator: "<!--more-->"
 
 # Collections
 collections:
+  posts:
+    output: true
   events:
     output: false
     sort_by: date
@@ -20,7 +22,7 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      author: "Talha Asghar"
+      # author: "Talha Asghar"
   -
     scope:
       path: ""
