@@ -1,6 +1,6 @@
 title: CS Connect Pk
 markdown: kramdown
-permalink: /blog/:year/:title/
+permalink: /blog/:title/
 # permalink: /:year/:month/:day/:title/
 # permalink: pretty
 
@@ -33,5 +33,5 @@ defaults:
       author: "CS Connect PK Team"
 
 baseurl: "/csconnectpk"
-url: "https://higgsboson909.github.io"
+url: "https://csconnectpk.github.io"
 
