@@ -48,7 +48,7 @@ But honestly, **you can prepare much more effectively at home**.
 - Solve **<a class="resource" href="https://youtube.com/playlist?list=PL5b9mn6-ELrGzCLF4mypzRNHQaa24BtH6&si=rvFpLJHkGke4KC-t" target="_blank">FAST past papers</a>** to get familiar with the paper style.
 - Keep your **FSc books** close, because they form your base.
 
-If you ever get stuck on a question, especially from KIPS books, use the **<a class="resource" href="https://play.google.com/store/apps/details?id=io.maqsad" target="_blank">Maqsa App</a>**. Its doubt-solve feature is extremely helpful. You just take a picture of your question, and it gives you a clear and fast solution.  
+If you ever get stuck on a question, especially from KIPS books, use the **<a class="resource" href="https://play.google.com/store/apps/details?id=io.maqsad" target="_blank">Maqsad App</a>**. Its doubt-solve feature is extremely helpful. You just take a picture of your question, and it gives you a clear and fast solution.  
 It can save hours of confusion.
 
 ## Discipline Matters More Than Hours
