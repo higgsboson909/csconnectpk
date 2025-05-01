@@ -12,7 +12,7 @@ featured: true
 giscus_comments: true
 ---
 
-# How a Pre-Med Student Can Get Into FAST for BS Computer Science
+# How a Pre-Med Student Can Get Into FAST for Computing Programs?
 
 If you are a pre-medical student thinking about switching to Computer Science at FAST, the first thing you need to do is pause and ask yourself one simple question: **Do I really want to do this?**  
 Because this decision changes everything.
@@ -28,16 +28,18 @@ It feels unfair. You start comparing yourself with students who have been doing 
 
 ## How to Study Smart
 
-The best approach is **not to study just for the sake of passing**. Learn the concepts deeply. Every topic, every example, and every exercise from your textbook matters. These same concepts will return in your first-year university courses like **Calculus, Digital Logic Design, and Programming**.
+The best approach is **not to study just for the sake of passing**. Learn the concepts deeply. Every topic, every example, and every exercise from your textbook matters. These same concepts will return in your first-year university courses like **Calculus, Digital Logic Design, and Programming**. Some exercises are more important than others. I remember one teacher casually saying:  
 
-Some exercises are more important than others. I remember one teacher casually saying:  
 *"I would recommend solving this particular exercise twenty times."*  
+
 He did not expect anyone to actually do that. But I did. I repeated each question in that exercise so many times that my hands started solving them automatically. It felt like I had trained my muscle memory.  
+
 That is the level of **focus and repetition you need when you are short on time.**
 
 ## Resources You Should Use
 
 When it comes to preparation, you might hear people say things like, *"Join KIPS"* or *"Go to an academy."*  
+
 But honestly, **you can prepare much more effectively at home**.
 
 - Watch the full **<a class="resource" href="https://youtube.com/playlist?list=PL5b9mn6-ELrHhjcb17nu1d8Zxcogj2gFP&si=5_i8goKLi5YUURI_" target="_blank">Hashim Zia playlist on YouTube</a>**. It is one of the best and most complete resources for the FAST entry test.
