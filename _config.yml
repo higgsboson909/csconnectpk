@@ -32,8 +32,7 @@ defaults:
     values:
       author: "CS Connect PK Team"
 
-baseurl: "/csconnectpk.github.io"
-url: "https://csconnectpk.github.io"
-
+baseurl: "/csconnectpk"
+url: "https://higgsboson909.github.io"
 # url: "https://csconnect.pk"
 # baseurl: ""  # because you're serving from root of the domain
