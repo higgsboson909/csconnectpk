@@ -2,7 +2,7 @@
 layout: post
 title: Transitioning from Pre-Medical to FAST
 description: How can a pre-med student secure admission to computing programs at FAST?
-image: "https://github.com/csconnectpk/csconnectpk.github.io/blob/main/images/nuces.jpeg"
+image: "https://csconnect.pk/images/nuces.jpeg"
 date: 2025-05-01 10:20:00 +0500
 categories: ["Pre-Med", "Entry Test"]
 author: "Azan Waseem"
