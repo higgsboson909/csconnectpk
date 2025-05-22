@@ -2,7 +2,7 @@
 layout: post
 title: "Why is FAST so famous for its CS?" 
 description: "Discover what makes FAST’s computer science program one of the most respected in Pakistan."
-image: "https://higgsboson909.github.io/csconnectpk/images/fast_isl.jpeg"
+image: "https://higgsboson909.github.io/csconnectpk/images/fast_red.jpeg"
 date: 2025-05-22 16:25:00 +0500
 categories: ["FAST", "CS"]
 author: "Azan Waseem"
